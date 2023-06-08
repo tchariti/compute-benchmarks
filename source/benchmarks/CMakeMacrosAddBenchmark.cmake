@@ -60,6 +60,8 @@ function (add_benchmark_for_api BASE_TARGET_NAME APPEND_API_TO_TARGET_NAME REGIS
     add_executable(${TARGET_NAME} CMakeLists.txt)
     foreach(API ${APIS})
         target_link_libraries(${TARGET_NAME} PRIVATE compute_benchmarks_framework_${API})
+        # link ocl framework to enable compilation of ocl kernels in L0 benchmarks
+        target_link_libraries(${TARGET_NAME} PRIVATE compute_benchmarks_framework_ocl)
     endforeach()
     target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER ${TARGET_FOLDER_NAME})

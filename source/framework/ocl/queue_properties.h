@@ -74,7 +74,7 @@ struct QueueProperties {
             properties[1] |= CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE;
         }
         if (this->selectedEngine != Engine::Unknown) {
-            const auto propertiesForBlitter = QueueFamiliesHelper::getPropertiesForSelectingEngine(device, this->selectedEngine);
+            const auto propertiesForBlitter = ::QueueFamiliesHelper::getPropertiesForSelectingEngine(device, this->selectedEngine);
             if (propertiesForBlitter == nullptr) {
                 return false;
             }
