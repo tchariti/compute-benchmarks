@@ -32,7 +32,12 @@ static TestResult run(const EmptyKernelImmediateArguments &arguments, Statistics
         return TestResult::KernelNotFound;
     }
     ze_module_handle_t module;
-    ze_kernel_handle_t kernel;
+    ze_kernel_handle_t kernel0;
+    ze_kernel_handle_t kernel1;
+    ze_kernel_handle_t kernel2;
+    ze_kernel_handle_t kernel3;
+    ze_kernel_handle_t kernel4;
+    ze_kernel_handle_t kernel5;
     ze_module_desc_t moduleDesc{ZE_STRUCTURE_TYPE_MODULE_DESC};
     moduleDesc.format = ZE_MODULE_FORMAT_IL_SPIRV;
     moduleDesc.pInputModule = reinterpret_cast<const uint8_t *>(spirvModule.data());
@@ -40,12 +45,22 @@ static TestResult run(const EmptyKernelImmediateArguments &arguments, Statistics
     ASSERT_ZE_RESULT_SUCCESS(zeModuleCreate(levelzero.context, levelzero.device, &moduleDesc, &module, nullptr));
     ze_kernel_desc_t kernelDesc{ZE_STRUCTURE_TYPE_KERNEL_DESC};
     kernelDesc.pKernelName = "empty";
-    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel0));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel1));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel2));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel3));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel4));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelCreate(module, &kernelDesc, &kernel5));
 
     uint32_t groupSizeX = static_cast<uint32_t>(arguments.workgroupSize);
     uint32_t groupSizeY = 1u;
     uint32_t groupSizeZ = 1u;
-    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel0, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel1, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel2, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel3, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel4, groupSizeX, groupSizeY, groupSizeZ));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel5, groupSizeX, groupSizeY, groupSizeZ));
 
     ze_group_count_t groupCounts;
     groupCounts.groupCountX = static_cast<uint32_t>(arguments.workgroupCount);
@@ -70,27 +85,38 @@ static TestResult run(const EmptyKernelImmediateArguments &arguments, Statistics
     ASSERT_ZE_RESULT_SUCCESS(zeCommandListCreateImmediate(levelzero.context, levelzero.device, &commandQueueDesc->desc, &cmdList));
 
     // Warmup
-    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel, &groupCounts, event, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &groupCounts, nullptr, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &groupCounts, nullptr, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &groupCounts, nullptr, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &groupCounts, nullptr, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &groupCounts, nullptr, 0, nullptr));
+    ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &groupCounts, event, 0, nullptr));
     ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
     ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
 
     // Benchmark
     for (auto i = 0u; i < arguments.iterations; i++) {
         timer.measureStart();
-        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel, &groupCounts, event, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &groupCounts, nullptr, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &groupCounts, nullptr, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &groupCounts, nullptr, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &groupCounts, nullptr, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &groupCounts, nullptr, 0, nullptr));
+        ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &groupCounts, event, 0, nullptr));
 
-        if (arguments.useEventForHostSync) {
-            ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
-        } else {
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListHostSynchronize(cmdList, std::numeric_limits<uint64_t>::max()));
-        }
+        ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
         timer.measureEnd();
         statistics.pushValue(timer.get(), typeSelector.getUnit(), typeSelector.getType());
         ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
     }
 
     // Cleanup
-    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel0));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel1));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel2));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel3));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel4));
+    ASSERT_ZE_RESULT_SUCCESS(zeKernelDestroy(kernel5));
     ASSERT_ZE_RESULT_SUCCESS(zeModuleDestroy(module));
     ASSERT_ZE_RESULT_SUCCESS(zeCommandListDestroy(cmdList));
     ASSERT_ZE_RESULT_SUCCESS(zeEventDestroy(event));

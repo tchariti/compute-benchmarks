@@ -107,6 +107,9 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
         statistics.pushUnitAndType(typeSelector.getUnit(), typeSelector.getType());
         return TestResult::Nooped;
     }
+    if (arguments.oooq) {
+        return TestResult::FilteredOut;
+    }
 
     // Setup
     LevelZero levelzero(L0::QueueProperties::create().disable());
@@ -136,7 +139,6 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
 
     ze_group_count_t gws4 = {8, 1, 1};
     std::vector<uint32_t> lws4 = {8, 1, 1};
-
 
     ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel0, lws05[0], lws05[1], lws05[2]));
     ASSERT_ZE_RESULT_SUCCESS(zeKernelSetGroupSize(kernel1, lws12[0], lws12[1], lws12[2]));
