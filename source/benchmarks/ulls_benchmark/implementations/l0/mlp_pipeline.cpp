@@ -60,7 +60,7 @@ static ze_module_handle_t ze_create_module_with_level_zero(const LevelZero& leve
     return ze_module;
 }
 
-ze_kernel_handle_t create_ze_kernel(const LevelZero& levelzero, cl_kernel kernel, std::string entry_point) {
+static ze_kernel_handle_t create_ze_kernel(const LevelZero& levelzero, cl_kernel kernel, std::string entry_point) {
     auto binary = get_binary(kernel);
     ze_module_handle_t ze_module = ze_create_module_with_level_zero(levelzero, binary);
     ze_kernel_handle_t ze_kernel;
@@ -252,10 +252,15 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
         for (auto i = 0u; i < arguments.iterations; i++) {
             timer.measureStart();
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &gws05, nullptr, 0, nullptr));
+            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &gws12, nullptr, 0, nullptr));
+            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &gws12, nullptr, 0, nullptr));
+            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &gws3, nullptr, 0, nullptr));
+            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &gws4, nullptr, 0, nullptr));
+            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
             ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &gws05, event, 0, nullptr));
 
             ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
