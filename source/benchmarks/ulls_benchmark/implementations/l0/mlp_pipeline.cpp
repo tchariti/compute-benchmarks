@@ -111,6 +111,7 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
     // Setup
     LevelZero levelzero(L0::QueueProperties::create());
     Timer timer;
+    size_t num_kernels = 6;
 
     // Create kernels
     auto kernel = get_kernels(levelzero);
@@ -232,11 +233,25 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
             statistics.pushValue(timer.get(), typeSelector.getUnit(), typeSelector.getType());
         }
     } else {
+        bool use_events = true;
 
         // Create an immediate command list
         ze_command_list_handle_t cmdList{};
         auto commandQueueDesc = L0::QueueFamiliesHelper::getPropertiesForSelectingEngine(levelzero.device, Engine::Ccs0);
         ASSERT_ZE_RESULT_SUCCESS(zeCommandListCreateImmediate(levelzero.context, levelzero.device, &commandQueueDesc->desc, &cmdList));
+
+        ze_event_pool_handle_t eventPoolDevice{};
+        std::vector<ze_event_handle_t> events(num_kernels);
+        ze_event_pool_desc_t eventPoolDeviceDesc{ZE_STRUCTURE_TYPE_EVENT_POOL_DESC};
+        eventPoolDeviceDesc.count = num_kernels;
+        ASSERT_ZE_RESULT_SUCCESS(zeEventPoolCreate(levelzero.context, &eventPoolDeviceDesc, 1, &levelzero.device, &eventPoolDevice));
+        for (size_t i = 0; i < num_kernels; i++) {
+            ze_event_desc_t eventDeviceDesc{ZE_STRUCTURE_TYPE_EVENT_DESC};
+            eventDeviceDesc.index = i;
+            eventDeviceDesc.signal = ZE_EVENT_SCOPE_FLAG_DEVICE;
+            ASSERT_ZE_RESULT_SUCCESS(zeEventCreate(eventPoolDevice, &eventDeviceDesc, &events[i]));
+        }
+
 
         // Warmup
         ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &gws05, nullptr, 0, nullptr));
@@ -248,26 +263,50 @@ static TestResult run(const MLPPipelineArguments &arguments, Statistics &statist
         ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
         ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
 
-        // Benchmark
-        for (auto i = 0u; i < arguments.iterations; i++) {
-            timer.measureStart();
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &gws05, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &gws12, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &gws12, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &gws3, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &gws4, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
-            ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &gws05, event, 0, nullptr));
+        if (use_events) {
+            // Benchmark
+            for (auto i = 0u; i < arguments.iterations; i++) {
+                timer.measureStart();
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &gws05, events[0], 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &gws12, events[1], 1, &events[0]));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &gws12, events[2], 1, &events[1]));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &gws3, events[3], 1, &events[2]));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &gws4, events[4], 1, &events[3]));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &gws05, event, 1, &events[4]));
 
-            ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
-            timer.measureEnd();
-            statistics.pushValue(timer.get(), typeSelector.getUnit(), typeSelector.getType());
+                ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
+                timer.measureEnd();
+                statistics.pushValue(timer.get(), typeSelector.getUnit(), typeSelector.getType());
 
-            ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
+                ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
+
+                for (auto j = 0u; j < num_kernels; j++) {
+                    ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(events[j]));
+                }
+            }
+        } else {
+
+            // Benchmark
+            for (auto i = 0u; i < arguments.iterations; i++) {
+                timer.measureStart();
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel0, &gws05, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel1, &gws12, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel2, &gws12, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel3, &gws3, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel4, &gws4, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendBarrier(cmdList, nullptr, 0, nullptr));
+                ASSERT_ZE_RESULT_SUCCESS(zeCommandListAppendLaunchKernel(cmdList, kernel5, &gws05, event, 0, nullptr));
+
+                ASSERT_ZE_RESULT_SUCCESS(zeEventHostSynchronize(event, std::numeric_limits<uint64_t>::max()));
+                timer.measureEnd();
+                statistics.pushValue(timer.get(), typeSelector.getUnit(), typeSelector.getType());
+
+                ASSERT_ZE_RESULT_SUCCESS(zeEventHostReset(event));
+            }
         }
         ASSERT_ZE_RESULT_SUCCESS(zeCommandListDestroy(cmdList));
     }

@@ -311,7 +311,7 @@ static TestResult run(const MLP15PipelineArguments &arguments, Statistics &stati
         }
         ASSERT_ZE_RESULT_SUCCESS(zeCommandListDestroy(cmdList));
     } else {
-        bool use_events = false;
+        bool use_events = true;
 
         // Create an immediate command list
         ze_command_list_handle_t cmdList{};

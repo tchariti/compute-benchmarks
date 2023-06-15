@@ -34,33 +34,28 @@ static TestResult run(const EmptyKernelArguments &arguments, Statistics &statist
     cl_program program = clCreateProgramWithSource(opencl.context, 1, &source, &sourceLength, &retVal);
     ASSERT_CL_SUCCESS(retVal);
     ASSERT_CL_SUCCESS(clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr));
-    cl_kernel kernel0 = clCreateKernel(program, "empty", &retVal);
-    cl_kernel kernel1 = clCreateKernel(program, "empty", &retVal);
-    cl_kernel kernel2 = clCreateKernel(program, "empty", &retVal);
-    cl_kernel kernel3 = clCreateKernel(program, "empty", &retVal);
-    cl_kernel kernel4 = clCreateKernel(program, "empty", &retVal);
-    cl_kernel kernel5 = clCreateKernel(program, "empty", &retVal);
-    ASSERT_CL_SUCCESS(retVal);
+
+    size_t num_kernels = 8;
+    std::vector<cl_kernel> kernels;
+    for (size_t i = 0; i < num_kernels; i++) {
+        kernels.push_back(clCreateKernel(program, "empty", &retVal));
+        ASSERT_CL_SUCCESS(retVal);
+    }
 
     // Warmup, kernel
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel0, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel1, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel2, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel3, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel4, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-    ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel5, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
+    for (size_t i = 0; i < num_kernels; i++) {
+        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernels[i], 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
+    }
     ASSERT_CL_SUCCESS(clFinish(opencl.commandQueue));
 
     // Benchmark
     for (auto i = 0u; i < arguments.iterations; i++) {
         // Enqueue empty kernel and measure it
         timer.measureStart();
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel0, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel1, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel2, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel3, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel4, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
-        ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernel5, 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
+        for (size_t i = 0; i < num_kernels; i++) {
+            ASSERT_CL_SUCCESS(clEnqueueNDRangeKernel(opencl.commandQueue, kernels[i], 1, nullptr, &gws, &lws, 0, nullptr, nullptr));
+        }
+
         ASSERT_CL_SUCCESS(clFinish(opencl.commandQueue));
         timer.measureEnd();
 
@@ -68,12 +63,9 @@ static TestResult run(const EmptyKernelArguments &arguments, Statistics &statist
     }
 
     // Cleanup
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel0));
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel1));
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel2));
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel3));
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel4));
-    ASSERT_CL_SUCCESS(clReleaseKernel(kernel5));
+    for (size_t i = 0; i < num_kernels; i++) {
+        ASSERT_CL_SUCCESS(clReleaseKernel(kernels[i]));
+    }
     ASSERT_CL_SUCCESS(clReleaseProgram(program));
     return TestResult::Success;
 }
