@@ -22,6 +22,7 @@ LevelZero::LevelZero(const QueueProperties &queueProperties, const ContextProper
     if (driverIndex >= driverCount) {
         FATAL_ERROR("Invalid LevelZero driver index. driverIndex=", driverIndex, " driverCount=", driverCount);
     }
+
     auto drivers = std::make_unique<ze_driver_handle_t[]>(driverCount);
     EXPECT_ZE_RESULT_SUCCESS(zeDriverGet(&driverCount, drivers.get()));
     this->driver = drivers[driverIndex];
