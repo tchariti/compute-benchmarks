@@ -76,24 +76,42 @@ static std::vector<ze_kernel_handle_t> get_kernels(const LevelZero& levelzero) {
     Opencl opencl;
 
     cl_int retVal;
-    std::ifstream file("ulls_benchmark_mlp15_pipeline_p1.cl");
+    std::ifstream file("/home/tchariti/ericsson/compute-benchmarks/source/benchmarks/ulls_benchmark/kernels/copyable_sources/ulls_benchmark_prog1_bmlp15_pipeline_sync.cl");
     std::stringstream buffer;
     buffer << file.rdbuf();
     const std::string source = buffer.str();
+    //std::cout<<"source=" << source << std::endl;
     auto data_ptr = source.data();
     const auto sourceLength = source.length();
     cl_program program = clCreateProgramWithSource(opencl.context, 1, &data_ptr, &sourceLength, &retVal);
+    std::cout<<"clCreateProgramWithSource retVal=" << retVal << std::endl;
     clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr);
 #if 1
     std::cout<<"Bhaskar debug 100 \n";
     cl_kernel kernel0 = clCreateKernel(program, "reorder_data_fast_b1_11762321333161727376_0", &retVal);
+    std::cout<<"kernel0 retVal=" << retVal << std::endl;
+
     cl_kernel kernel1 = clCreateKernel(program, "fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0", &retVal);
+    std::cout<<"kernel1 retVal=" << retVal << std::endl;
+
     cl_kernel kernel2 = clCreateKernel(program, "fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0", &retVal);
+    std::cout<<"kernel2 retVal=" << retVal << std::endl;
+
     cl_kernel kernel3 = clCreateKernel(program, "fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0", &retVal);
+    std::cout<<"kernel3 retVal=" << retVal << std::endl;
+
     cl_kernel kernel4 = clCreateKernel(program, "fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0", &retVal);
+    std::cout<<"kernel4 retVal=" << retVal << std::endl;
+
     cl_kernel kernel5 = clCreateKernel(program, "fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0", &retVal);
+    std::cout<<"kernel5 retVal=" << retVal << std::endl;
+
     cl_kernel kernel6 = clCreateKernel(program, "softmax_gpu_bf_5332774206223613098_0", &retVal);
+    std::cout<<"kernel6 retVal=" << retVal << std::endl;
+
     cl_kernel kernel7 = clCreateKernel(program, "reorder_data_fast_b1_9576409340358326759_0", &retVal);
+    std::cout<<"kernel7 retVal=" << retVal << std::endl;
+
 std::cout<<"Bhaskar debug 200 \n";
     std::vector<ze_kernel_handle_t> kernels;
     kernels.push_back(create_ze_kernel(levelzero, kernel0, "reorder_data_fast_b1_11762321333161727376_0"));
@@ -160,7 +178,7 @@ static TestResult run(const BMLP15PipelineArguments &arguments, Statistics &stat
     ze_group_count_t gws0 = {64, 1, 1};
     std::vector<uint32_t> lws0 = {32, 1, 1};
 
-    ze_group_count_t gws1234 = {512, 1, 1};
+    ze_group_count_t gws1234 = {256, 1, 1};
     std::vector<uint32_t> lws1234 = {16, 1, 1};
 
     ze_group_count_t gws5 = {128, 1, 1};
