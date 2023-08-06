@@ -14,6 +14,7 @@
 #include "framework/ocl/opencl.h"
 
 #include <gtest/gtest.h>
+#include <x86intrin.h>
 
 static std::vector<uint8_t> get_binary(cl_kernel kernel) {
     // Get the corresponding program object for the kernel
@@ -23,7 +24,7 @@ static std::vector<uint8_t> get_binary(cl_kernel kernel) {
     if (error) {
         throw std::runtime_error("Failed to retrieve CL_KERNEL_PROGRAM: " + std::to_string(error));
     }
-   // std::cout << "Bhaskar 200 \n";
+    // std::cout << "Bhaskar 200 \n";
     // Get the size of the program binary in bytes.
     size_t binary_size = 0;
     error = clGetProgramInfo(program, CL_PROGRAM_BINARY_SIZES, sizeof(binary_size), &binary_size, nullptr);
@@ -76,16 +77,25 @@ static std::vector<ze_kernel_handle_t> get_kernels(const LevelZero& levelzero) {
     Opencl opencl;
 
     cl_int retVal;
-    std::ifstream file("/home/tchariti/ericsson/compute-benchmarks/source/benchmarks/ulls_benchmark/kernels/copyable_sources/ulls_benchmark_prog1_bmlp15_pipeline_sync.cl");
+    std::ifstream file("/home/tchariti/ericsson/compute-benchmarks/source/benchmarks/ulls_benchmark/kernels/copyable_sources/ulls_benchmark_prog1_bmlp15_pipeline_sync_adls.bin");
     std::stringstream buffer;
     buffer << file.rdbuf();
     const std::string source = buffer.str();
     //std::cout<<"source=" << source << std::endl;
     auto data_ptr = source.data();
     const auto sourceLength = source.length();
+
+    /* //Build from source files
     cl_program program = clCreateProgramWithSource(opencl.context, 1, &data_ptr, &sourceLength, &retVal);
     std::cout<<"clCreateProgramWithSource retVal=" << retVal << std::endl;
-    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr);
+    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr); */
+
+    //Build from binary files
+    cl_int binStatus;
+    cl_program program = clCreateProgramWithBinary(opencl.context, 1, &opencl.device, &sourceLength, (const unsigned char **) &data_ptr, &binStatus, &retVal);
+    std::cout<<" clCreateProgramWithBinary, binStatus, retVal =  " << binStatus << "," << retVal << std::endl;
+    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr); // Must be called even when loading binary
+
 #if 1
     std::cout<<"Bhaskar debug 100 \n";
     cl_kernel kernel0 = clCreateKernel(program, "reorder_data_fast_b1_11762321333161727376_0", &retVal);

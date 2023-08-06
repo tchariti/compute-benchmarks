@@ -1445,12 +1445,12 @@ DECLARE_SUB_GROUP_SHUFFLE(float)
 
 //====================================================
 // Kernel template: reorder_data_fast_b1 
-// Kernel name: reorder_data_fast_b1_9576409340358326759_0
-#define KERNEL(name) __kernel void reorder_data_fast_b1_9576409340358326759_0
-#define FUNC(name)  _##name##_reorder_data_fast_b1_9576409340358326759_0
-#define FUNC_CALL(name)  _##name##_reorder_data_fast_b1_9576409340358326759_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_reorder_data_fast_b1_9576409340358326759_0 []
-#define CONST_ARRAY_REF(name)  _##name##_reorder_data_fast_b1_9576409340358326759_0
+// Kernel name: reorder_data_fast_b1_1859976072953354345_0
+#define KERNEL(name) __kernel void reorder_data_fast_b1_1859976072953354345_0
+#define FUNC(name)  _##name##_reorder_data_fast_b1_1859976072953354345_0
+#define FUNC_CALL(name)  _##name##_reorder_data_fast_b1_1859976072953354345_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_reorder_data_fast_b1_1859976072953354345_0 []
+#define CONST_ARRAY_REF(name)  _##name##_reorder_data_fast_b1_1859976072953354345_0
 #define FP64_SUPPORTED 0
 #define FP16_SUPPORTED 1
 #define FP16_UNIT_USED 1
@@ -1496,7 +1496,7 @@ DECLARE_SUB_GROUP_SHUFFLE(float)
 #define INPUT0_SIZE_W 1
 #define INPUT0_SIZE_U 1
 #define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 128
+#define INPUT0_FEATURE_NUM 64
 #define INPUT0_BATCH_NUM 1
 #define INPUT0_PAD_BEFORE_SIZE_X 0
 #define INPUT0_PAD_BEFORE_SIZE_Y 0
@@ -1521,12 +1521,12 @@ DECLARE_SUB_GROUP_SHUFFLE(float)
 #define INPUT0_U_PITCH 1
 #define INPUT0_V_PITCH 1
 #define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 128
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define INPUT0_BATCH_PITCH 64
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
 #define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
 #define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
 #define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 128
+#define INPUT0_LENGTH 64
 #define INPUT0_DIMS 4
 #define INPUT0_SIMPLE 1
 #define INPUT0_GROUPED 0
@@ -1545,10 +1545,10 @@ DECLARE_SUB_GROUP_SHUFFLE(float)
 #define INPUT0_TYPE_SIZE 2
 #define INPUT0_IS_FP 1
 #define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
+#define INPUT0_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
+#define INPUT0_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
 #define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_SIZE_X 1
@@ -1557,7 +1557,7 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_SIZE_W 1
 #define OUTPUT_SIZE_U 1
 #define OUTPUT_SIZE_V 1
-#define OUTPUT_FEATURE_NUM 128
+#define OUTPUT_FEATURE_NUM 64
 #define OUTPUT_BATCH_NUM 1
 #define OUTPUT_PAD_BEFORE_SIZE_X 0
 #define OUTPUT_PAD_BEFORE_SIZE_Y 0
@@ -1582,12 +1582,12 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_U_PITCH 1
 #define OUTPUT_V_PITCH 1
 #define OUTPUT_FEATURE_PITCH 1
-#define OUTPUT_BATCH_PITCH 128
-#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define OUTPUT_BATCH_PITCH 64
+#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
 #define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
 #define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
 #define OUTPUT_VIEW_OFFSET 0
-#define OUTPUT_LENGTH 128
+#define OUTPUT_LENGTH 64
 #define OUTPUT_DIMS 4
 #define OUTPUT_SIMPLE 1
 #define OUTPUT_GROUPED 0
@@ -1606,10 +1606,10 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_TYPE_SIZE 4
 #define OUTPUT_IS_FP 1
 #define OUTPUT_OFFSET 0
-#define OUTPUT_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
+#define OUTPUT_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
-#define OUTPUT_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
+#define OUTPUT_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
 #define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OPTIONAL_SHAPE_INFO_ARG 
@@ -1677,7 +1677,7 @@ CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define GWS_BATCH 2
 #define GWS_FEATURE 1
 #define GWS_YX 0
-#define ELEMENTS_COUNT 128
+#define ELEMENTS_COUNT 64
 #define CHANGE_DATA_TYPE_ONLY 1
 
 
@@ -2597,12 +2597,12 @@ KERNEL (reorder_data_fast_b1)(
 
 //====================================================
 // Kernel template: softmax_gpu_bf 
-// Kernel name: softmax_gpu_bf_5332774206223613098_0
-#define KERNEL(name) __kernel void softmax_gpu_bf_5332774206223613098_0
-#define FUNC(name)  _##name##_softmax_gpu_bf_5332774206223613098_0
-#define FUNC_CALL(name)  _##name##_softmax_gpu_bf_5332774206223613098_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_softmax_gpu_bf_5332774206223613098_0 []
-#define CONST_ARRAY_REF(name)  _##name##_softmax_gpu_bf_5332774206223613098_0
+// Kernel name: softmax_gpu_bf_4033561128309031624_0
+#define KERNEL(name) __kernel void softmax_gpu_bf_4033561128309031624_0
+#define FUNC(name)  _##name##_softmax_gpu_bf_4033561128309031624_0
+#define FUNC_CALL(name)  _##name##_softmax_gpu_bf_4033561128309031624_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_softmax_gpu_bf_4033561128309031624_0 []
+#define CONST_ARRAY_REF(name)  _##name##_softmax_gpu_bf_4033561128309031624_0
 #define FP64_SUPPORTED 0
 #define FP16_SUPPORTED 1
 #define FP16_UNIT_USED 1
@@ -2648,7 +2648,7 @@ KERNEL (reorder_data_fast_b1)(
 #define INPUT0_SIZE_W 1
 #define INPUT0_SIZE_U 1
 #define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 128
+#define INPUT0_FEATURE_NUM 64
 #define INPUT0_BATCH_NUM 1
 #define INPUT0_PAD_BEFORE_SIZE_X 0
 #define INPUT0_PAD_BEFORE_SIZE_Y 0
@@ -2673,12 +2673,12 @@ KERNEL (reorder_data_fast_b1)(
 #define INPUT0_U_PITCH 1
 #define INPUT0_V_PITCH 1
 #define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 128
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define INPUT0_BATCH_PITCH 64
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
 #define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
 #define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
 #define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 128
+#define INPUT0_LENGTH 64
 #define INPUT0_DIMS 4
 #define INPUT0_SIMPLE 1
 #define INPUT0_GROUPED 0
@@ -2697,10 +2697,10 @@ KERNEL (reorder_data_fast_b1)(
 #define INPUT0_TYPE_SIZE 2
 #define INPUT0_IS_FP 1
 #define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
+#define INPUT0_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
+#define INPUT0_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
 #define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_SIZE_X 1
@@ -2709,7 +2709,7 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_SIZE_W 1
 #define OUTPUT_SIZE_U 1
 #define OUTPUT_SIZE_V 1
-#define OUTPUT_FEATURE_NUM 128
+#define OUTPUT_FEATURE_NUM 64
 #define OUTPUT_BATCH_NUM 1
 #define OUTPUT_PAD_BEFORE_SIZE_X 0
 #define OUTPUT_PAD_BEFORE_SIZE_Y 0
@@ -2734,12 +2734,12 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_U_PITCH 1
 #define OUTPUT_V_PITCH 1
 #define OUTPUT_FEATURE_PITCH 1
-#define OUTPUT_BATCH_PITCH 128
-#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define OUTPUT_BATCH_PITCH 64
+#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
 #define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
 #define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
 #define OUTPUT_VIEW_OFFSET 0
-#define OUTPUT_LENGTH 128
+#define OUTPUT_LENGTH 64
 #define OUTPUT_DIMS 4
 #define OUTPUT_SIMPLE 1
 #define OUTPUT_GROUPED 0
@@ -2758,20 +2758,20 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_TYPE_SIZE 2
 #define OUTPUT_IS_FP 1
 #define OUTPUT_OFFSET 0
-#define OUTPUT_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
+#define OUTPUT_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
-#define OUTPUT_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
+#define OUTPUT_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
 #define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OPTIONAL_SHAPE_INFO_ARG 
 #define OPTIONAL_SHAPE_INFO_TENSOR 
 #define ALONG_FEATURE 1
 #define ITEMS_NUM 8
-#define LWS 16
-#define SLM_SIZE 16
+#define LWS 8
+#define SLM_SIZE 8
 #define DATA_SETS_COUNT 1
-#define DATA_SET_SIZE 128
+#define DATA_SET_SIZE 64
 #define LEFTOVERS 0
 #define STACK_SIZE 9
 #define SUB_GROUP_SIZE 16
@@ -3528,12 +3528,12 @@ KERNEL (softmax_gpu_continuous_bfyx)(
 
 //====================================================
 // Kernel template: fully_connected_gpu_bs_f_bsv16_b1 
-// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0
-#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0
-#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0
-#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0 []
-#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10275378013738315182_0
+// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0
+#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0
+#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0
+#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0 []
+#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9995861220820203849_0
 #define FP64_SUPPORTED 0
 #define FP16_SUPPORTED 1
 #define FP16_UNIT_USED 1
@@ -3555,31 +3555,33 @@ KERNEL (softmax_gpu_continuous_bfyx)(
 #define UNIT_ABS_FUNC fabs
 #define UNIT_TYPE_SIZE 2
 #define UNIT_IS_FP 1
-#define NL_M as_float(0x0)/*0.000000e+00*/
-#define NL_N as_float(0x0)/*0.000000e+00*/
-#define ACTIVATION_FUNC_TYPE half
-#define ACTIVATION_FUNC_VAL_MAX HALF_MAX
-#define ACTIVATION_FUNC_VAL_MIN -ACTIVATION_FUNC_VAL_MAX
-#define ACTIVATION_FUNC_VAL_ONE 1.0h
-#define ACTIVATION_FUNC_VAL_ZERO 0.0h
-#define TO_ACTIVATION_FUNC_TYPE(v) convert_half(v)
-#define TO_ACTIVATION_FUNC_TYPE_SAT(v) convert_half(v)
-#define AS_ACTIVATION_FUNC_TYPE(v) as_half(v)
-#define ACTIVATION_FUNC_MAX_FUNC fmax
-#define ACTIVATION_FUNC_MIN_FUNC fmin
-#define ACTIVATION_FUNC_ABS_FUNC fabs
-#define ACTIVATION_FUNC_TYPE_SIZE 2
-#define ACTIVATION_FUNC_IS_FP 1
-#define ACTIVATION_PARAMS NL_M, NL_N
-#define ACTIVATION_FUNC(input, m, n) input
-#define ACTIVATION(input, params) ACTIVATION_FUNC(input, params)
+#define NL_M_0 as_float(0x0)/*0.000000e+00*/
+#define NL_N_0 as_float(0x0)/*0.000000e+00*/
+#define ACTIVATION_FUNC_0_TYPE half
+#define ACTIVATION_FUNC_0_VAL_MAX HALF_MAX
+#define ACTIVATION_FUNC_0_VAL_MIN -ACTIVATION_FUNC_0_VAL_MAX
+#define ACTIVATION_FUNC_0_VAL_ONE 1.0h
+#define ACTIVATION_FUNC_0_VAL_ZERO 0.0h
+#define TO_ACTIVATION_FUNC_0_TYPE(v) convert_half(v)
+#define TO_ACTIVATION_FUNC_0_TYPE_SAT(v) convert_half(v)
+#define AS_ACTIVATION_FUNC_0_TYPE(v) as_half(v)
+#define ACTIVATION_FUNC_0_MAX_FUNC fmax
+#define ACTIVATION_FUNC_0_MIN_FUNC fmin
+#define ACTIVATION_FUNC_0_ABS_FUNC fabs
+#define ACTIVATION_FUNC_0_TYPE_SIZE 2
+#define ACTIVATION_FUNC_0_IS_FP 1
+#define ACTIVATION_PARAMS_0 NL_M_0, NL_N_0
+#define ACTIVATION_FUNC_0(input, m, n) (ACTIVATION_FUNC_0_MAX_FUNC(ACTIVATION_FUNC_0_VAL_ZERO, input))
+#define ACTIVATION_0(input, params) ACTIVATION_FUNC_0(input, params)
+#define ACTIVATION_PARAMS ACTIVATION_PARAMS_0
+#define ACTIVATION(input, params) ACTIVATION_FUNC_0(input, params)
 #define INPUT0_SIZE_X 1
 #define INPUT0_SIZE_Y 1
 #define INPUT0_SIZE_Z 1
 #define INPUT0_SIZE_W 1
 #define INPUT0_SIZE_U 1
 #define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 256
+#define INPUT0_FEATURE_NUM 128
 #define INPUT0_BATCH_NUM 1
 #define INPUT0_PAD_BEFORE_SIZE_X 0
 #define INPUT0_PAD_BEFORE_SIZE_Y 0
@@ -3604,12 +3606,12 @@ KERNEL (softmax_gpu_continuous_bfyx)(
 #define INPUT0_U_PITCH 1
 #define INPUT0_V_PITCH 1
 #define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 256
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
+#define INPUT0_BATCH_PITCH 128
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
 #define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
 #define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
 #define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 256
+#define INPUT0_LENGTH 128
 #define INPUT0_DIMS 4
 #define INPUT0_SIMPLE 1
 #define INPUT0_GROUPED 0
@@ -3628,10 +3630,10 @@ KERNEL (softmax_gpu_continuous_bfyx)(
 #define INPUT0_TYPE_SIZE 2
 #define INPUT0_IS_FP 1
 #define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,256,1,1,1,1,1,1, } 
+#define INPUT0_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,256,1,1,1,1,1, } 
+#define INPUT0_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
 #define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_SIZE_X 1
@@ -3700,17 +3702,17 @@ CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define FILTER_SIZE_X 1
 #define FILTER_SIZE_Y 1
 #define FILTER_SIZE_Z 1
-#define FILTER_IFM_NUM 256
+#define FILTER_IFM_NUM 128
 #define FILTER_OFM_NUM 128
 #define FILTER_GROUPS_NUM 1
 #define FILTER_X_PITCH 1
 #define FILTER_Y_PITCH 1
 #define FILTER_Z_PITCH 1
 #define FILTER_IFM_PITCH 1
-#define FILTER_OFM_PITCH 256
+#define FILTER_OFM_PITCH 128
 #define FILTER_GROUPS_PITCH 1
 #define FILTER_VIEW_OFFSET 0
-#define FILTER_LENGTH 32768
+#define FILTER_LENGTH 16384
 #define FILTER_DIMS 2
 #define FILTER_SIMPLE 0
 #define FILTER_GROUPED 0
@@ -3729,10 +3731,10 @@ CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define FILTER_TYPE_SIZE 2
 #define FILTER_IS_FP 1
 #define FILTER_OFFSET 0
-#define FILTER_SIZES_DATA { 256,128,1,1,1,1,1,1,1, } 
+#define FILTER_SIZES_DATA { 128,128,1,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(FILTER_SIZES) = FILTER_SIZES_DATA;
 #define FILTER_SIZES CONST_ARRAY_REF(FILTER_SIZES)
-#define FILTER_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
+#define FILTER_PITCHES (size_t []){ 1,128,1,1,1,1,1,1,1, } 
 #define FILTER_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define FILTER_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define BIAS_TERM 1
@@ -3799,7 +3801,3095 @@ CONST_ARRAY_DECL(BIAS_SIZES) = BIAS_SIZES_DATA;
 #define BIAS_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define BIAS_PER_OUTPUT 1
 #define BIAS_PER_OFM 0
-#define INPUT0_ELEMENTS_COUNT 256
+#define INPUT0_ELEMENTS_COUNT 128
+#define SUB_GROUP_SIZE 16
+#define WORK_ITEMS_PER_BATCH 1
+#define UNIT_BYTE_SIZE 2
+#define CHUNK_TYPE uint
+#define CHUNK_BYTE_SIZE 4
+#define UNITS_PER_CHUNK 2
+#define BYTES_PER_SG_READ 64
+#define UNITS_PER_SG_READ 32
+#define RESPONSES_PER_SG_EXEC 16
+#define IN_CHUNK_PREFETCH_SIZE 2
+#define FILTER_CHUNK_PREFETCH_SIZE 16
+
+
+#define CONCAT_TOKEN_HANDLER1(prefix, suffix) prefix##suffix
+#define CONCAT_TOKEN(prefix, suffix) CONCAT_TOKEN_HANDLER1(prefix, suffix)
+#if FP16_UNIT_USED
+ #define CVT_UNIT(expression) CONCAT_TOKEN(convert_, UNIT_TYPE)(expression)
+#else
+ #define CVT_UNIT(expression) (expression)
+#endif
+#if UNITS_PER_CHUNK == 1
+ #define CHUNK_UNITS_TYPE UNIT_TYPE
+#else
+ #define CHUNK_UNITS_TYPE MAKE_VECTOR_TYPE(UNIT_TYPE, UNITS_PER_CHUNK)
+#endif
+#define AS_CHUNK(expression) CONCAT_TOKEN(as_, CHUNK_TYPE)(expression)
+#define AS_UNITS(expression) CONCAT_TOKEN(as_, CHUNK_UNITS_TYPE)(expression)
+#if UNITS_PER_CHUNK == 4
+ #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) > 1 ? ((idx) > 2 ? AS_UNITS(chunk).s3 : AS_UNITS(chunk).s2) : ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0))
+#elif UNITS_PER_CHUNK == 2
+ #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0)
+#elif UNITS_PER_CHUNK == 1
+ #define CHUNK_UNIT_SELECT(chunk, idx) AS_UNITS(chunk)
+#else
+ #error Unsupported number of units per chunk.
+#endif
+#define SG_UNIT_SELECT(chunk, idx) CHUNK_UNIT_SELECT(_sub_group_shuffle(chunk, (idx) / UNITS_PER_CHUNK), (idx) % UNITS_PER_CHUNK)
+#define CHUNK_VEC1_TYPE CHUNK_TYPE
+#define CHUNK_VEC2_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 2)
+#define CHUNK_VEC4_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 4)
+#define CHUNK_VEC8_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 8)
+#define EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec))
+#define EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1))
+#define EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3))
+#define EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3, (array)[(idx) + 4] = chunk_vec.s4, (array)[(idx) + 5] = chunk_vec.s5, (array)[(idx) + 6] = chunk_vec.s6, (array)[(idx) + 7] = chunk_vec.s7))
+#define ALIGNED_BLOCK_READ1(ptr, byte_offset) _sub_group_block_read((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ2(ptr, byte_offset) _sub_group_block_read2((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ4(ptr, byte_offset) _sub_group_block_read4((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ8(ptr, byte_offset) _sub_group_block_read8((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ1(ptr, byte_offset) (*(const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ2(ptr, byte_offset) vload2(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ4(ptr, byte_offset) vload4(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ8(ptr, byte_offset) vload8(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_WRITE1(ptr, byte_offset, val) _sub_group_block_write((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE2(ptr, byte_offset, val) _sub_group_block_write2((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE4(ptr, byte_offset, val) _sub_group_block_write4((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE8(ptr, byte_offset, val) _sub_group_block_write8((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_WRITE1(ptr, byte_offset, val) ((void)(*(__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)) = (val)))
+#define ALIGNED_WRITE2(ptr, byte_offset, val) vstore2((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#define ALIGNED_WRITE4(ptr, byte_offset, val) vstore4((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#define ALIGNED_WRITE8(ptr, byte_offset, val) vstore8((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#if INPUT0_BATCH_NUM != 1
+ #error Kernel does not support specified input batch size.
+#endif
+#if UNITS_PER_SG_READ <= 0 || RESPONSES_PER_SG_EXEC <= 0 || UNITS_PER_CHUNK <= 0 || UNITS_PER_SG_READ % RESPONSES_PER_SG_EXEC != 0 || RESPONSES_PER_SG_EXEC % UNITS_PER_CHUNK != 0
+ #error Kernel does not support specified number of responses processed by single sub-group.
+#endif
+#if IN_CHUNK_PREFETCH_SIZE <= 0 || FILTER_CHUNK_PREFETCH_SIZE <= 0 || (IN_CHUNK_PREFETCH_SIZE * RESPONSES_PER_SG_EXEC) % FILTER_CHUNK_PREFETCH_SIZE != 0
+ #error Kernel does not support specified prefetch sizes.
+#endif
+REQD_SUB_GROUP_SIZE(SUB_GROUP_SIZE)
+__attribute__((reqd_work_group_size(SUB_GROUP_SIZE, 1, 1)))
+KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
+ const __global UNIT_TYPE* input,
+ __global UNIT_TYPE* output,
+ const __global UNIT_TYPE* weight
+#if BIAS_TERM
+ , __global UNIT_TYPE* bias)
+#else
+ )
+#endif
+{
+ const uint input_byte_size = INPUT0_ELEMENTS_COUNT * UNIT_BYTE_SIZE;
+ const uint output_size = FILTER_OFM_NUM;
+ const uint sg_elem_id = get_sub_group_local_id();
+ const uint sg_id = get_group_id(0);
+ const uint input_base = 0;
+ const uint filter_base = sg_id * input_byte_size * RESPONSES_PER_SG_EXEC;
+ const uint output_base_id = sg_id * RESPONSES_PER_SG_EXEC + sg_elem_id;
+#if BIAS_TERM
+ const uint bias_base_id = output_base_id;
+#endif
+ const uint sg_elem_offset = sg_elem_id * CHUNK_BYTE_SIZE;
+ CHUNK_TYPE acc = 0;
+ uint input_offset = input_base;
+ uint filter_offset = filter_base;
+ while (input_offset + IN_CHUNK_PREFETCH_SIZE * BYTES_PER_SG_READ <= input_byte_size)
+ {
+ CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
+#if IN_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
+ input_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#elif IN_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
+ input_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#elif IN_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
+ input_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#else
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
+ input_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#endif
+ unroll_for(uint elem_base_idx = 0; elem_base_idx < IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
+ {
+ CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
+#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
+ filter_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
+ filter_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
+ filter_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#else
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
+ filter_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#endif
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; ++filter_val_idx)
+ {
+ const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
+#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (sg_elem_id < SUB_GROUP_SIZE / 4
+ ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ)))
+ : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
+ ? (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ)));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
+ UNIT_TYPE rearranged_input = SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ);
+#else
+ #error Selected RESPONSES_PER_SG_EXEC is not supported.
+#endif
+ acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
+ }
+ }
+ }
+#define INPUT0_ELEMENTS_REMAINDER (INPUT0_ELEMENTS_COUNT % (IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ))
+#define IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE ((INPUT0_ELEMENTS_REMAINDER + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ)
+#if INPUT0_ELEMENTS_REMAINDER != 0
+ {
+ CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
+ #if IN_CHUNK_PREFETCH_SIZE % 8 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 8 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 16)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
+ input_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #elif IN_CHUNK_PREFETCH_SIZE % 4 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 4 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 8)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
+ input_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #elif IN_CHUNK_PREFETCH_SIZE % 2 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 2 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 4)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
+ input_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #else
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
+ input_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #endif
+ unroll_for(uint elem_base_idx = 0; elem_base_idx < INPUT0_ELEMENTS_REMAINDER; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
+ {
+ const uint filter_chunk_remainder_size = ((INPUT0_ELEMENTS_REMAINDER - elem_base_idx) * RESPONSES_PER_SG_EXEC + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ;
+ const uint filter_chunk_prefetch_req_size = filter_chunk_remainder_size < FILTER_CHUNK_PREFETCH_SIZE ? filter_chunk_remainder_size : FILTER_CHUNK_PREFETCH_SIZE;
+ CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
+#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
+ filter_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
+ filter_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
+ filter_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#else
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
+ filter_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#endif
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; ++filter_val_idx)
+ {
+ const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
+#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (sg_elem_id < SUB_GROUP_SIZE / 4
+ ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO))
+ : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
+ ? (input_base_elem_idx + 2 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 3 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO);
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
+ UNIT_TYPE rearranged_input = input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO;
+#else
+ #error Selected RESPONSES_PER_SG_EXEC is not supported.
+#endif
+ acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
+ }
+ }
+ }
+#endif
+#undef INPUT0_ELEMENTS_REMAINDER
+#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+ CHUNK_TYPE reduced_acc = acc;
+ CHUNK_TYPE zero = 0;
+ for (uint sg_reduce_offset = SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ;
+ sg_reduce_offset < SUB_GROUP_SIZE;
+ sg_reduce_offset += SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ)
+ {
+ reduced_acc = AS_CHUNK(AS_UNITS(reduced_acc) + AS_UNITS(_sub_group_shuffle_down(acc, zero, sg_reduce_offset)));
+ }
+ const uint expanded_acc_size = (RESPONSES_PER_SG_EXEC + SUB_GROUP_SIZE - 1) / SUB_GROUP_SIZE;
+ unroll_for (uint expanded_acc_idx = 0; expanded_acc_idx < expanded_acc_size; ++expanded_acc_idx)
+ {
+ const uint output_id = output_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
+#if BIAS_TERM
+ const uint bias_id = bias_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
+#endif
+ UNIT_TYPE expanded_acc = SG_UNIT_SELECT(reduced_acc, expanded_acc_idx * SUB_GROUP_SIZE + sg_elem_id);
+ if (output_id < output_size)
+ {
+#if BIAS_TERM
+ expanded_acc += bias[bias_id];
+#endif
+ output[output_id] = ACTIVATION(expanded_acc, ACTIVATION_PARAMS);
+ }
+ }
+}
+#undef CONCAT_TOKEN_HANDLER1
+#undef CONCAT_TOKEN
+#undef CVT_UNIT
+#undef CHUNK_UNITS_TYPE
+#undef AS_CHUNK
+#undef AS_UNITS
+#undef CHUNK_UNIT_SELECT
+#undef SG_UNIT_SELECT
+#undef CHUNK_VEC1_TYPE
+#undef CHUNK_VEC2_TYPE
+#undef CHUNK_VEC4_TYPE
+#undef CHUNK_VEC8_TYPE
+#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#undef ALIGNED_BLOCK_READ1
+#undef ALIGNED_BLOCK_READ2
+#undef ALIGNED_BLOCK_READ4
+#undef ALIGNED_BLOCK_READ8
+#undef ALIGNED_READ1
+#undef ALIGNED_READ2
+#undef ALIGNED_READ4
+#undef ALIGNED_READ8
+#undef ALIGNED_BLOCK_WRITE1
+#undef ALIGNED_BLOCK_WRITE2
+#undef ALIGNED_BLOCK_WRITE4
+#undef ALIGNED_BLOCK_WRITE8
+#undef ALIGNED_WRITE1
+#undef ALIGNED_WRITE2
+#undef ALIGNED_WRITE4
+#undef ALIGNED_WRITE8
+#ifdef CONCAT_TOKEN_HANDLER1
+#undef CONCAT_TOKEN_HANDLER1
+#endif
+#ifdef CONCAT_TOKEN
+#undef CONCAT_TOKEN
+#endif
+#ifdef CVT_UNIT
+#undef CVT_UNIT
+#endif
+#ifdef CVT_UNIT
+#undef CVT_UNIT
+#endif
+#ifdef CHUNK_UNITS_TYPE
+#undef CHUNK_UNITS_TYPE
+#endif
+#ifdef CHUNK_UNITS_TYPE
+#undef CHUNK_UNITS_TYPE
+#endif
+#ifdef AS_CHUNK
+#undef AS_CHUNK
+#endif
+#ifdef AS_UNITS
+#undef AS_UNITS
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef SG_UNIT_SELECT
+#undef SG_UNIT_SELECT
+#endif
+#ifdef CHUNK_VEC1_TYPE
+#undef CHUNK_VEC1_TYPE
+#endif
+#ifdef CHUNK_VEC2_TYPE
+#undef CHUNK_VEC2_TYPE
+#endif
+#ifdef CHUNK_VEC4_TYPE
+#undef CHUNK_VEC4_TYPE
+#endif
+#ifdef CHUNK_VEC8_TYPE
+#undef CHUNK_VEC8_TYPE
+#endif
+#ifdef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#endif
+#ifdef ALIGNED_BLOCK_READ1
+#undef ALIGNED_BLOCK_READ1
+#endif
+#ifdef ALIGNED_BLOCK_READ2
+#undef ALIGNED_BLOCK_READ2
+#endif
+#ifdef ALIGNED_BLOCK_READ4
+#undef ALIGNED_BLOCK_READ4
+#endif
+#ifdef ALIGNED_BLOCK_READ8
+#undef ALIGNED_BLOCK_READ8
+#endif
+#ifdef ALIGNED_READ1
+#undef ALIGNED_READ1
+#endif
+#ifdef ALIGNED_READ2
+#undef ALIGNED_READ2
+#endif
+#ifdef ALIGNED_READ4
+#undef ALIGNED_READ4
+#endif
+#ifdef ALIGNED_READ8
+#undef ALIGNED_READ8
+#endif
+#ifdef ALIGNED_BLOCK_WRITE1
+#undef ALIGNED_BLOCK_WRITE1
+#endif
+#ifdef ALIGNED_BLOCK_WRITE2
+#undef ALIGNED_BLOCK_WRITE2
+#endif
+#ifdef ALIGNED_BLOCK_WRITE4
+#undef ALIGNED_BLOCK_WRITE4
+#endif
+#ifdef ALIGNED_BLOCK_WRITE8
+#undef ALIGNED_BLOCK_WRITE8
+#endif
+#ifdef ALIGNED_WRITE1
+#undef ALIGNED_WRITE1
+#endif
+#ifdef ALIGNED_WRITE2
+#undef ALIGNED_WRITE2
+#endif
+#ifdef ALIGNED_WRITE4
+#undef ALIGNED_WRITE4
+#endif
+#ifdef ALIGNED_WRITE8
+#undef ALIGNED_WRITE8
+#endif
+#ifdef INPUT0_ELEMENTS_REMAINDER
+#undef INPUT0_ELEMENTS_REMAINDER
+#endif
+#ifdef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+#endif
+#undef KERNEL
+#undef FUNC
+#undef FUNC_CALL
+#undef CONST_ARRAY_DECL
+#undef CONST_ARRAY_REF
+#ifdef FP64_SUPPORTED
+#undef FP64_SUPPORTED
+#endif
+#ifdef FP16_SUPPORTED
+#undef FP16_SUPPORTED
+#endif
+#ifdef FP16_UNIT_USED
+#undef FP16_UNIT_USED
+#endif
+#ifdef INT8_UNIT_USED
+#undef INT8_UNIT_USED
+#endif
+#ifdef INT32_UNIT_USED
+#undef INT32_UNIT_USED
+#endif
+#ifdef INT64_UNIT_USED
+#undef INT64_UNIT_USED
+#endif
+#ifdef UINT8_UNIT_USED
+#undef UINT8_UNIT_USED
+#endif
+#ifdef UINT32_UNIT_USED
+#undef UINT32_UNIT_USED
+#endif
+#ifdef UNIT_TYPE
+#undef UNIT_TYPE
+#endif
+#ifdef UNIT_VAL_MAX
+#undef UNIT_VAL_MAX
+#endif
+#ifdef UNIT_VAL_MIN
+#undef UNIT_VAL_MIN
+#endif
+#ifdef UNIT_VAL_ONE
+#undef UNIT_VAL_ONE
+#endif
+#ifdef UNIT_VAL_ZERO
+#undef UNIT_VAL_ZERO
+#endif
+#ifdef TO_UNIT_TYPE
+#undef TO_UNIT_TYPE
+#endif
+#ifdef TO_UNIT_TYPE_SAT
+#undef TO_UNIT_TYPE_SAT
+#endif
+#ifdef AS_UNIT_TYPE
+#undef AS_UNIT_TYPE
+#endif
+#ifdef UNIT_MAX_FUNC
+#undef UNIT_MAX_FUNC
+#endif
+#ifdef UNIT_MIN_FUNC
+#undef UNIT_MIN_FUNC
+#endif
+#ifdef UNIT_ABS_FUNC
+#undef UNIT_ABS_FUNC
+#endif
+#ifdef UNIT_TYPE_SIZE
+#undef UNIT_TYPE_SIZE
+#endif
+#ifdef UNIT_IS_FP
+#undef UNIT_IS_FP
+#endif
+#ifdef NL_M_0
+#undef NL_M_0
+#endif
+#ifdef NL_N_0
+#undef NL_N_0
+#endif
+#ifdef ACTIVATION_FUNC_0_TYPE
+#undef ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_MAX
+#undef ACTIVATION_FUNC_0_VAL_MAX
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_MIN
+#undef ACTIVATION_FUNC_0_VAL_MIN
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_ONE
+#undef ACTIVATION_FUNC_0_VAL_ONE
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_ZERO
+#undef ACTIVATION_FUNC_0_VAL_ZERO
+#endif
+#ifdef TO_ACTIVATION_FUNC_0_TYPE
+#undef TO_ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef TO_ACTIVATION_FUNC_0_TYPE_SAT
+#undef TO_ACTIVATION_FUNC_0_TYPE_SAT
+#endif
+#ifdef AS_ACTIVATION_FUNC_0_TYPE
+#undef AS_ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef ACTIVATION_FUNC_0_MAX_FUNC
+#undef ACTIVATION_FUNC_0_MAX_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_MIN_FUNC
+#undef ACTIVATION_FUNC_0_MIN_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_ABS_FUNC
+#undef ACTIVATION_FUNC_0_ABS_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_TYPE_SIZE
+#undef ACTIVATION_FUNC_0_TYPE_SIZE
+#endif
+#ifdef ACTIVATION_FUNC_0_IS_FP
+#undef ACTIVATION_FUNC_0_IS_FP
+#endif
+#ifdef ACTIVATION_PARAMS_0
+#undef ACTIVATION_PARAMS_0
+#endif
+#ifdef ACTIVATION_FUNC_0
+#undef ACTIVATION_FUNC_0
+#endif
+#ifdef ACTIVATION_0
+#undef ACTIVATION_0
+#endif
+#ifdef ACTIVATION_PARAMS
+#undef ACTIVATION_PARAMS
+#endif
+#ifdef ACTIVATION
+#undef ACTIVATION
+#endif
+#ifdef INPUT0_SIZE_X
+#undef INPUT0_SIZE_X
+#endif
+#ifdef INPUT0_SIZE_Y
+#undef INPUT0_SIZE_Y
+#endif
+#ifdef INPUT0_SIZE_Z
+#undef INPUT0_SIZE_Z
+#endif
+#ifdef INPUT0_SIZE_W
+#undef INPUT0_SIZE_W
+#endif
+#ifdef INPUT0_SIZE_U
+#undef INPUT0_SIZE_U
+#endif
+#ifdef INPUT0_SIZE_V
+#undef INPUT0_SIZE_V
+#endif
+#ifdef INPUT0_FEATURE_NUM
+#undef INPUT0_FEATURE_NUM
+#endif
+#ifdef INPUT0_BATCH_NUM
+#undef INPUT0_BATCH_NUM
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_X
+#undef INPUT0_PAD_BEFORE_SIZE_X
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_Y
+#undef INPUT0_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_Z
+#undef INPUT0_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_W
+#undef INPUT0_PAD_BEFORE_SIZE_W
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_U
+#undef INPUT0_PAD_BEFORE_SIZE_U
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_V
+#undef INPUT0_PAD_BEFORE_SIZE_V
+#endif
+#ifdef INPUT0_PAD_BEFORE_FEATURE_NUM
+#undef INPUT0_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef INPUT0_PAD_BEFORE_BATCH_NUM
+#undef INPUT0_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_X
+#undef INPUT0_PAD_AFTER_SIZE_X
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_Y
+#undef INPUT0_PAD_AFTER_SIZE_Y
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_Z
+#undef INPUT0_PAD_AFTER_SIZE_Z
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_W
+#undef INPUT0_PAD_AFTER_SIZE_W
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_U
+#undef INPUT0_PAD_AFTER_SIZE_U
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_V
+#undef INPUT0_PAD_AFTER_SIZE_V
+#endif
+#ifdef INPUT0_PAD_AFTER_FEATURE_NUM
+#undef INPUT0_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef INPUT0_PAD_AFTER_BATCH_NUM
+#undef INPUT0_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef INPUT0_X_PITCH
+#undef INPUT0_X_PITCH
+#endif
+#ifdef INPUT0_Y_PITCH
+#undef INPUT0_Y_PITCH
+#endif
+#ifdef INPUT0_Z_PITCH
+#undef INPUT0_Z_PITCH
+#endif
+#ifdef INPUT0_W_PITCH
+#undef INPUT0_W_PITCH
+#endif
+#ifdef INPUT0_U_PITCH
+#undef INPUT0_U_PITCH
+#endif
+#ifdef INPUT0_V_PITCH
+#undef INPUT0_V_PITCH
+#endif
+#ifdef INPUT0_FEATURE_PITCH
+#undef INPUT0_FEATURE_PITCH
+#endif
+#ifdef INPUT0_BATCH_PITCH
+#undef INPUT0_BATCH_PITCH
+#endif
+#ifdef INPUT0_GET_INDEX_SAFE
+#undef INPUT0_GET_INDEX_SAFE
+#endif
+#ifdef INPUT0_GET_INDEX
+#undef INPUT0_GET_INDEX
+#endif
+#ifdef INPUT0_GET_INDEX_RAW
+#undef INPUT0_GET_INDEX_RAW
+#endif
+#ifdef INPUT0_VIEW_OFFSET
+#undef INPUT0_VIEW_OFFSET
+#endif
+#ifdef INPUT0_LENGTH
+#undef INPUT0_LENGTH
+#endif
+#ifdef INPUT0_DIMS
+#undef INPUT0_DIMS
+#endif
+#ifdef INPUT0_SIMPLE
+#undef INPUT0_SIMPLE
+#endif
+#ifdef INPUT0_GROUPED
+#undef INPUT0_GROUPED
+#endif
+#ifdef INPUT0_LAYOUT_BFYX
+#undef INPUT0_LAYOUT_BFYX
+#endif
+#ifdef INPUT0_TYPE
+#undef INPUT0_TYPE
+#endif
+#ifdef INPUT0_VAL_MAX
+#undef INPUT0_VAL_MAX
+#endif
+#ifdef INPUT0_VAL_MIN
+#undef INPUT0_VAL_MIN
+#endif
+#ifdef INPUT0_VAL_ONE
+#undef INPUT0_VAL_ONE
+#endif
+#ifdef INPUT0_VAL_ZERO
+#undef INPUT0_VAL_ZERO
+#endif
+#ifdef TO_INPUT0_TYPE
+#undef TO_INPUT0_TYPE
+#endif
+#ifdef TO_INPUT0_TYPE_SAT
+#undef TO_INPUT0_TYPE_SAT
+#endif
+#ifdef AS_INPUT0_TYPE
+#undef AS_INPUT0_TYPE
+#endif
+#ifdef INPUT0_MAX_FUNC
+#undef INPUT0_MAX_FUNC
+#endif
+#ifdef INPUT0_MIN_FUNC
+#undef INPUT0_MIN_FUNC
+#endif
+#ifdef INPUT0_ABS_FUNC
+#undef INPUT0_ABS_FUNC
+#endif
+#ifdef INPUT0_TYPE_SIZE
+#undef INPUT0_TYPE_SIZE
+#endif
+#ifdef INPUT0_IS_FP
+#undef INPUT0_IS_FP
+#endif
+#ifdef INPUT0_OFFSET
+#undef INPUT0_OFFSET
+#endif
+#ifdef INPUT0_SIZES_DATA
+#undef INPUT0_SIZES_DATA
+#endif
+#ifdef INPUT0_PITCHES
+#undef INPUT0_PITCHES
+#endif
+#ifdef INPUT0_PAD_BEFORE
+#undef INPUT0_PAD_BEFORE
+#endif
+#ifdef INPUT0_PAD_AFTER
+#undef INPUT0_PAD_AFTER
+#endif
+#ifdef OUTPUT_SIZE_X
+#undef OUTPUT_SIZE_X
+#endif
+#ifdef OUTPUT_SIZE_Y
+#undef OUTPUT_SIZE_Y
+#endif
+#ifdef OUTPUT_SIZE_Z
+#undef OUTPUT_SIZE_Z
+#endif
+#ifdef OUTPUT_SIZE_W
+#undef OUTPUT_SIZE_W
+#endif
+#ifdef OUTPUT_SIZE_U
+#undef OUTPUT_SIZE_U
+#endif
+#ifdef OUTPUT_SIZE_V
+#undef OUTPUT_SIZE_V
+#endif
+#ifdef OUTPUT_FEATURE_NUM
+#undef OUTPUT_FEATURE_NUM
+#endif
+#ifdef OUTPUT_BATCH_NUM
+#undef OUTPUT_BATCH_NUM
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_X
+#undef OUTPUT_PAD_BEFORE_SIZE_X
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_Y
+#undef OUTPUT_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_Z
+#undef OUTPUT_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_W
+#undef OUTPUT_PAD_BEFORE_SIZE_W
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_U
+#undef OUTPUT_PAD_BEFORE_SIZE_U
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_V
+#undef OUTPUT_PAD_BEFORE_SIZE_V
+#endif
+#ifdef OUTPUT_PAD_BEFORE_FEATURE_NUM
+#undef OUTPUT_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef OUTPUT_PAD_BEFORE_BATCH_NUM
+#undef OUTPUT_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_X
+#undef OUTPUT_PAD_AFTER_SIZE_X
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_Y
+#undef OUTPUT_PAD_AFTER_SIZE_Y
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_Z
+#undef OUTPUT_PAD_AFTER_SIZE_Z
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_W
+#undef OUTPUT_PAD_AFTER_SIZE_W
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_U
+#undef OUTPUT_PAD_AFTER_SIZE_U
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_V
+#undef OUTPUT_PAD_AFTER_SIZE_V
+#endif
+#ifdef OUTPUT_PAD_AFTER_FEATURE_NUM
+#undef OUTPUT_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef OUTPUT_PAD_AFTER_BATCH_NUM
+#undef OUTPUT_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef OUTPUT_X_PITCH
+#undef OUTPUT_X_PITCH
+#endif
+#ifdef OUTPUT_Y_PITCH
+#undef OUTPUT_Y_PITCH
+#endif
+#ifdef OUTPUT_Z_PITCH
+#undef OUTPUT_Z_PITCH
+#endif
+#ifdef OUTPUT_W_PITCH
+#undef OUTPUT_W_PITCH
+#endif
+#ifdef OUTPUT_U_PITCH
+#undef OUTPUT_U_PITCH
+#endif
+#ifdef OUTPUT_V_PITCH
+#undef OUTPUT_V_PITCH
+#endif
+#ifdef OUTPUT_FEATURE_PITCH
+#undef OUTPUT_FEATURE_PITCH
+#endif
+#ifdef OUTPUT_BATCH_PITCH
+#undef OUTPUT_BATCH_PITCH
+#endif
+#ifdef OUTPUT_GET_INDEX_SAFE
+#undef OUTPUT_GET_INDEX_SAFE
+#endif
+#ifdef OUTPUT_GET_INDEX
+#undef OUTPUT_GET_INDEX
+#endif
+#ifdef OUTPUT_GET_INDEX_RAW
+#undef OUTPUT_GET_INDEX_RAW
+#endif
+#ifdef OUTPUT_VIEW_OFFSET
+#undef OUTPUT_VIEW_OFFSET
+#endif
+#ifdef OUTPUT_LENGTH
+#undef OUTPUT_LENGTH
+#endif
+#ifdef OUTPUT_DIMS
+#undef OUTPUT_DIMS
+#endif
+#ifdef OUTPUT_SIMPLE
+#undef OUTPUT_SIMPLE
+#endif
+#ifdef OUTPUT_GROUPED
+#undef OUTPUT_GROUPED
+#endif
+#ifdef OUTPUT_LAYOUT_BF
+#undef OUTPUT_LAYOUT_BF
+#endif
+#ifdef OUTPUT_TYPE
+#undef OUTPUT_TYPE
+#endif
+#ifdef OUTPUT_VAL_MAX
+#undef OUTPUT_VAL_MAX
+#endif
+#ifdef OUTPUT_VAL_MIN
+#undef OUTPUT_VAL_MIN
+#endif
+#ifdef OUTPUT_VAL_ONE
+#undef OUTPUT_VAL_ONE
+#endif
+#ifdef OUTPUT_VAL_ZERO
+#undef OUTPUT_VAL_ZERO
+#endif
+#ifdef TO_OUTPUT_TYPE
+#undef TO_OUTPUT_TYPE
+#endif
+#ifdef TO_OUTPUT_TYPE_SAT
+#undef TO_OUTPUT_TYPE_SAT
+#endif
+#ifdef AS_OUTPUT_TYPE
+#undef AS_OUTPUT_TYPE
+#endif
+#ifdef OUTPUT_MAX_FUNC
+#undef OUTPUT_MAX_FUNC
+#endif
+#ifdef OUTPUT_MIN_FUNC
+#undef OUTPUT_MIN_FUNC
+#endif
+#ifdef OUTPUT_ABS_FUNC
+#undef OUTPUT_ABS_FUNC
+#endif
+#ifdef OUTPUT_TYPE_SIZE
+#undef OUTPUT_TYPE_SIZE
+#endif
+#ifdef OUTPUT_IS_FP
+#undef OUTPUT_IS_FP
+#endif
+#ifdef OUTPUT_OFFSET
+#undef OUTPUT_OFFSET
+#endif
+#ifdef OUTPUT_SIZES_DATA
+#undef OUTPUT_SIZES_DATA
+#endif
+#ifdef OUTPUT_PITCHES
+#undef OUTPUT_PITCHES
+#endif
+#ifdef OUTPUT_PAD_BEFORE
+#undef OUTPUT_PAD_BEFORE
+#endif
+#ifdef OUTPUT_PAD_AFTER
+#undef OUTPUT_PAD_AFTER
+#endif
+#ifdef OPTIONAL_SHAPE_INFO_ARG
+#undef OPTIONAL_SHAPE_INFO_ARG
+#endif
+#ifdef OPTIONAL_SHAPE_INFO_TENSOR
+#undef OPTIONAL_SHAPE_INFO_TENSOR
+#endif
+#ifdef FILTER_SIZE_X
+#undef FILTER_SIZE_X
+#endif
+#ifdef FILTER_SIZE_Y
+#undef FILTER_SIZE_Y
+#endif
+#ifdef FILTER_SIZE_Z
+#undef FILTER_SIZE_Z
+#endif
+#ifdef FILTER_IFM_NUM
+#undef FILTER_IFM_NUM
+#endif
+#ifdef FILTER_OFM_NUM
+#undef FILTER_OFM_NUM
+#endif
+#ifdef FILTER_GROUPS_NUM
+#undef FILTER_GROUPS_NUM
+#endif
+#ifdef FILTER_X_PITCH
+#undef FILTER_X_PITCH
+#endif
+#ifdef FILTER_Y_PITCH
+#undef FILTER_Y_PITCH
+#endif
+#ifdef FILTER_Z_PITCH
+#undef FILTER_Z_PITCH
+#endif
+#ifdef FILTER_IFM_PITCH
+#undef FILTER_IFM_PITCH
+#endif
+#ifdef FILTER_OFM_PITCH
+#undef FILTER_OFM_PITCH
+#endif
+#ifdef FILTER_GROUPS_PITCH
+#undef FILTER_GROUPS_PITCH
+#endif
+#ifdef FILTER_VIEW_OFFSET
+#undef FILTER_VIEW_OFFSET
+#endif
+#ifdef FILTER_LENGTH
+#undef FILTER_LENGTH
+#endif
+#ifdef FILTER_DIMS
+#undef FILTER_DIMS
+#endif
+#ifdef FILTER_SIMPLE
+#undef FILTER_SIMPLE
+#endif
+#ifdef FILTER_GROUPED
+#undef FILTER_GROUPED
+#endif
+#ifdef FILTER_LAYOUT_OS_I_OSV16
+#undef FILTER_LAYOUT_OS_I_OSV16
+#endif
+#ifdef FILTER_TYPE
+#undef FILTER_TYPE
+#endif
+#ifdef FILTER_VAL_MAX
+#undef FILTER_VAL_MAX
+#endif
+#ifdef FILTER_VAL_MIN
+#undef FILTER_VAL_MIN
+#endif
+#ifdef FILTER_VAL_ONE
+#undef FILTER_VAL_ONE
+#endif
+#ifdef FILTER_VAL_ZERO
+#undef FILTER_VAL_ZERO
+#endif
+#ifdef TO_FILTER_TYPE
+#undef TO_FILTER_TYPE
+#endif
+#ifdef TO_FILTER_TYPE_SAT
+#undef TO_FILTER_TYPE_SAT
+#endif
+#ifdef AS_FILTER_TYPE
+#undef AS_FILTER_TYPE
+#endif
+#ifdef FILTER_MAX_FUNC
+#undef FILTER_MAX_FUNC
+#endif
+#ifdef FILTER_MIN_FUNC
+#undef FILTER_MIN_FUNC
+#endif
+#ifdef FILTER_ABS_FUNC
+#undef FILTER_ABS_FUNC
+#endif
+#ifdef FILTER_TYPE_SIZE
+#undef FILTER_TYPE_SIZE
+#endif
+#ifdef FILTER_IS_FP
+#undef FILTER_IS_FP
+#endif
+#ifdef FILTER_OFFSET
+#undef FILTER_OFFSET
+#endif
+#ifdef FILTER_SIZES_DATA
+#undef FILTER_SIZES_DATA
+#endif
+#ifdef FILTER_PITCHES
+#undef FILTER_PITCHES
+#endif
+#ifdef FILTER_PAD_BEFORE
+#undef FILTER_PAD_BEFORE
+#endif
+#ifdef FILTER_PAD_AFTER
+#undef FILTER_PAD_AFTER
+#endif
+#ifdef BIAS_TERM
+#undef BIAS_TERM
+#endif
+#ifdef BIAS_SIZE_X
+#undef BIAS_SIZE_X
+#endif
+#ifdef BIAS_SIZE_Y
+#undef BIAS_SIZE_Y
+#endif
+#ifdef BIAS_SIZE_Z
+#undef BIAS_SIZE_Z
+#endif
+#ifdef BIAS_SIZE_W
+#undef BIAS_SIZE_W
+#endif
+#ifdef BIAS_SIZE_U
+#undef BIAS_SIZE_U
+#endif
+#ifdef BIAS_SIZE_V
+#undef BIAS_SIZE_V
+#endif
+#ifdef BIAS_FEATURE_NUM
+#undef BIAS_FEATURE_NUM
+#endif
+#ifdef BIAS_BATCH_NUM
+#undef BIAS_BATCH_NUM
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_X
+#undef BIAS_PAD_BEFORE_SIZE_X
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_Y
+#undef BIAS_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_Z
+#undef BIAS_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_W
+#undef BIAS_PAD_BEFORE_SIZE_W
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_U
+#undef BIAS_PAD_BEFORE_SIZE_U
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_V
+#undef BIAS_PAD_BEFORE_SIZE_V
+#endif
+#ifdef BIAS_PAD_BEFORE_FEATURE_NUM
+#undef BIAS_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef BIAS_PAD_BEFORE_BATCH_NUM
+#undef BIAS_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_X
+#undef BIAS_PAD_AFTER_SIZE_X
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_Y
+#undef BIAS_PAD_AFTER_SIZE_Y
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_Z
+#undef BIAS_PAD_AFTER_SIZE_Z
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_W
+#undef BIAS_PAD_AFTER_SIZE_W
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_U
+#undef BIAS_PAD_AFTER_SIZE_U
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_V
+#undef BIAS_PAD_AFTER_SIZE_V
+#endif
+#ifdef BIAS_PAD_AFTER_FEATURE_NUM
+#undef BIAS_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef BIAS_PAD_AFTER_BATCH_NUM
+#undef BIAS_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef BIAS_X_PITCH
+#undef BIAS_X_PITCH
+#endif
+#ifdef BIAS_Y_PITCH
+#undef BIAS_Y_PITCH
+#endif
+#ifdef BIAS_Z_PITCH
+#undef BIAS_Z_PITCH
+#endif
+#ifdef BIAS_W_PITCH
+#undef BIAS_W_PITCH
+#endif
+#ifdef BIAS_U_PITCH
+#undef BIAS_U_PITCH
+#endif
+#ifdef BIAS_V_PITCH
+#undef BIAS_V_PITCH
+#endif
+#ifdef BIAS_FEATURE_PITCH
+#undef BIAS_FEATURE_PITCH
+#endif
+#ifdef BIAS_BATCH_PITCH
+#undef BIAS_BATCH_PITCH
+#endif
+#ifdef BIAS_GET_INDEX_SAFE
+#undef BIAS_GET_INDEX_SAFE
+#endif
+#ifdef BIAS_GET_INDEX
+#undef BIAS_GET_INDEX
+#endif
+#ifdef BIAS_GET_INDEX_RAW
+#undef BIAS_GET_INDEX_RAW
+#endif
+#ifdef BIAS_VIEW_OFFSET
+#undef BIAS_VIEW_OFFSET
+#endif
+#ifdef BIAS_LENGTH
+#undef BIAS_LENGTH
+#endif
+#ifdef BIAS_DIMS
+#undef BIAS_DIMS
+#endif
+#ifdef BIAS_SIMPLE
+#undef BIAS_SIMPLE
+#endif
+#ifdef BIAS_GROUPED
+#undef BIAS_GROUPED
+#endif
+#ifdef BIAS_LAYOUT_BF
+#undef BIAS_LAYOUT_BF
+#endif
+#ifdef BIAS_TYPE
+#undef BIAS_TYPE
+#endif
+#ifdef BIAS_VAL_MAX
+#undef BIAS_VAL_MAX
+#endif
+#ifdef BIAS_VAL_MIN
+#undef BIAS_VAL_MIN
+#endif
+#ifdef BIAS_VAL_ONE
+#undef BIAS_VAL_ONE
+#endif
+#ifdef BIAS_VAL_ZERO
+#undef BIAS_VAL_ZERO
+#endif
+#ifdef TO_BIAS_TYPE
+#undef TO_BIAS_TYPE
+#endif
+#ifdef TO_BIAS_TYPE_SAT
+#undef TO_BIAS_TYPE_SAT
+#endif
+#ifdef AS_BIAS_TYPE
+#undef AS_BIAS_TYPE
+#endif
+#ifdef BIAS_MAX_FUNC
+#undef BIAS_MAX_FUNC
+#endif
+#ifdef BIAS_MIN_FUNC
+#undef BIAS_MIN_FUNC
+#endif
+#ifdef BIAS_ABS_FUNC
+#undef BIAS_ABS_FUNC
+#endif
+#ifdef BIAS_TYPE_SIZE
+#undef BIAS_TYPE_SIZE
+#endif
+#ifdef BIAS_IS_FP
+#undef BIAS_IS_FP
+#endif
+#ifdef BIAS_OFFSET
+#undef BIAS_OFFSET
+#endif
+#ifdef BIAS_SIZES_DATA
+#undef BIAS_SIZES_DATA
+#endif
+#ifdef BIAS_PITCHES
+#undef BIAS_PITCHES
+#endif
+#ifdef BIAS_PAD_BEFORE
+#undef BIAS_PAD_BEFORE
+#endif
+#ifdef BIAS_PAD_AFTER
+#undef BIAS_PAD_AFTER
+#endif
+#ifdef BIAS_PER_OUTPUT
+#undef BIAS_PER_OUTPUT
+#endif
+#ifdef BIAS_PER_OFM
+#undef BIAS_PER_OFM
+#endif
+#ifdef INPUT0_ELEMENTS_COUNT
+#undef INPUT0_ELEMENTS_COUNT
+#endif
+#ifdef SUB_GROUP_SIZE
+#undef SUB_GROUP_SIZE
+#endif
+#ifdef WORK_ITEMS_PER_BATCH
+#undef WORK_ITEMS_PER_BATCH
+#endif
+#ifdef UNIT_BYTE_SIZE
+#undef UNIT_BYTE_SIZE
+#endif
+#ifdef CHUNK_TYPE
+#undef CHUNK_TYPE
+#endif
+#ifdef CHUNK_BYTE_SIZE
+#undef CHUNK_BYTE_SIZE
+#endif
+#ifdef UNITS_PER_CHUNK
+#undef UNITS_PER_CHUNK
+#endif
+#ifdef BYTES_PER_SG_READ
+#undef BYTES_PER_SG_READ
+#endif
+#ifdef UNITS_PER_SG_READ
+#undef UNITS_PER_SG_READ
+#endif
+#ifdef RESPONSES_PER_SG_EXEC
+#undef RESPONSES_PER_SG_EXEC
+#endif
+#ifdef IN_CHUNK_PREFETCH_SIZE
+#undef IN_CHUNK_PREFETCH_SIZE
+#endif
+#ifdef FILTER_CHUNK_PREFETCH_SIZE
+#undef FILTER_CHUNK_PREFETCH_SIZE
+#endif
+
+//====================================================
+// Kernel template: fully_connected_gpu_bs_f_bsv16_b1 
+// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0
+#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0
+#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0
+#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0 []
+#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4189689361718010219_0
+#define FP64_SUPPORTED 0
+#define FP16_SUPPORTED 1
+#define FP16_UNIT_USED 1
+#define INT8_UNIT_USED 0
+#define INT32_UNIT_USED 0
+#define INT64_UNIT_USED 0
+#define UINT8_UNIT_USED 0
+#define UINT32_UNIT_USED 0
+#define UNIT_TYPE half
+#define UNIT_VAL_MAX HALF_MAX
+#define UNIT_VAL_MIN -UNIT_VAL_MAX
+#define UNIT_VAL_ONE 1.0h
+#define UNIT_VAL_ZERO 0.0h
+#define TO_UNIT_TYPE(v) convert_half(v)
+#define TO_UNIT_TYPE_SAT(v) convert_half(v)
+#define AS_UNIT_TYPE(v) as_half(v)
+#define UNIT_MAX_FUNC fmax
+#define UNIT_MIN_FUNC fmin
+#define UNIT_ABS_FUNC fabs
+#define UNIT_TYPE_SIZE 2
+#define UNIT_IS_FP 1
+#define NL_M_0 as_float(0x0)/*0.000000e+00*/
+#define NL_N_0 as_float(0x0)/*0.000000e+00*/
+#define ACTIVATION_FUNC_0_TYPE half
+#define ACTIVATION_FUNC_0_VAL_MAX HALF_MAX
+#define ACTIVATION_FUNC_0_VAL_MIN -ACTIVATION_FUNC_0_VAL_MAX
+#define ACTIVATION_FUNC_0_VAL_ONE 1.0h
+#define ACTIVATION_FUNC_0_VAL_ZERO 0.0h
+#define TO_ACTIVATION_FUNC_0_TYPE(v) convert_half(v)
+#define TO_ACTIVATION_FUNC_0_TYPE_SAT(v) convert_half(v)
+#define AS_ACTIVATION_FUNC_0_TYPE(v) as_half(v)
+#define ACTIVATION_FUNC_0_MAX_FUNC fmax
+#define ACTIVATION_FUNC_0_MIN_FUNC fmin
+#define ACTIVATION_FUNC_0_ABS_FUNC fabs
+#define ACTIVATION_FUNC_0_TYPE_SIZE 2
+#define ACTIVATION_FUNC_0_IS_FP 1
+#define ACTIVATION_PARAMS_0 NL_M_0, NL_N_0
+#define ACTIVATION_FUNC_0(input, m, n) (ACTIVATION_FUNC_0_MAX_FUNC(ACTIVATION_FUNC_0_VAL_ZERO, input))
+#define ACTIVATION_0(input, params) ACTIVATION_FUNC_0(input, params)
+#define ACTIVATION_PARAMS ACTIVATION_PARAMS_0
+#define ACTIVATION(input, params) ACTIVATION_FUNC_0(input, params)
+#define INPUT0_SIZE_X 1
+#define INPUT0_SIZE_Y 1
+#define INPUT0_SIZE_Z 1
+#define INPUT0_SIZE_W 1
+#define INPUT0_SIZE_U 1
+#define INPUT0_SIZE_V 1
+#define INPUT0_FEATURE_NUM 32
+#define INPUT0_BATCH_NUM 1
+#define INPUT0_PAD_BEFORE_SIZE_X 0
+#define INPUT0_PAD_BEFORE_SIZE_Y 0
+#define INPUT0_PAD_BEFORE_SIZE_Z 0
+#define INPUT0_PAD_BEFORE_SIZE_W 0
+#define INPUT0_PAD_BEFORE_SIZE_U 0
+#define INPUT0_PAD_BEFORE_SIZE_V 0
+#define INPUT0_PAD_BEFORE_FEATURE_NUM 0
+#define INPUT0_PAD_BEFORE_BATCH_NUM 0
+#define INPUT0_PAD_AFTER_SIZE_X 0
+#define INPUT0_PAD_AFTER_SIZE_Y 0
+#define INPUT0_PAD_AFTER_SIZE_Z 0
+#define INPUT0_PAD_AFTER_SIZE_W 0
+#define INPUT0_PAD_AFTER_SIZE_U 0
+#define INPUT0_PAD_AFTER_SIZE_V 0
+#define INPUT0_PAD_AFTER_FEATURE_NUM 0
+#define INPUT0_PAD_AFTER_BATCH_NUM 0
+#define INPUT0_X_PITCH 1
+#define INPUT0_Y_PITCH 1
+#define INPUT0_Z_PITCH 1
+#define INPUT0_W_PITCH 1
+#define INPUT0_U_PITCH 1
+#define INPUT0_V_PITCH 1
+#define INPUT0_FEATURE_PITCH 1
+#define INPUT0_BATCH_PITCH 32
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 32)
+#define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
+#define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
+#define INPUT0_VIEW_OFFSET 0
+#define INPUT0_LENGTH 32
+#define INPUT0_DIMS 4
+#define INPUT0_SIMPLE 1
+#define INPUT0_GROUPED 0
+#define INPUT0_LAYOUT_BFYX 1
+#define INPUT0_TYPE half
+#define INPUT0_VAL_MAX HALF_MAX
+#define INPUT0_VAL_MIN -INPUT0_VAL_MAX
+#define INPUT0_VAL_ONE 1.0h
+#define INPUT0_VAL_ZERO 0.0h
+#define TO_INPUT0_TYPE(v) convert_half(v)
+#define TO_INPUT0_TYPE_SAT(v) convert_half(v)
+#define AS_INPUT0_TYPE(v) as_half(v)
+#define INPUT0_MAX_FUNC fmax
+#define INPUT0_MIN_FUNC fmin
+#define INPUT0_ABS_FUNC fabs
+#define INPUT0_TYPE_SIZE 2
+#define INPUT0_IS_FP 1
+#define INPUT0_OFFSET 0
+#define INPUT0_SIZES_DATA { 1,1,32,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
+#define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
+#define INPUT0_PITCHES (size_t []){ 1,1,1,32,1,1,1,1,1, } 
+#define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OUTPUT_SIZE_X 1
+#define OUTPUT_SIZE_Y 1
+#define OUTPUT_SIZE_Z 1
+#define OUTPUT_SIZE_W 1
+#define OUTPUT_SIZE_U 1
+#define OUTPUT_SIZE_V 1
+#define OUTPUT_FEATURE_NUM 128
+#define OUTPUT_BATCH_NUM 1
+#define OUTPUT_PAD_BEFORE_SIZE_X 0
+#define OUTPUT_PAD_BEFORE_SIZE_Y 0
+#define OUTPUT_PAD_BEFORE_SIZE_Z 0
+#define OUTPUT_PAD_BEFORE_SIZE_W 0
+#define OUTPUT_PAD_BEFORE_SIZE_U 0
+#define OUTPUT_PAD_BEFORE_SIZE_V 0
+#define OUTPUT_PAD_BEFORE_FEATURE_NUM 0
+#define OUTPUT_PAD_BEFORE_BATCH_NUM 0
+#define OUTPUT_PAD_AFTER_SIZE_X 0
+#define OUTPUT_PAD_AFTER_SIZE_Y 0
+#define OUTPUT_PAD_AFTER_SIZE_Z 0
+#define OUTPUT_PAD_AFTER_SIZE_W 0
+#define OUTPUT_PAD_AFTER_SIZE_U 0
+#define OUTPUT_PAD_AFTER_SIZE_V 0
+#define OUTPUT_PAD_AFTER_FEATURE_NUM 0
+#define OUTPUT_PAD_AFTER_BATCH_NUM 0
+#define OUTPUT_X_PITCH 1
+#define OUTPUT_Y_PITCH 1
+#define OUTPUT_Z_PITCH 1
+#define OUTPUT_W_PITCH 1
+#define OUTPUT_U_PITCH 1
+#define OUTPUT_V_PITCH 1
+#define OUTPUT_FEATURE_PITCH 1
+#define OUTPUT_BATCH_PITCH 128
+#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
+#define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
+#define OUTPUT_VIEW_OFFSET 0
+#define OUTPUT_LENGTH 128
+#define OUTPUT_DIMS 2
+#define OUTPUT_SIMPLE 1
+#define OUTPUT_GROUPED 0
+#define OUTPUT_LAYOUT_BF 1
+#define OUTPUT_TYPE half
+#define OUTPUT_VAL_MAX HALF_MAX
+#define OUTPUT_VAL_MIN -OUTPUT_VAL_MAX
+#define OUTPUT_VAL_ONE 1.0h
+#define OUTPUT_VAL_ZERO 0.0h
+#define TO_OUTPUT_TYPE(v) convert_half(v)
+#define TO_OUTPUT_TYPE_SAT(v) convert_half(v)
+#define AS_OUTPUT_TYPE(v) as_half(v)
+#define OUTPUT_MAX_FUNC fmax
+#define OUTPUT_MIN_FUNC fmin
+#define OUTPUT_ABS_FUNC fabs
+#define OUTPUT_TYPE_SIZE 2
+#define OUTPUT_IS_FP 1
+#define OUTPUT_OFFSET 0
+#define OUTPUT_SIZES_DATA { 128,1,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
+#define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
+#define OUTPUT_PITCHES (size_t []){ 1,128,1,1,1,1,1,1,1, } 
+#define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OPTIONAL_SHAPE_INFO_ARG 
+#define OPTIONAL_SHAPE_INFO_TENSOR 
+#define FILTER_SIZE_X 1
+#define FILTER_SIZE_Y 1
+#define FILTER_SIZE_Z 1
+#define FILTER_IFM_NUM 32
+#define FILTER_OFM_NUM 128
+#define FILTER_GROUPS_NUM 1
+#define FILTER_X_PITCH 1
+#define FILTER_Y_PITCH 1
+#define FILTER_Z_PITCH 1
+#define FILTER_IFM_PITCH 1
+#define FILTER_OFM_PITCH 32
+#define FILTER_GROUPS_PITCH 1
+#define FILTER_VIEW_OFFSET 0
+#define FILTER_LENGTH 4096
+#define FILTER_DIMS 2
+#define FILTER_SIMPLE 0
+#define FILTER_GROUPED 0
+#define FILTER_LAYOUT_OS_I_OSV16 1
+#define FILTER_TYPE half
+#define FILTER_VAL_MAX HALF_MAX
+#define FILTER_VAL_MIN -FILTER_VAL_MAX
+#define FILTER_VAL_ONE 1.0h
+#define FILTER_VAL_ZERO 0.0h
+#define TO_FILTER_TYPE(v) convert_half(v)
+#define TO_FILTER_TYPE_SAT(v) convert_half(v)
+#define AS_FILTER_TYPE(v) as_half(v)
+#define FILTER_MAX_FUNC fmax
+#define FILTER_MIN_FUNC fmin
+#define FILTER_ABS_FUNC fabs
+#define FILTER_TYPE_SIZE 2
+#define FILTER_IS_FP 1
+#define FILTER_OFFSET 0
+#define FILTER_SIZES_DATA { 32,128,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(FILTER_SIZES) = FILTER_SIZES_DATA;
+#define FILTER_SIZES CONST_ARRAY_REF(FILTER_SIZES)
+#define FILTER_PITCHES (size_t []){ 1,32,1,1,1,1,1,1,1, } 
+#define FILTER_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define FILTER_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_TERM 1
+#define BIAS_SIZE_X 1
+#define BIAS_SIZE_Y 1
+#define BIAS_SIZE_Z 1
+#define BIAS_SIZE_W 1
+#define BIAS_SIZE_U 1
+#define BIAS_SIZE_V 1
+#define BIAS_FEATURE_NUM 128
+#define BIAS_BATCH_NUM 1
+#define BIAS_PAD_BEFORE_SIZE_X 0
+#define BIAS_PAD_BEFORE_SIZE_Y 0
+#define BIAS_PAD_BEFORE_SIZE_Z 0
+#define BIAS_PAD_BEFORE_SIZE_W 0
+#define BIAS_PAD_BEFORE_SIZE_U 0
+#define BIAS_PAD_BEFORE_SIZE_V 0
+#define BIAS_PAD_BEFORE_FEATURE_NUM 0
+#define BIAS_PAD_BEFORE_BATCH_NUM 0
+#define BIAS_PAD_AFTER_SIZE_X 0
+#define BIAS_PAD_AFTER_SIZE_Y 0
+#define BIAS_PAD_AFTER_SIZE_Z 0
+#define BIAS_PAD_AFTER_SIZE_W 0
+#define BIAS_PAD_AFTER_SIZE_U 0
+#define BIAS_PAD_AFTER_SIZE_V 0
+#define BIAS_PAD_AFTER_FEATURE_NUM 0
+#define BIAS_PAD_AFTER_BATCH_NUM 0
+#define BIAS_X_PITCH 1
+#define BIAS_Y_PITCH 1
+#define BIAS_Z_PITCH 1
+#define BIAS_W_PITCH 1
+#define BIAS_U_PITCH 1
+#define BIAS_V_PITCH 1
+#define BIAS_FEATURE_PITCH 1
+#define BIAS_BATCH_PITCH 128
+#define BIAS_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define BIAS_GET_INDEX(b, f, y, x) (0 + (f))
+#define BIAS_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(BIAS, b, f, y, x)
+#define BIAS_VIEW_OFFSET 0
+#define BIAS_LENGTH 128
+#define BIAS_DIMS 2
+#define BIAS_SIMPLE 1
+#define BIAS_GROUPED 0
+#define BIAS_LAYOUT_BF 1
+#define BIAS_TYPE half
+#define BIAS_VAL_MAX HALF_MAX
+#define BIAS_VAL_MIN -BIAS_VAL_MAX
+#define BIAS_VAL_ONE 1.0h
+#define BIAS_VAL_ZERO 0.0h
+#define TO_BIAS_TYPE(v) convert_half(v)
+#define TO_BIAS_TYPE_SAT(v) convert_half(v)
+#define AS_BIAS_TYPE(v) as_half(v)
+#define BIAS_MAX_FUNC fmax
+#define BIAS_MIN_FUNC fmin
+#define BIAS_ABS_FUNC fabs
+#define BIAS_TYPE_SIZE 2
+#define BIAS_IS_FP 1
+#define BIAS_OFFSET 0
+#define BIAS_SIZES_DATA { 128,1,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(BIAS_SIZES) = BIAS_SIZES_DATA;
+#define BIAS_SIZES CONST_ARRAY_REF(BIAS_SIZES)
+#define BIAS_PITCHES (size_t []){ 1,128,1,1,1,1,1,1,1, } 
+#define BIAS_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_PER_OUTPUT 1
+#define BIAS_PER_OFM 0
+#define INPUT0_ELEMENTS_COUNT 32
+#define SUB_GROUP_SIZE 16
+#define WORK_ITEMS_PER_BATCH 1
+#define UNIT_BYTE_SIZE 2
+#define CHUNK_TYPE uint
+#define CHUNK_BYTE_SIZE 4
+#define UNITS_PER_CHUNK 2
+#define BYTES_PER_SG_READ 64
+#define UNITS_PER_SG_READ 32
+#define RESPONSES_PER_SG_EXEC 16
+#define IN_CHUNK_PREFETCH_SIZE 2
+#define FILTER_CHUNK_PREFETCH_SIZE 16
+
+
+#define CONCAT_TOKEN_HANDLER1(prefix, suffix) prefix##suffix
+#define CONCAT_TOKEN(prefix, suffix) CONCAT_TOKEN_HANDLER1(prefix, suffix)
+#if FP16_UNIT_USED
+ #define CVT_UNIT(expression) CONCAT_TOKEN(convert_, UNIT_TYPE)(expression)
+#else
+ #define CVT_UNIT(expression) (expression)
+#endif
+#if UNITS_PER_CHUNK == 1
+ #define CHUNK_UNITS_TYPE UNIT_TYPE
+#else
+ #define CHUNK_UNITS_TYPE MAKE_VECTOR_TYPE(UNIT_TYPE, UNITS_PER_CHUNK)
+#endif
+#define AS_CHUNK(expression) CONCAT_TOKEN(as_, CHUNK_TYPE)(expression)
+#define AS_UNITS(expression) CONCAT_TOKEN(as_, CHUNK_UNITS_TYPE)(expression)
+#if UNITS_PER_CHUNK == 4
+ #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) > 1 ? ((idx) > 2 ? AS_UNITS(chunk).s3 : AS_UNITS(chunk).s2) : ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0))
+#elif UNITS_PER_CHUNK == 2
+ #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0)
+#elif UNITS_PER_CHUNK == 1
+ #define CHUNK_UNIT_SELECT(chunk, idx) AS_UNITS(chunk)
+#else
+ #error Unsupported number of units per chunk.
+#endif
+#define SG_UNIT_SELECT(chunk, idx) CHUNK_UNIT_SELECT(_sub_group_shuffle(chunk, (idx) / UNITS_PER_CHUNK), (idx) % UNITS_PER_CHUNK)
+#define CHUNK_VEC1_TYPE CHUNK_TYPE
+#define CHUNK_VEC2_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 2)
+#define CHUNK_VEC4_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 4)
+#define CHUNK_VEC8_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 8)
+#define EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec))
+#define EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1))
+#define EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3))
+#define EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3, (array)[(idx) + 4] = chunk_vec.s4, (array)[(idx) + 5] = chunk_vec.s5, (array)[(idx) + 6] = chunk_vec.s6, (array)[(idx) + 7] = chunk_vec.s7))
+#define ALIGNED_BLOCK_READ1(ptr, byte_offset) _sub_group_block_read((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ2(ptr, byte_offset) _sub_group_block_read2((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ4(ptr, byte_offset) _sub_group_block_read4((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_READ8(ptr, byte_offset) _sub_group_block_read8((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ1(ptr, byte_offset) (*(const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ2(ptr, byte_offset) vload2(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ4(ptr, byte_offset) vload4(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_READ8(ptr, byte_offset) vload8(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
+#define ALIGNED_BLOCK_WRITE1(ptr, byte_offset, val) _sub_group_block_write((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE2(ptr, byte_offset, val) _sub_group_block_write2((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE4(ptr, byte_offset, val) _sub_group_block_write4((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_BLOCK_WRITE8(ptr, byte_offset, val) _sub_group_block_write8((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
+#define ALIGNED_WRITE1(ptr, byte_offset, val) ((void)(*(__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)) = (val)))
+#define ALIGNED_WRITE2(ptr, byte_offset, val) vstore2((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#define ALIGNED_WRITE4(ptr, byte_offset, val) vstore4((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#define ALIGNED_WRITE8(ptr, byte_offset, val) vstore8((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
+#if INPUT0_BATCH_NUM != 1
+ #error Kernel does not support specified input batch size.
+#endif
+#if UNITS_PER_SG_READ <= 0 || RESPONSES_PER_SG_EXEC <= 0 || UNITS_PER_CHUNK <= 0 || UNITS_PER_SG_READ % RESPONSES_PER_SG_EXEC != 0 || RESPONSES_PER_SG_EXEC % UNITS_PER_CHUNK != 0
+ #error Kernel does not support specified number of responses processed by single sub-group.
+#endif
+#if IN_CHUNK_PREFETCH_SIZE <= 0 || FILTER_CHUNK_PREFETCH_SIZE <= 0 || (IN_CHUNK_PREFETCH_SIZE * RESPONSES_PER_SG_EXEC) % FILTER_CHUNK_PREFETCH_SIZE != 0
+ #error Kernel does not support specified prefetch sizes.
+#endif
+REQD_SUB_GROUP_SIZE(SUB_GROUP_SIZE)
+__attribute__((reqd_work_group_size(SUB_GROUP_SIZE, 1, 1)))
+KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
+ const __global UNIT_TYPE* input,
+ __global UNIT_TYPE* output,
+ const __global UNIT_TYPE* weight
+#if BIAS_TERM
+ , __global UNIT_TYPE* bias)
+#else
+ )
+#endif
+{
+ const uint input_byte_size = INPUT0_ELEMENTS_COUNT * UNIT_BYTE_SIZE;
+ const uint output_size = FILTER_OFM_NUM;
+ const uint sg_elem_id = get_sub_group_local_id();
+ const uint sg_id = get_group_id(0);
+ const uint input_base = 0;
+ const uint filter_base = sg_id * input_byte_size * RESPONSES_PER_SG_EXEC;
+ const uint output_base_id = sg_id * RESPONSES_PER_SG_EXEC + sg_elem_id;
+#if BIAS_TERM
+ const uint bias_base_id = output_base_id;
+#endif
+ const uint sg_elem_offset = sg_elem_id * CHUNK_BYTE_SIZE;
+ CHUNK_TYPE acc = 0;
+ uint input_offset = input_base;
+ uint filter_offset = filter_base;
+ while (input_offset + IN_CHUNK_PREFETCH_SIZE * BYTES_PER_SG_READ <= input_byte_size)
+ {
+ CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
+#if IN_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
+ input_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#elif IN_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
+ input_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#elif IN_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
+ input_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#else
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
+ input_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+#endif
+ unroll_for(uint elem_base_idx = 0; elem_base_idx < IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
+ {
+ CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
+#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
+ filter_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
+ filter_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
+ filter_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#else
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
+ filter_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#endif
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; ++filter_val_idx)
+ {
+ const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
+#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (sg_elem_id < SUB_GROUP_SIZE / 4
+ ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ)))
+ : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
+ ? (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ)));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
+ : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
+ UNIT_TYPE rearranged_input = SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ);
+#else
+ #error Selected RESPONSES_PER_SG_EXEC is not supported.
+#endif
+ acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
+ }
+ }
+ }
+#define INPUT0_ELEMENTS_REMAINDER (INPUT0_ELEMENTS_COUNT % (IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ))
+#define IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE ((INPUT0_ELEMENTS_REMAINDER + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ)
+#if INPUT0_ELEMENTS_REMAINDER != 0
+ {
+ CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
+ #if IN_CHUNK_PREFETCH_SIZE % 8 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 8 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 16)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
+ input_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #elif IN_CHUNK_PREFETCH_SIZE % 4 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 4 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 8)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
+ input_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #elif IN_CHUNK_PREFETCH_SIZE % 2 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 2 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 4)
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
+ input_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #else
+ unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
+ input_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
+ }
+ #endif
+ unroll_for(uint elem_base_idx = 0; elem_base_idx < INPUT0_ELEMENTS_REMAINDER; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
+ {
+ const uint filter_chunk_remainder_size = ((INPUT0_ELEMENTS_REMAINDER - elem_base_idx) * RESPONSES_PER_SG_EXEC + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ;
+ const uint filter_chunk_prefetch_req_size = filter_chunk_remainder_size < FILTER_CHUNK_PREFETCH_SIZE ? filter_chunk_remainder_size : FILTER_CHUNK_PREFETCH_SIZE;
+ CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
+#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 8)
+ {
+ CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
+ filter_offset += 8 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 4)
+ {
+ CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
+ filter_offset += 4 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 2)
+ {
+ CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
+ filter_offset += 2 * BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#else
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 1)
+ {
+ CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
+ filter_offset += BYTES_PER_SG_READ;
+ EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
+ }
+#endif
+ unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; ++filter_val_idx)
+ {
+ const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
+#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (sg_elem_id < SUB_GROUP_SIZE / 4
+ ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO))
+ : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
+ ? (input_base_elem_idx + 2 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 3 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO));
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
+ UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
+ ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
+ : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO);
+#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
+ UNIT_TYPE rearranged_input = input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO;
+#else
+ #error Selected RESPONSES_PER_SG_EXEC is not supported.
+#endif
+ acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
+ }
+ }
+ }
+#endif
+#undef INPUT0_ELEMENTS_REMAINDER
+#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+ CHUNK_TYPE reduced_acc = acc;
+ CHUNK_TYPE zero = 0;
+ for (uint sg_reduce_offset = SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ;
+ sg_reduce_offset < SUB_GROUP_SIZE;
+ sg_reduce_offset += SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ)
+ {
+ reduced_acc = AS_CHUNK(AS_UNITS(reduced_acc) + AS_UNITS(_sub_group_shuffle_down(acc, zero, sg_reduce_offset)));
+ }
+ const uint expanded_acc_size = (RESPONSES_PER_SG_EXEC + SUB_GROUP_SIZE - 1) / SUB_GROUP_SIZE;
+ unroll_for (uint expanded_acc_idx = 0; expanded_acc_idx < expanded_acc_size; ++expanded_acc_idx)
+ {
+ const uint output_id = output_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
+#if BIAS_TERM
+ const uint bias_id = bias_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
+#endif
+ UNIT_TYPE expanded_acc = SG_UNIT_SELECT(reduced_acc, expanded_acc_idx * SUB_GROUP_SIZE + sg_elem_id);
+ if (output_id < output_size)
+ {
+#if BIAS_TERM
+ expanded_acc += bias[bias_id];
+#endif
+ output[output_id] = ACTIVATION(expanded_acc, ACTIVATION_PARAMS);
+ }
+ }
+}
+#undef CONCAT_TOKEN_HANDLER1
+#undef CONCAT_TOKEN
+#undef CVT_UNIT
+#undef CHUNK_UNITS_TYPE
+#undef AS_CHUNK
+#undef AS_UNITS
+#undef CHUNK_UNIT_SELECT
+#undef SG_UNIT_SELECT
+#undef CHUNK_VEC1_TYPE
+#undef CHUNK_VEC2_TYPE
+#undef CHUNK_VEC4_TYPE
+#undef CHUNK_VEC8_TYPE
+#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#undef ALIGNED_BLOCK_READ1
+#undef ALIGNED_BLOCK_READ2
+#undef ALIGNED_BLOCK_READ4
+#undef ALIGNED_BLOCK_READ8
+#undef ALIGNED_READ1
+#undef ALIGNED_READ2
+#undef ALIGNED_READ4
+#undef ALIGNED_READ8
+#undef ALIGNED_BLOCK_WRITE1
+#undef ALIGNED_BLOCK_WRITE2
+#undef ALIGNED_BLOCK_WRITE4
+#undef ALIGNED_BLOCK_WRITE8
+#undef ALIGNED_WRITE1
+#undef ALIGNED_WRITE2
+#undef ALIGNED_WRITE4
+#undef ALIGNED_WRITE8
+#ifdef CONCAT_TOKEN_HANDLER1
+#undef CONCAT_TOKEN_HANDLER1
+#endif
+#ifdef CONCAT_TOKEN
+#undef CONCAT_TOKEN
+#endif
+#ifdef CVT_UNIT
+#undef CVT_UNIT
+#endif
+#ifdef CVT_UNIT
+#undef CVT_UNIT
+#endif
+#ifdef CHUNK_UNITS_TYPE
+#undef CHUNK_UNITS_TYPE
+#endif
+#ifdef CHUNK_UNITS_TYPE
+#undef CHUNK_UNITS_TYPE
+#endif
+#ifdef AS_CHUNK
+#undef AS_CHUNK
+#endif
+#ifdef AS_UNITS
+#undef AS_UNITS
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef CHUNK_UNIT_SELECT
+#undef CHUNK_UNIT_SELECT
+#endif
+#ifdef SG_UNIT_SELECT
+#undef SG_UNIT_SELECT
+#endif
+#ifdef CHUNK_VEC1_TYPE
+#undef CHUNK_VEC1_TYPE
+#endif
+#ifdef CHUNK_VEC2_TYPE
+#undef CHUNK_VEC2_TYPE
+#endif
+#ifdef CHUNK_VEC4_TYPE
+#undef CHUNK_VEC4_TYPE
+#endif
+#ifdef CHUNK_VEC8_TYPE
+#undef CHUNK_VEC8_TYPE
+#endif
+#ifdef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
+#endif
+#ifdef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
+#endif
+#ifdef ALIGNED_BLOCK_READ1
+#undef ALIGNED_BLOCK_READ1
+#endif
+#ifdef ALIGNED_BLOCK_READ2
+#undef ALIGNED_BLOCK_READ2
+#endif
+#ifdef ALIGNED_BLOCK_READ4
+#undef ALIGNED_BLOCK_READ4
+#endif
+#ifdef ALIGNED_BLOCK_READ8
+#undef ALIGNED_BLOCK_READ8
+#endif
+#ifdef ALIGNED_READ1
+#undef ALIGNED_READ1
+#endif
+#ifdef ALIGNED_READ2
+#undef ALIGNED_READ2
+#endif
+#ifdef ALIGNED_READ4
+#undef ALIGNED_READ4
+#endif
+#ifdef ALIGNED_READ8
+#undef ALIGNED_READ8
+#endif
+#ifdef ALIGNED_BLOCK_WRITE1
+#undef ALIGNED_BLOCK_WRITE1
+#endif
+#ifdef ALIGNED_BLOCK_WRITE2
+#undef ALIGNED_BLOCK_WRITE2
+#endif
+#ifdef ALIGNED_BLOCK_WRITE4
+#undef ALIGNED_BLOCK_WRITE4
+#endif
+#ifdef ALIGNED_BLOCK_WRITE8
+#undef ALIGNED_BLOCK_WRITE8
+#endif
+#ifdef ALIGNED_WRITE1
+#undef ALIGNED_WRITE1
+#endif
+#ifdef ALIGNED_WRITE2
+#undef ALIGNED_WRITE2
+#endif
+#ifdef ALIGNED_WRITE4
+#undef ALIGNED_WRITE4
+#endif
+#ifdef ALIGNED_WRITE8
+#undef ALIGNED_WRITE8
+#endif
+#ifdef INPUT0_ELEMENTS_REMAINDER
+#undef INPUT0_ELEMENTS_REMAINDER
+#endif
+#ifdef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
+#endif
+#undef KERNEL
+#undef FUNC
+#undef FUNC_CALL
+#undef CONST_ARRAY_DECL
+#undef CONST_ARRAY_REF
+#ifdef FP64_SUPPORTED
+#undef FP64_SUPPORTED
+#endif
+#ifdef FP16_SUPPORTED
+#undef FP16_SUPPORTED
+#endif
+#ifdef FP16_UNIT_USED
+#undef FP16_UNIT_USED
+#endif
+#ifdef INT8_UNIT_USED
+#undef INT8_UNIT_USED
+#endif
+#ifdef INT32_UNIT_USED
+#undef INT32_UNIT_USED
+#endif
+#ifdef INT64_UNIT_USED
+#undef INT64_UNIT_USED
+#endif
+#ifdef UINT8_UNIT_USED
+#undef UINT8_UNIT_USED
+#endif
+#ifdef UINT32_UNIT_USED
+#undef UINT32_UNIT_USED
+#endif
+#ifdef UNIT_TYPE
+#undef UNIT_TYPE
+#endif
+#ifdef UNIT_VAL_MAX
+#undef UNIT_VAL_MAX
+#endif
+#ifdef UNIT_VAL_MIN
+#undef UNIT_VAL_MIN
+#endif
+#ifdef UNIT_VAL_ONE
+#undef UNIT_VAL_ONE
+#endif
+#ifdef UNIT_VAL_ZERO
+#undef UNIT_VAL_ZERO
+#endif
+#ifdef TO_UNIT_TYPE
+#undef TO_UNIT_TYPE
+#endif
+#ifdef TO_UNIT_TYPE_SAT
+#undef TO_UNIT_TYPE_SAT
+#endif
+#ifdef AS_UNIT_TYPE
+#undef AS_UNIT_TYPE
+#endif
+#ifdef UNIT_MAX_FUNC
+#undef UNIT_MAX_FUNC
+#endif
+#ifdef UNIT_MIN_FUNC
+#undef UNIT_MIN_FUNC
+#endif
+#ifdef UNIT_ABS_FUNC
+#undef UNIT_ABS_FUNC
+#endif
+#ifdef UNIT_TYPE_SIZE
+#undef UNIT_TYPE_SIZE
+#endif
+#ifdef UNIT_IS_FP
+#undef UNIT_IS_FP
+#endif
+#ifdef NL_M_0
+#undef NL_M_0
+#endif
+#ifdef NL_N_0
+#undef NL_N_0
+#endif
+#ifdef ACTIVATION_FUNC_0_TYPE
+#undef ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_MAX
+#undef ACTIVATION_FUNC_0_VAL_MAX
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_MIN
+#undef ACTIVATION_FUNC_0_VAL_MIN
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_ONE
+#undef ACTIVATION_FUNC_0_VAL_ONE
+#endif
+#ifdef ACTIVATION_FUNC_0_VAL_ZERO
+#undef ACTIVATION_FUNC_0_VAL_ZERO
+#endif
+#ifdef TO_ACTIVATION_FUNC_0_TYPE
+#undef TO_ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef TO_ACTIVATION_FUNC_0_TYPE_SAT
+#undef TO_ACTIVATION_FUNC_0_TYPE_SAT
+#endif
+#ifdef AS_ACTIVATION_FUNC_0_TYPE
+#undef AS_ACTIVATION_FUNC_0_TYPE
+#endif
+#ifdef ACTIVATION_FUNC_0_MAX_FUNC
+#undef ACTIVATION_FUNC_0_MAX_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_MIN_FUNC
+#undef ACTIVATION_FUNC_0_MIN_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_ABS_FUNC
+#undef ACTIVATION_FUNC_0_ABS_FUNC
+#endif
+#ifdef ACTIVATION_FUNC_0_TYPE_SIZE
+#undef ACTIVATION_FUNC_0_TYPE_SIZE
+#endif
+#ifdef ACTIVATION_FUNC_0_IS_FP
+#undef ACTIVATION_FUNC_0_IS_FP
+#endif
+#ifdef ACTIVATION_PARAMS_0
+#undef ACTIVATION_PARAMS_0
+#endif
+#ifdef ACTIVATION_FUNC_0
+#undef ACTIVATION_FUNC_0
+#endif
+#ifdef ACTIVATION_0
+#undef ACTIVATION_0
+#endif
+#ifdef ACTIVATION_PARAMS
+#undef ACTIVATION_PARAMS
+#endif
+#ifdef ACTIVATION
+#undef ACTIVATION
+#endif
+#ifdef INPUT0_SIZE_X
+#undef INPUT0_SIZE_X
+#endif
+#ifdef INPUT0_SIZE_Y
+#undef INPUT0_SIZE_Y
+#endif
+#ifdef INPUT0_SIZE_Z
+#undef INPUT0_SIZE_Z
+#endif
+#ifdef INPUT0_SIZE_W
+#undef INPUT0_SIZE_W
+#endif
+#ifdef INPUT0_SIZE_U
+#undef INPUT0_SIZE_U
+#endif
+#ifdef INPUT0_SIZE_V
+#undef INPUT0_SIZE_V
+#endif
+#ifdef INPUT0_FEATURE_NUM
+#undef INPUT0_FEATURE_NUM
+#endif
+#ifdef INPUT0_BATCH_NUM
+#undef INPUT0_BATCH_NUM
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_X
+#undef INPUT0_PAD_BEFORE_SIZE_X
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_Y
+#undef INPUT0_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_Z
+#undef INPUT0_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_W
+#undef INPUT0_PAD_BEFORE_SIZE_W
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_U
+#undef INPUT0_PAD_BEFORE_SIZE_U
+#endif
+#ifdef INPUT0_PAD_BEFORE_SIZE_V
+#undef INPUT0_PAD_BEFORE_SIZE_V
+#endif
+#ifdef INPUT0_PAD_BEFORE_FEATURE_NUM
+#undef INPUT0_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef INPUT0_PAD_BEFORE_BATCH_NUM
+#undef INPUT0_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_X
+#undef INPUT0_PAD_AFTER_SIZE_X
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_Y
+#undef INPUT0_PAD_AFTER_SIZE_Y
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_Z
+#undef INPUT0_PAD_AFTER_SIZE_Z
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_W
+#undef INPUT0_PAD_AFTER_SIZE_W
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_U
+#undef INPUT0_PAD_AFTER_SIZE_U
+#endif
+#ifdef INPUT0_PAD_AFTER_SIZE_V
+#undef INPUT0_PAD_AFTER_SIZE_V
+#endif
+#ifdef INPUT0_PAD_AFTER_FEATURE_NUM
+#undef INPUT0_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef INPUT0_PAD_AFTER_BATCH_NUM
+#undef INPUT0_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef INPUT0_X_PITCH
+#undef INPUT0_X_PITCH
+#endif
+#ifdef INPUT0_Y_PITCH
+#undef INPUT0_Y_PITCH
+#endif
+#ifdef INPUT0_Z_PITCH
+#undef INPUT0_Z_PITCH
+#endif
+#ifdef INPUT0_W_PITCH
+#undef INPUT0_W_PITCH
+#endif
+#ifdef INPUT0_U_PITCH
+#undef INPUT0_U_PITCH
+#endif
+#ifdef INPUT0_V_PITCH
+#undef INPUT0_V_PITCH
+#endif
+#ifdef INPUT0_FEATURE_PITCH
+#undef INPUT0_FEATURE_PITCH
+#endif
+#ifdef INPUT0_BATCH_PITCH
+#undef INPUT0_BATCH_PITCH
+#endif
+#ifdef INPUT0_GET_INDEX_SAFE
+#undef INPUT0_GET_INDEX_SAFE
+#endif
+#ifdef INPUT0_GET_INDEX
+#undef INPUT0_GET_INDEX
+#endif
+#ifdef INPUT0_GET_INDEX_RAW
+#undef INPUT0_GET_INDEX_RAW
+#endif
+#ifdef INPUT0_VIEW_OFFSET
+#undef INPUT0_VIEW_OFFSET
+#endif
+#ifdef INPUT0_LENGTH
+#undef INPUT0_LENGTH
+#endif
+#ifdef INPUT0_DIMS
+#undef INPUT0_DIMS
+#endif
+#ifdef INPUT0_SIMPLE
+#undef INPUT0_SIMPLE
+#endif
+#ifdef INPUT0_GROUPED
+#undef INPUT0_GROUPED
+#endif
+#ifdef INPUT0_LAYOUT_BFYX
+#undef INPUT0_LAYOUT_BFYX
+#endif
+#ifdef INPUT0_TYPE
+#undef INPUT0_TYPE
+#endif
+#ifdef INPUT0_VAL_MAX
+#undef INPUT0_VAL_MAX
+#endif
+#ifdef INPUT0_VAL_MIN
+#undef INPUT0_VAL_MIN
+#endif
+#ifdef INPUT0_VAL_ONE
+#undef INPUT0_VAL_ONE
+#endif
+#ifdef INPUT0_VAL_ZERO
+#undef INPUT0_VAL_ZERO
+#endif
+#ifdef TO_INPUT0_TYPE
+#undef TO_INPUT0_TYPE
+#endif
+#ifdef TO_INPUT0_TYPE_SAT
+#undef TO_INPUT0_TYPE_SAT
+#endif
+#ifdef AS_INPUT0_TYPE
+#undef AS_INPUT0_TYPE
+#endif
+#ifdef INPUT0_MAX_FUNC
+#undef INPUT0_MAX_FUNC
+#endif
+#ifdef INPUT0_MIN_FUNC
+#undef INPUT0_MIN_FUNC
+#endif
+#ifdef INPUT0_ABS_FUNC
+#undef INPUT0_ABS_FUNC
+#endif
+#ifdef INPUT0_TYPE_SIZE
+#undef INPUT0_TYPE_SIZE
+#endif
+#ifdef INPUT0_IS_FP
+#undef INPUT0_IS_FP
+#endif
+#ifdef INPUT0_OFFSET
+#undef INPUT0_OFFSET
+#endif
+#ifdef INPUT0_SIZES_DATA
+#undef INPUT0_SIZES_DATA
+#endif
+#ifdef INPUT0_PITCHES
+#undef INPUT0_PITCHES
+#endif
+#ifdef INPUT0_PAD_BEFORE
+#undef INPUT0_PAD_BEFORE
+#endif
+#ifdef INPUT0_PAD_AFTER
+#undef INPUT0_PAD_AFTER
+#endif
+#ifdef OUTPUT_SIZE_X
+#undef OUTPUT_SIZE_X
+#endif
+#ifdef OUTPUT_SIZE_Y
+#undef OUTPUT_SIZE_Y
+#endif
+#ifdef OUTPUT_SIZE_Z
+#undef OUTPUT_SIZE_Z
+#endif
+#ifdef OUTPUT_SIZE_W
+#undef OUTPUT_SIZE_W
+#endif
+#ifdef OUTPUT_SIZE_U
+#undef OUTPUT_SIZE_U
+#endif
+#ifdef OUTPUT_SIZE_V
+#undef OUTPUT_SIZE_V
+#endif
+#ifdef OUTPUT_FEATURE_NUM
+#undef OUTPUT_FEATURE_NUM
+#endif
+#ifdef OUTPUT_BATCH_NUM
+#undef OUTPUT_BATCH_NUM
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_X
+#undef OUTPUT_PAD_BEFORE_SIZE_X
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_Y
+#undef OUTPUT_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_Z
+#undef OUTPUT_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_W
+#undef OUTPUT_PAD_BEFORE_SIZE_W
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_U
+#undef OUTPUT_PAD_BEFORE_SIZE_U
+#endif
+#ifdef OUTPUT_PAD_BEFORE_SIZE_V
+#undef OUTPUT_PAD_BEFORE_SIZE_V
+#endif
+#ifdef OUTPUT_PAD_BEFORE_FEATURE_NUM
+#undef OUTPUT_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef OUTPUT_PAD_BEFORE_BATCH_NUM
+#undef OUTPUT_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_X
+#undef OUTPUT_PAD_AFTER_SIZE_X
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_Y
+#undef OUTPUT_PAD_AFTER_SIZE_Y
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_Z
+#undef OUTPUT_PAD_AFTER_SIZE_Z
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_W
+#undef OUTPUT_PAD_AFTER_SIZE_W
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_U
+#undef OUTPUT_PAD_AFTER_SIZE_U
+#endif
+#ifdef OUTPUT_PAD_AFTER_SIZE_V
+#undef OUTPUT_PAD_AFTER_SIZE_V
+#endif
+#ifdef OUTPUT_PAD_AFTER_FEATURE_NUM
+#undef OUTPUT_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef OUTPUT_PAD_AFTER_BATCH_NUM
+#undef OUTPUT_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef OUTPUT_X_PITCH
+#undef OUTPUT_X_PITCH
+#endif
+#ifdef OUTPUT_Y_PITCH
+#undef OUTPUT_Y_PITCH
+#endif
+#ifdef OUTPUT_Z_PITCH
+#undef OUTPUT_Z_PITCH
+#endif
+#ifdef OUTPUT_W_PITCH
+#undef OUTPUT_W_PITCH
+#endif
+#ifdef OUTPUT_U_PITCH
+#undef OUTPUT_U_PITCH
+#endif
+#ifdef OUTPUT_V_PITCH
+#undef OUTPUT_V_PITCH
+#endif
+#ifdef OUTPUT_FEATURE_PITCH
+#undef OUTPUT_FEATURE_PITCH
+#endif
+#ifdef OUTPUT_BATCH_PITCH
+#undef OUTPUT_BATCH_PITCH
+#endif
+#ifdef OUTPUT_GET_INDEX_SAFE
+#undef OUTPUT_GET_INDEX_SAFE
+#endif
+#ifdef OUTPUT_GET_INDEX
+#undef OUTPUT_GET_INDEX
+#endif
+#ifdef OUTPUT_GET_INDEX_RAW
+#undef OUTPUT_GET_INDEX_RAW
+#endif
+#ifdef OUTPUT_VIEW_OFFSET
+#undef OUTPUT_VIEW_OFFSET
+#endif
+#ifdef OUTPUT_LENGTH
+#undef OUTPUT_LENGTH
+#endif
+#ifdef OUTPUT_DIMS
+#undef OUTPUT_DIMS
+#endif
+#ifdef OUTPUT_SIMPLE
+#undef OUTPUT_SIMPLE
+#endif
+#ifdef OUTPUT_GROUPED
+#undef OUTPUT_GROUPED
+#endif
+#ifdef OUTPUT_LAYOUT_BF
+#undef OUTPUT_LAYOUT_BF
+#endif
+#ifdef OUTPUT_TYPE
+#undef OUTPUT_TYPE
+#endif
+#ifdef OUTPUT_VAL_MAX
+#undef OUTPUT_VAL_MAX
+#endif
+#ifdef OUTPUT_VAL_MIN
+#undef OUTPUT_VAL_MIN
+#endif
+#ifdef OUTPUT_VAL_ONE
+#undef OUTPUT_VAL_ONE
+#endif
+#ifdef OUTPUT_VAL_ZERO
+#undef OUTPUT_VAL_ZERO
+#endif
+#ifdef TO_OUTPUT_TYPE
+#undef TO_OUTPUT_TYPE
+#endif
+#ifdef TO_OUTPUT_TYPE_SAT
+#undef TO_OUTPUT_TYPE_SAT
+#endif
+#ifdef AS_OUTPUT_TYPE
+#undef AS_OUTPUT_TYPE
+#endif
+#ifdef OUTPUT_MAX_FUNC
+#undef OUTPUT_MAX_FUNC
+#endif
+#ifdef OUTPUT_MIN_FUNC
+#undef OUTPUT_MIN_FUNC
+#endif
+#ifdef OUTPUT_ABS_FUNC
+#undef OUTPUT_ABS_FUNC
+#endif
+#ifdef OUTPUT_TYPE_SIZE
+#undef OUTPUT_TYPE_SIZE
+#endif
+#ifdef OUTPUT_IS_FP
+#undef OUTPUT_IS_FP
+#endif
+#ifdef OUTPUT_OFFSET
+#undef OUTPUT_OFFSET
+#endif
+#ifdef OUTPUT_SIZES_DATA
+#undef OUTPUT_SIZES_DATA
+#endif
+#ifdef OUTPUT_PITCHES
+#undef OUTPUT_PITCHES
+#endif
+#ifdef OUTPUT_PAD_BEFORE
+#undef OUTPUT_PAD_BEFORE
+#endif
+#ifdef OUTPUT_PAD_AFTER
+#undef OUTPUT_PAD_AFTER
+#endif
+#ifdef OPTIONAL_SHAPE_INFO_ARG
+#undef OPTIONAL_SHAPE_INFO_ARG
+#endif
+#ifdef OPTIONAL_SHAPE_INFO_TENSOR
+#undef OPTIONAL_SHAPE_INFO_TENSOR
+#endif
+#ifdef FILTER_SIZE_X
+#undef FILTER_SIZE_X
+#endif
+#ifdef FILTER_SIZE_Y
+#undef FILTER_SIZE_Y
+#endif
+#ifdef FILTER_SIZE_Z
+#undef FILTER_SIZE_Z
+#endif
+#ifdef FILTER_IFM_NUM
+#undef FILTER_IFM_NUM
+#endif
+#ifdef FILTER_OFM_NUM
+#undef FILTER_OFM_NUM
+#endif
+#ifdef FILTER_GROUPS_NUM
+#undef FILTER_GROUPS_NUM
+#endif
+#ifdef FILTER_X_PITCH
+#undef FILTER_X_PITCH
+#endif
+#ifdef FILTER_Y_PITCH
+#undef FILTER_Y_PITCH
+#endif
+#ifdef FILTER_Z_PITCH
+#undef FILTER_Z_PITCH
+#endif
+#ifdef FILTER_IFM_PITCH
+#undef FILTER_IFM_PITCH
+#endif
+#ifdef FILTER_OFM_PITCH
+#undef FILTER_OFM_PITCH
+#endif
+#ifdef FILTER_GROUPS_PITCH
+#undef FILTER_GROUPS_PITCH
+#endif
+#ifdef FILTER_VIEW_OFFSET
+#undef FILTER_VIEW_OFFSET
+#endif
+#ifdef FILTER_LENGTH
+#undef FILTER_LENGTH
+#endif
+#ifdef FILTER_DIMS
+#undef FILTER_DIMS
+#endif
+#ifdef FILTER_SIMPLE
+#undef FILTER_SIMPLE
+#endif
+#ifdef FILTER_GROUPED
+#undef FILTER_GROUPED
+#endif
+#ifdef FILTER_LAYOUT_OS_I_OSV16
+#undef FILTER_LAYOUT_OS_I_OSV16
+#endif
+#ifdef FILTER_TYPE
+#undef FILTER_TYPE
+#endif
+#ifdef FILTER_VAL_MAX
+#undef FILTER_VAL_MAX
+#endif
+#ifdef FILTER_VAL_MIN
+#undef FILTER_VAL_MIN
+#endif
+#ifdef FILTER_VAL_ONE
+#undef FILTER_VAL_ONE
+#endif
+#ifdef FILTER_VAL_ZERO
+#undef FILTER_VAL_ZERO
+#endif
+#ifdef TO_FILTER_TYPE
+#undef TO_FILTER_TYPE
+#endif
+#ifdef TO_FILTER_TYPE_SAT
+#undef TO_FILTER_TYPE_SAT
+#endif
+#ifdef AS_FILTER_TYPE
+#undef AS_FILTER_TYPE
+#endif
+#ifdef FILTER_MAX_FUNC
+#undef FILTER_MAX_FUNC
+#endif
+#ifdef FILTER_MIN_FUNC
+#undef FILTER_MIN_FUNC
+#endif
+#ifdef FILTER_ABS_FUNC
+#undef FILTER_ABS_FUNC
+#endif
+#ifdef FILTER_TYPE_SIZE
+#undef FILTER_TYPE_SIZE
+#endif
+#ifdef FILTER_IS_FP
+#undef FILTER_IS_FP
+#endif
+#ifdef FILTER_OFFSET
+#undef FILTER_OFFSET
+#endif
+#ifdef FILTER_SIZES_DATA
+#undef FILTER_SIZES_DATA
+#endif
+#ifdef FILTER_PITCHES
+#undef FILTER_PITCHES
+#endif
+#ifdef FILTER_PAD_BEFORE
+#undef FILTER_PAD_BEFORE
+#endif
+#ifdef FILTER_PAD_AFTER
+#undef FILTER_PAD_AFTER
+#endif
+#ifdef BIAS_TERM
+#undef BIAS_TERM
+#endif
+#ifdef BIAS_SIZE_X
+#undef BIAS_SIZE_X
+#endif
+#ifdef BIAS_SIZE_Y
+#undef BIAS_SIZE_Y
+#endif
+#ifdef BIAS_SIZE_Z
+#undef BIAS_SIZE_Z
+#endif
+#ifdef BIAS_SIZE_W
+#undef BIAS_SIZE_W
+#endif
+#ifdef BIAS_SIZE_U
+#undef BIAS_SIZE_U
+#endif
+#ifdef BIAS_SIZE_V
+#undef BIAS_SIZE_V
+#endif
+#ifdef BIAS_FEATURE_NUM
+#undef BIAS_FEATURE_NUM
+#endif
+#ifdef BIAS_BATCH_NUM
+#undef BIAS_BATCH_NUM
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_X
+#undef BIAS_PAD_BEFORE_SIZE_X
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_Y
+#undef BIAS_PAD_BEFORE_SIZE_Y
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_Z
+#undef BIAS_PAD_BEFORE_SIZE_Z
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_W
+#undef BIAS_PAD_BEFORE_SIZE_W
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_U
+#undef BIAS_PAD_BEFORE_SIZE_U
+#endif
+#ifdef BIAS_PAD_BEFORE_SIZE_V
+#undef BIAS_PAD_BEFORE_SIZE_V
+#endif
+#ifdef BIAS_PAD_BEFORE_FEATURE_NUM
+#undef BIAS_PAD_BEFORE_FEATURE_NUM
+#endif
+#ifdef BIAS_PAD_BEFORE_BATCH_NUM
+#undef BIAS_PAD_BEFORE_BATCH_NUM
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_X
+#undef BIAS_PAD_AFTER_SIZE_X
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_Y
+#undef BIAS_PAD_AFTER_SIZE_Y
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_Z
+#undef BIAS_PAD_AFTER_SIZE_Z
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_W
+#undef BIAS_PAD_AFTER_SIZE_W
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_U
+#undef BIAS_PAD_AFTER_SIZE_U
+#endif
+#ifdef BIAS_PAD_AFTER_SIZE_V
+#undef BIAS_PAD_AFTER_SIZE_V
+#endif
+#ifdef BIAS_PAD_AFTER_FEATURE_NUM
+#undef BIAS_PAD_AFTER_FEATURE_NUM
+#endif
+#ifdef BIAS_PAD_AFTER_BATCH_NUM
+#undef BIAS_PAD_AFTER_BATCH_NUM
+#endif
+#ifdef BIAS_X_PITCH
+#undef BIAS_X_PITCH
+#endif
+#ifdef BIAS_Y_PITCH
+#undef BIAS_Y_PITCH
+#endif
+#ifdef BIAS_Z_PITCH
+#undef BIAS_Z_PITCH
+#endif
+#ifdef BIAS_W_PITCH
+#undef BIAS_W_PITCH
+#endif
+#ifdef BIAS_U_PITCH
+#undef BIAS_U_PITCH
+#endif
+#ifdef BIAS_V_PITCH
+#undef BIAS_V_PITCH
+#endif
+#ifdef BIAS_FEATURE_PITCH
+#undef BIAS_FEATURE_PITCH
+#endif
+#ifdef BIAS_BATCH_PITCH
+#undef BIAS_BATCH_PITCH
+#endif
+#ifdef BIAS_GET_INDEX_SAFE
+#undef BIAS_GET_INDEX_SAFE
+#endif
+#ifdef BIAS_GET_INDEX
+#undef BIAS_GET_INDEX
+#endif
+#ifdef BIAS_GET_INDEX_RAW
+#undef BIAS_GET_INDEX_RAW
+#endif
+#ifdef BIAS_VIEW_OFFSET
+#undef BIAS_VIEW_OFFSET
+#endif
+#ifdef BIAS_LENGTH
+#undef BIAS_LENGTH
+#endif
+#ifdef BIAS_DIMS
+#undef BIAS_DIMS
+#endif
+#ifdef BIAS_SIMPLE
+#undef BIAS_SIMPLE
+#endif
+#ifdef BIAS_GROUPED
+#undef BIAS_GROUPED
+#endif
+#ifdef BIAS_LAYOUT_BF
+#undef BIAS_LAYOUT_BF
+#endif
+#ifdef BIAS_TYPE
+#undef BIAS_TYPE
+#endif
+#ifdef BIAS_VAL_MAX
+#undef BIAS_VAL_MAX
+#endif
+#ifdef BIAS_VAL_MIN
+#undef BIAS_VAL_MIN
+#endif
+#ifdef BIAS_VAL_ONE
+#undef BIAS_VAL_ONE
+#endif
+#ifdef BIAS_VAL_ZERO
+#undef BIAS_VAL_ZERO
+#endif
+#ifdef TO_BIAS_TYPE
+#undef TO_BIAS_TYPE
+#endif
+#ifdef TO_BIAS_TYPE_SAT
+#undef TO_BIAS_TYPE_SAT
+#endif
+#ifdef AS_BIAS_TYPE
+#undef AS_BIAS_TYPE
+#endif
+#ifdef BIAS_MAX_FUNC
+#undef BIAS_MAX_FUNC
+#endif
+#ifdef BIAS_MIN_FUNC
+#undef BIAS_MIN_FUNC
+#endif
+#ifdef BIAS_ABS_FUNC
+#undef BIAS_ABS_FUNC
+#endif
+#ifdef BIAS_TYPE_SIZE
+#undef BIAS_TYPE_SIZE
+#endif
+#ifdef BIAS_IS_FP
+#undef BIAS_IS_FP
+#endif
+#ifdef BIAS_OFFSET
+#undef BIAS_OFFSET
+#endif
+#ifdef BIAS_SIZES_DATA
+#undef BIAS_SIZES_DATA
+#endif
+#ifdef BIAS_PITCHES
+#undef BIAS_PITCHES
+#endif
+#ifdef BIAS_PAD_BEFORE
+#undef BIAS_PAD_BEFORE
+#endif
+#ifdef BIAS_PAD_AFTER
+#undef BIAS_PAD_AFTER
+#endif
+#ifdef BIAS_PER_OUTPUT
+#undef BIAS_PER_OUTPUT
+#endif
+#ifdef BIAS_PER_OFM
+#undef BIAS_PER_OFM
+#endif
+#ifdef INPUT0_ELEMENTS_COUNT
+#undef INPUT0_ELEMENTS_COUNT
+#endif
+#ifdef SUB_GROUP_SIZE
+#undef SUB_GROUP_SIZE
+#endif
+#ifdef WORK_ITEMS_PER_BATCH
+#undef WORK_ITEMS_PER_BATCH
+#endif
+#ifdef UNIT_BYTE_SIZE
+#undef UNIT_BYTE_SIZE
+#endif
+#ifdef CHUNK_TYPE
+#undef CHUNK_TYPE
+#endif
+#ifdef CHUNK_BYTE_SIZE
+#undef CHUNK_BYTE_SIZE
+#endif
+#ifdef UNITS_PER_CHUNK
+#undef UNITS_PER_CHUNK
+#endif
+#ifdef BYTES_PER_SG_READ
+#undef BYTES_PER_SG_READ
+#endif
+#ifdef UNITS_PER_SG_READ
+#undef UNITS_PER_SG_READ
+#endif
+#ifdef RESPONSES_PER_SG_EXEC
+#undef RESPONSES_PER_SG_EXEC
+#endif
+#ifdef IN_CHUNK_PREFETCH_SIZE
+#undef IN_CHUNK_PREFETCH_SIZE
+#endif
+#ifdef FILTER_CHUNK_PREFETCH_SIZE
+#undef FILTER_CHUNK_PREFETCH_SIZE
+#endif
+
+//====================================================
+// Kernel template: fully_connected_gpu_bs_f_bsv16_b1 
+// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0
+#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0
+#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0
+#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0 []
+#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_10198823769218063516_0
+#define FP64_SUPPORTED 0
+#define FP16_SUPPORTED 1
+#define FP16_UNIT_USED 1
+#define INT8_UNIT_USED 0
+#define INT32_UNIT_USED 0
+#define INT64_UNIT_USED 0
+#define UINT8_UNIT_USED 0
+#define UINT32_UNIT_USED 0
+#define UNIT_TYPE half
+#define UNIT_VAL_MAX HALF_MAX
+#define UNIT_VAL_MIN -UNIT_VAL_MAX
+#define UNIT_VAL_ONE 1.0h
+#define UNIT_VAL_ZERO 0.0h
+#define TO_UNIT_TYPE(v) convert_half(v)
+#define TO_UNIT_TYPE_SAT(v) convert_half(v)
+#define AS_UNIT_TYPE(v) as_half(v)
+#define UNIT_MAX_FUNC fmax
+#define UNIT_MIN_FUNC fmin
+#define UNIT_ABS_FUNC fabs
+#define UNIT_TYPE_SIZE 2
+#define UNIT_IS_FP 1
+#define NL_M as_float(0x0)/*0.000000e+00*/
+#define NL_N as_float(0x0)/*0.000000e+00*/
+#define ACTIVATION_FUNC_TYPE half
+#define ACTIVATION_FUNC_VAL_MAX HALF_MAX
+#define ACTIVATION_FUNC_VAL_MIN -ACTIVATION_FUNC_VAL_MAX
+#define ACTIVATION_FUNC_VAL_ONE 1.0h
+#define ACTIVATION_FUNC_VAL_ZERO 0.0h
+#define TO_ACTIVATION_FUNC_TYPE(v) convert_half(v)
+#define TO_ACTIVATION_FUNC_TYPE_SAT(v) convert_half(v)
+#define AS_ACTIVATION_FUNC_TYPE(v) as_half(v)
+#define ACTIVATION_FUNC_MAX_FUNC fmax
+#define ACTIVATION_FUNC_MIN_FUNC fmin
+#define ACTIVATION_FUNC_ABS_FUNC fabs
+#define ACTIVATION_FUNC_TYPE_SIZE 2
+#define ACTIVATION_FUNC_IS_FP 1
+#define ACTIVATION_PARAMS NL_M, NL_N
+#define ACTIVATION_FUNC(input, m, n) input
+#define ACTIVATION(input, params) ACTIVATION_FUNC(input, params)
+#define INPUT0_SIZE_X 1
+#define INPUT0_SIZE_Y 1
+#define INPUT0_SIZE_Z 1
+#define INPUT0_SIZE_W 1
+#define INPUT0_SIZE_U 1
+#define INPUT0_SIZE_V 1
+#define INPUT0_FEATURE_NUM 128
+#define INPUT0_BATCH_NUM 1
+#define INPUT0_PAD_BEFORE_SIZE_X 0
+#define INPUT0_PAD_BEFORE_SIZE_Y 0
+#define INPUT0_PAD_BEFORE_SIZE_Z 0
+#define INPUT0_PAD_BEFORE_SIZE_W 0
+#define INPUT0_PAD_BEFORE_SIZE_U 0
+#define INPUT0_PAD_BEFORE_SIZE_V 0
+#define INPUT0_PAD_BEFORE_FEATURE_NUM 0
+#define INPUT0_PAD_BEFORE_BATCH_NUM 0
+#define INPUT0_PAD_AFTER_SIZE_X 0
+#define INPUT0_PAD_AFTER_SIZE_Y 0
+#define INPUT0_PAD_AFTER_SIZE_Z 0
+#define INPUT0_PAD_AFTER_SIZE_W 0
+#define INPUT0_PAD_AFTER_SIZE_U 0
+#define INPUT0_PAD_AFTER_SIZE_V 0
+#define INPUT0_PAD_AFTER_FEATURE_NUM 0
+#define INPUT0_PAD_AFTER_BATCH_NUM 0
+#define INPUT0_X_PITCH 1
+#define INPUT0_Y_PITCH 1
+#define INPUT0_Z_PITCH 1
+#define INPUT0_W_PITCH 1
+#define INPUT0_U_PITCH 1
+#define INPUT0_V_PITCH 1
+#define INPUT0_FEATURE_PITCH 1
+#define INPUT0_BATCH_PITCH 128
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 128)
+#define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
+#define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
+#define INPUT0_VIEW_OFFSET 0
+#define INPUT0_LENGTH 128
+#define INPUT0_DIMS 4
+#define INPUT0_SIMPLE 1
+#define INPUT0_GROUPED 0
+#define INPUT0_LAYOUT_BFYX 1
+#define INPUT0_TYPE half
+#define INPUT0_VAL_MAX HALF_MAX
+#define INPUT0_VAL_MIN -INPUT0_VAL_MAX
+#define INPUT0_VAL_ONE 1.0h
+#define INPUT0_VAL_ZERO 0.0h
+#define TO_INPUT0_TYPE(v) convert_half(v)
+#define TO_INPUT0_TYPE_SAT(v) convert_half(v)
+#define AS_INPUT0_TYPE(v) as_half(v)
+#define INPUT0_MAX_FUNC fmax
+#define INPUT0_MIN_FUNC fmin
+#define INPUT0_ABS_FUNC fabs
+#define INPUT0_TYPE_SIZE 2
+#define INPUT0_IS_FP 1
+#define INPUT0_OFFSET 0
+#define INPUT0_SIZES_DATA { 1,1,128,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
+#define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
+#define INPUT0_PITCHES (size_t []){ 1,1,1,128,1,1,1,1,1, } 
+#define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OUTPUT_SIZE_X 1
+#define OUTPUT_SIZE_Y 1
+#define OUTPUT_SIZE_Z 1
+#define OUTPUT_SIZE_W 1
+#define OUTPUT_SIZE_U 1
+#define OUTPUT_SIZE_V 1
+#define OUTPUT_FEATURE_NUM 64
+#define OUTPUT_BATCH_NUM 1
+#define OUTPUT_PAD_BEFORE_SIZE_X 0
+#define OUTPUT_PAD_BEFORE_SIZE_Y 0
+#define OUTPUT_PAD_BEFORE_SIZE_Z 0
+#define OUTPUT_PAD_BEFORE_SIZE_W 0
+#define OUTPUT_PAD_BEFORE_SIZE_U 0
+#define OUTPUT_PAD_BEFORE_SIZE_V 0
+#define OUTPUT_PAD_BEFORE_FEATURE_NUM 0
+#define OUTPUT_PAD_BEFORE_BATCH_NUM 0
+#define OUTPUT_PAD_AFTER_SIZE_X 0
+#define OUTPUT_PAD_AFTER_SIZE_Y 0
+#define OUTPUT_PAD_AFTER_SIZE_Z 0
+#define OUTPUT_PAD_AFTER_SIZE_W 0
+#define OUTPUT_PAD_AFTER_SIZE_U 0
+#define OUTPUT_PAD_AFTER_SIZE_V 0
+#define OUTPUT_PAD_AFTER_FEATURE_NUM 0
+#define OUTPUT_PAD_AFTER_BATCH_NUM 0
+#define OUTPUT_X_PITCH 1
+#define OUTPUT_Y_PITCH 1
+#define OUTPUT_Z_PITCH 1
+#define OUTPUT_W_PITCH 1
+#define OUTPUT_U_PITCH 1
+#define OUTPUT_V_PITCH 1
+#define OUTPUT_FEATURE_PITCH 1
+#define OUTPUT_BATCH_PITCH 64
+#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
+#define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
+#define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
+#define OUTPUT_VIEW_OFFSET 0
+#define OUTPUT_LENGTH 64
+#define OUTPUT_DIMS 2
+#define OUTPUT_SIMPLE 1
+#define OUTPUT_GROUPED 0
+#define OUTPUT_LAYOUT_BF 1
+#define OUTPUT_TYPE half
+#define OUTPUT_VAL_MAX HALF_MAX
+#define OUTPUT_VAL_MIN -OUTPUT_VAL_MAX
+#define OUTPUT_VAL_ONE 1.0h
+#define OUTPUT_VAL_ZERO 0.0h
+#define TO_OUTPUT_TYPE(v) convert_half(v)
+#define TO_OUTPUT_TYPE_SAT(v) convert_half(v)
+#define AS_OUTPUT_TYPE(v) as_half(v)
+#define OUTPUT_MAX_FUNC fmax
+#define OUTPUT_MIN_FUNC fmin
+#define OUTPUT_ABS_FUNC fabs
+#define OUTPUT_TYPE_SIZE 2
+#define OUTPUT_IS_FP 1
+#define OUTPUT_OFFSET 0
+#define OUTPUT_SIZES_DATA { 64,1,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
+#define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
+#define OUTPUT_PITCHES (size_t []){ 1,64,1,1,1,1,1,1,1, } 
+#define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define OPTIONAL_SHAPE_INFO_ARG 
+#define OPTIONAL_SHAPE_INFO_TENSOR 
+#define FILTER_SIZE_X 1
+#define FILTER_SIZE_Y 1
+#define FILTER_SIZE_Z 1
+#define FILTER_IFM_NUM 128
+#define FILTER_OFM_NUM 64
+#define FILTER_GROUPS_NUM 1
+#define FILTER_X_PITCH 1
+#define FILTER_Y_PITCH 1
+#define FILTER_Z_PITCH 1
+#define FILTER_IFM_PITCH 1
+#define FILTER_OFM_PITCH 128
+#define FILTER_GROUPS_PITCH 1
+#define FILTER_VIEW_OFFSET 0
+#define FILTER_LENGTH 8192
+#define FILTER_DIMS 2
+#define FILTER_SIMPLE 0
+#define FILTER_GROUPED 0
+#define FILTER_LAYOUT_OS_I_OSV16 1
+#define FILTER_TYPE half
+#define FILTER_VAL_MAX HALF_MAX
+#define FILTER_VAL_MIN -FILTER_VAL_MAX
+#define FILTER_VAL_ONE 1.0h
+#define FILTER_VAL_ZERO 0.0h
+#define TO_FILTER_TYPE(v) convert_half(v)
+#define TO_FILTER_TYPE_SAT(v) convert_half(v)
+#define AS_FILTER_TYPE(v) as_half(v)
+#define FILTER_MAX_FUNC fmax
+#define FILTER_MIN_FUNC fmin
+#define FILTER_ABS_FUNC fabs
+#define FILTER_TYPE_SIZE 2
+#define FILTER_IS_FP 1
+#define FILTER_OFFSET 0
+#define FILTER_SIZES_DATA { 128,64,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(FILTER_SIZES) = FILTER_SIZES_DATA;
+#define FILTER_SIZES CONST_ARRAY_REF(FILTER_SIZES)
+#define FILTER_PITCHES (size_t []){ 1,128,1,1,1,1,1,1,1, } 
+#define FILTER_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define FILTER_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_TERM 1
+#define BIAS_SIZE_X 1
+#define BIAS_SIZE_Y 1
+#define BIAS_SIZE_Z 1
+#define BIAS_SIZE_W 1
+#define BIAS_SIZE_U 1
+#define BIAS_SIZE_V 1
+#define BIAS_FEATURE_NUM 64
+#define BIAS_BATCH_NUM 1
+#define BIAS_PAD_BEFORE_SIZE_X 0
+#define BIAS_PAD_BEFORE_SIZE_Y 0
+#define BIAS_PAD_BEFORE_SIZE_Z 0
+#define BIAS_PAD_BEFORE_SIZE_W 0
+#define BIAS_PAD_BEFORE_SIZE_U 0
+#define BIAS_PAD_BEFORE_SIZE_V 0
+#define BIAS_PAD_BEFORE_FEATURE_NUM 0
+#define BIAS_PAD_BEFORE_BATCH_NUM 0
+#define BIAS_PAD_AFTER_SIZE_X 0
+#define BIAS_PAD_AFTER_SIZE_Y 0
+#define BIAS_PAD_AFTER_SIZE_Z 0
+#define BIAS_PAD_AFTER_SIZE_W 0
+#define BIAS_PAD_AFTER_SIZE_U 0
+#define BIAS_PAD_AFTER_SIZE_V 0
+#define BIAS_PAD_AFTER_FEATURE_NUM 0
+#define BIAS_PAD_AFTER_BATCH_NUM 0
+#define BIAS_X_PITCH 1
+#define BIAS_Y_PITCH 1
+#define BIAS_Z_PITCH 1
+#define BIAS_W_PITCH 1
+#define BIAS_U_PITCH 1
+#define BIAS_V_PITCH 1
+#define BIAS_FEATURE_PITCH 1
+#define BIAS_BATCH_PITCH 64
+#define BIAS_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
+#define BIAS_GET_INDEX(b, f, y, x) (0 + (f))
+#define BIAS_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(BIAS, b, f, y, x)
+#define BIAS_VIEW_OFFSET 0
+#define BIAS_LENGTH 64
+#define BIAS_DIMS 2
+#define BIAS_SIMPLE 1
+#define BIAS_GROUPED 0
+#define BIAS_LAYOUT_BF 1
+#define BIAS_TYPE half
+#define BIAS_VAL_MAX HALF_MAX
+#define BIAS_VAL_MIN -BIAS_VAL_MAX
+#define BIAS_VAL_ONE 1.0h
+#define BIAS_VAL_ZERO 0.0h
+#define TO_BIAS_TYPE(v) convert_half(v)
+#define TO_BIAS_TYPE_SAT(v) convert_half(v)
+#define AS_BIAS_TYPE(v) as_half(v)
+#define BIAS_MAX_FUNC fmax
+#define BIAS_MIN_FUNC fmin
+#define BIAS_ABS_FUNC fabs
+#define BIAS_TYPE_SIZE 2
+#define BIAS_IS_FP 1
+#define BIAS_OFFSET 0
+#define BIAS_SIZES_DATA { 64,1,1,1,1,1,1,1,1, } 
+CONST_ARRAY_DECL(BIAS_SIZES) = BIAS_SIZES_DATA;
+#define BIAS_SIZES CONST_ARRAY_REF(BIAS_SIZES)
+#define BIAS_PITCHES (size_t []){ 1,64,1,1,1,1,1,1,1, } 
+#define BIAS_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
+#define BIAS_PER_OUTPUT 1
+#define BIAS_PER_OFM 0
+#define INPUT0_ELEMENTS_COUNT 128
 #define SUB_GROUP_SIZE 16
 #define WORK_ITEMS_PER_BATCH 1
 #define UNIT_BYTE_SIZE 2
@@ -5064,3103 +8154,13 @@ KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
 #endif
 
 //====================================================
-// Kernel template: fully_connected_gpu_bs_f_bsv16_b1 
-// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0
-#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0
-#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0
-#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0 []
-#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_9791167335079200504_0
-#define FP64_SUPPORTED 0
-#define FP16_SUPPORTED 1
-#define FP16_UNIT_USED 1
-#define INT8_UNIT_USED 0
-#define INT32_UNIT_USED 0
-#define INT64_UNIT_USED 0
-#define UINT8_UNIT_USED 0
-#define UINT32_UNIT_USED 0
-#define UNIT_TYPE half
-#define UNIT_VAL_MAX HALF_MAX
-#define UNIT_VAL_MIN -UNIT_VAL_MAX
-#define UNIT_VAL_ONE 1.0h
-#define UNIT_VAL_ZERO 0.0h
-#define TO_UNIT_TYPE(v) convert_half(v)
-#define TO_UNIT_TYPE_SAT(v) convert_half(v)
-#define AS_UNIT_TYPE(v) as_half(v)
-#define UNIT_MAX_FUNC fmax
-#define UNIT_MIN_FUNC fmin
-#define UNIT_ABS_FUNC fabs
-#define UNIT_TYPE_SIZE 2
-#define UNIT_IS_FP 1
-#define NL_M_0 as_float(0x0)/*0.000000e+00*/
-#define NL_N_0 as_float(0x0)/*0.000000e+00*/
-#define ACTIVATION_FUNC_0_TYPE half
-#define ACTIVATION_FUNC_0_VAL_MAX HALF_MAX
-#define ACTIVATION_FUNC_0_VAL_MIN -ACTIVATION_FUNC_0_VAL_MAX
-#define ACTIVATION_FUNC_0_VAL_ONE 1.0h
-#define ACTIVATION_FUNC_0_VAL_ZERO 0.0h
-#define TO_ACTIVATION_FUNC_0_TYPE(v) convert_half(v)
-#define TO_ACTIVATION_FUNC_0_TYPE_SAT(v) convert_half(v)
-#define AS_ACTIVATION_FUNC_0_TYPE(v) as_half(v)
-#define ACTIVATION_FUNC_0_MAX_FUNC fmax
-#define ACTIVATION_FUNC_0_MIN_FUNC fmin
-#define ACTIVATION_FUNC_0_ABS_FUNC fabs
-#define ACTIVATION_FUNC_0_TYPE_SIZE 2
-#define ACTIVATION_FUNC_0_IS_FP 1
-#define ACTIVATION_PARAMS_0 NL_M_0, NL_N_0
-#define ACTIVATION_FUNC_0(input, m, n) (ACTIVATION_FUNC_0_MAX_FUNC(ACTIVATION_FUNC_0_VAL_ZERO, input))
-#define ACTIVATION_0(input, params) ACTIVATION_FUNC_0(input, params)
-#define ACTIVATION_PARAMS ACTIVATION_PARAMS_0
-#define ACTIVATION(input, params) ACTIVATION_FUNC_0(input, params)
-#define INPUT0_SIZE_X 1
-#define INPUT0_SIZE_Y 1
-#define INPUT0_SIZE_Z 1
-#define INPUT0_SIZE_W 1
-#define INPUT0_SIZE_U 1
-#define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 256
-#define INPUT0_BATCH_NUM 1
-#define INPUT0_PAD_BEFORE_SIZE_X 0
-#define INPUT0_PAD_BEFORE_SIZE_Y 0
-#define INPUT0_PAD_BEFORE_SIZE_Z 0
-#define INPUT0_PAD_BEFORE_SIZE_W 0
-#define INPUT0_PAD_BEFORE_SIZE_U 0
-#define INPUT0_PAD_BEFORE_SIZE_V 0
-#define INPUT0_PAD_BEFORE_FEATURE_NUM 0
-#define INPUT0_PAD_BEFORE_BATCH_NUM 0
-#define INPUT0_PAD_AFTER_SIZE_X 0
-#define INPUT0_PAD_AFTER_SIZE_Y 0
-#define INPUT0_PAD_AFTER_SIZE_Z 0
-#define INPUT0_PAD_AFTER_SIZE_W 0
-#define INPUT0_PAD_AFTER_SIZE_U 0
-#define INPUT0_PAD_AFTER_SIZE_V 0
-#define INPUT0_PAD_AFTER_FEATURE_NUM 0
-#define INPUT0_PAD_AFTER_BATCH_NUM 0
-#define INPUT0_X_PITCH 1
-#define INPUT0_Y_PITCH 1
-#define INPUT0_Z_PITCH 1
-#define INPUT0_W_PITCH 1
-#define INPUT0_U_PITCH 1
-#define INPUT0_V_PITCH 1
-#define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 256
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
-#define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
-#define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
-#define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 256
-#define INPUT0_DIMS 4
-#define INPUT0_SIMPLE 1
-#define INPUT0_GROUPED 0
-#define INPUT0_LAYOUT_BFYX 1
-#define INPUT0_TYPE half
-#define INPUT0_VAL_MAX HALF_MAX
-#define INPUT0_VAL_MIN -INPUT0_VAL_MAX
-#define INPUT0_VAL_ONE 1.0h
-#define INPUT0_VAL_ZERO 0.0h
-#define TO_INPUT0_TYPE(v) convert_half(v)
-#define TO_INPUT0_TYPE_SAT(v) convert_half(v)
-#define AS_INPUT0_TYPE(v) as_half(v)
-#define INPUT0_MAX_FUNC fmax
-#define INPUT0_MIN_FUNC fmin
-#define INPUT0_ABS_FUNC fabs
-#define INPUT0_TYPE_SIZE 2
-#define INPUT0_IS_FP 1
-#define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,256,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
-#define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,256,1,1,1,1,1, } 
-#define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OUTPUT_SIZE_X 1
-#define OUTPUT_SIZE_Y 1
-#define OUTPUT_SIZE_Z 1
-#define OUTPUT_SIZE_W 1
-#define OUTPUT_SIZE_U 1
-#define OUTPUT_SIZE_V 1
-#define OUTPUT_FEATURE_NUM 256
-#define OUTPUT_BATCH_NUM 1
-#define OUTPUT_PAD_BEFORE_SIZE_X 0
-#define OUTPUT_PAD_BEFORE_SIZE_Y 0
-#define OUTPUT_PAD_BEFORE_SIZE_Z 0
-#define OUTPUT_PAD_BEFORE_SIZE_W 0
-#define OUTPUT_PAD_BEFORE_SIZE_U 0
-#define OUTPUT_PAD_BEFORE_SIZE_V 0
-#define OUTPUT_PAD_BEFORE_FEATURE_NUM 0
-#define OUTPUT_PAD_BEFORE_BATCH_NUM 0
-#define OUTPUT_PAD_AFTER_SIZE_X 0
-#define OUTPUT_PAD_AFTER_SIZE_Y 0
-#define OUTPUT_PAD_AFTER_SIZE_Z 0
-#define OUTPUT_PAD_AFTER_SIZE_W 0
-#define OUTPUT_PAD_AFTER_SIZE_U 0
-#define OUTPUT_PAD_AFTER_SIZE_V 0
-#define OUTPUT_PAD_AFTER_FEATURE_NUM 0
-#define OUTPUT_PAD_AFTER_BATCH_NUM 0
-#define OUTPUT_X_PITCH 1
-#define OUTPUT_Y_PITCH 1
-#define OUTPUT_Z_PITCH 1
-#define OUTPUT_W_PITCH 1
-#define OUTPUT_U_PITCH 1
-#define OUTPUT_V_PITCH 1
-#define OUTPUT_FEATURE_PITCH 1
-#define OUTPUT_BATCH_PITCH 256
-#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
-#define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
-#define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
-#define OUTPUT_VIEW_OFFSET 0
-#define OUTPUT_LENGTH 256
-#define OUTPUT_DIMS 2
-#define OUTPUT_SIMPLE 1
-#define OUTPUT_GROUPED 0
-#define OUTPUT_LAYOUT_BF 1
-#define OUTPUT_TYPE half
-#define OUTPUT_VAL_MAX HALF_MAX
-#define OUTPUT_VAL_MIN -OUTPUT_VAL_MAX
-#define OUTPUT_VAL_ONE 1.0h
-#define OUTPUT_VAL_ZERO 0.0h
-#define TO_OUTPUT_TYPE(v) convert_half(v)
-#define TO_OUTPUT_TYPE_SAT(v) convert_half(v)
-#define AS_OUTPUT_TYPE(v) as_half(v)
-#define OUTPUT_MAX_FUNC fmax
-#define OUTPUT_MIN_FUNC fmin
-#define OUTPUT_ABS_FUNC fabs
-#define OUTPUT_TYPE_SIZE 2
-#define OUTPUT_IS_FP 1
-#define OUTPUT_OFFSET 0
-#define OUTPUT_SIZES_DATA { 256,1,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
-#define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
-#define OUTPUT_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
-#define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OPTIONAL_SHAPE_INFO_ARG 
-#define OPTIONAL_SHAPE_INFO_TENSOR 
-#define FILTER_SIZE_X 1
-#define FILTER_SIZE_Y 1
-#define FILTER_SIZE_Z 1
-#define FILTER_IFM_NUM 256
-#define FILTER_OFM_NUM 256
-#define FILTER_GROUPS_NUM 1
-#define FILTER_X_PITCH 1
-#define FILTER_Y_PITCH 1
-#define FILTER_Z_PITCH 1
-#define FILTER_IFM_PITCH 1
-#define FILTER_OFM_PITCH 256
-#define FILTER_GROUPS_PITCH 1
-#define FILTER_VIEW_OFFSET 0
-#define FILTER_LENGTH 65536
-#define FILTER_DIMS 2
-#define FILTER_SIMPLE 0
-#define FILTER_GROUPED 0
-#define FILTER_LAYOUT_OS_I_OSV16 1
-#define FILTER_TYPE half
-#define FILTER_VAL_MAX HALF_MAX
-#define FILTER_VAL_MIN -FILTER_VAL_MAX
-#define FILTER_VAL_ONE 1.0h
-#define FILTER_VAL_ZERO 0.0h
-#define TO_FILTER_TYPE(v) convert_half(v)
-#define TO_FILTER_TYPE_SAT(v) convert_half(v)
-#define AS_FILTER_TYPE(v) as_half(v)
-#define FILTER_MAX_FUNC fmax
-#define FILTER_MIN_FUNC fmin
-#define FILTER_ABS_FUNC fabs
-#define FILTER_TYPE_SIZE 2
-#define FILTER_IS_FP 1
-#define FILTER_OFFSET 0
-#define FILTER_SIZES_DATA { 256,256,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(FILTER_SIZES) = FILTER_SIZES_DATA;
-#define FILTER_SIZES CONST_ARRAY_REF(FILTER_SIZES)
-#define FILTER_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
-#define FILTER_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define FILTER_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_TERM 1
-#define BIAS_SIZE_X 1
-#define BIAS_SIZE_Y 1
-#define BIAS_SIZE_Z 1
-#define BIAS_SIZE_W 1
-#define BIAS_SIZE_U 1
-#define BIAS_SIZE_V 1
-#define BIAS_FEATURE_NUM 256
-#define BIAS_BATCH_NUM 1
-#define BIAS_PAD_BEFORE_SIZE_X 0
-#define BIAS_PAD_BEFORE_SIZE_Y 0
-#define BIAS_PAD_BEFORE_SIZE_Z 0
-#define BIAS_PAD_BEFORE_SIZE_W 0
-#define BIAS_PAD_BEFORE_SIZE_U 0
-#define BIAS_PAD_BEFORE_SIZE_V 0
-#define BIAS_PAD_BEFORE_FEATURE_NUM 0
-#define BIAS_PAD_BEFORE_BATCH_NUM 0
-#define BIAS_PAD_AFTER_SIZE_X 0
-#define BIAS_PAD_AFTER_SIZE_Y 0
-#define BIAS_PAD_AFTER_SIZE_Z 0
-#define BIAS_PAD_AFTER_SIZE_W 0
-#define BIAS_PAD_AFTER_SIZE_U 0
-#define BIAS_PAD_AFTER_SIZE_V 0
-#define BIAS_PAD_AFTER_FEATURE_NUM 0
-#define BIAS_PAD_AFTER_BATCH_NUM 0
-#define BIAS_X_PITCH 1
-#define BIAS_Y_PITCH 1
-#define BIAS_Z_PITCH 1
-#define BIAS_W_PITCH 1
-#define BIAS_U_PITCH 1
-#define BIAS_V_PITCH 1
-#define BIAS_FEATURE_PITCH 1
-#define BIAS_BATCH_PITCH 256
-#define BIAS_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
-#define BIAS_GET_INDEX(b, f, y, x) (0 + (f))
-#define BIAS_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(BIAS, b, f, y, x)
-#define BIAS_VIEW_OFFSET 0
-#define BIAS_LENGTH 256
-#define BIAS_DIMS 2
-#define BIAS_SIMPLE 1
-#define BIAS_GROUPED 0
-#define BIAS_LAYOUT_BF 1
-#define BIAS_TYPE half
-#define BIAS_VAL_MAX HALF_MAX
-#define BIAS_VAL_MIN -BIAS_VAL_MAX
-#define BIAS_VAL_ONE 1.0h
-#define BIAS_VAL_ZERO 0.0h
-#define TO_BIAS_TYPE(v) convert_half(v)
-#define TO_BIAS_TYPE_SAT(v) convert_half(v)
-#define AS_BIAS_TYPE(v) as_half(v)
-#define BIAS_MAX_FUNC fmax
-#define BIAS_MIN_FUNC fmin
-#define BIAS_ABS_FUNC fabs
-#define BIAS_TYPE_SIZE 2
-#define BIAS_IS_FP 1
-#define BIAS_OFFSET 0
-#define BIAS_SIZES_DATA { 256,1,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(BIAS_SIZES) = BIAS_SIZES_DATA;
-#define BIAS_SIZES CONST_ARRAY_REF(BIAS_SIZES)
-#define BIAS_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
-#define BIAS_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_PER_OUTPUT 1
-#define BIAS_PER_OFM 0
-#define INPUT0_ELEMENTS_COUNT 256
-#define SUB_GROUP_SIZE 16
-#define WORK_ITEMS_PER_BATCH 1
-#define UNIT_BYTE_SIZE 2
-#define CHUNK_TYPE uint
-#define CHUNK_BYTE_SIZE 4
-#define UNITS_PER_CHUNK 2
-#define BYTES_PER_SG_READ 64
-#define UNITS_PER_SG_READ 32
-#define RESPONSES_PER_SG_EXEC 16
-#define IN_CHUNK_PREFETCH_SIZE 2
-#define FILTER_CHUNK_PREFETCH_SIZE 16
-
-
-#define CONCAT_TOKEN_HANDLER1(prefix, suffix) prefix##suffix
-#define CONCAT_TOKEN(prefix, suffix) CONCAT_TOKEN_HANDLER1(prefix, suffix)
-#if FP16_UNIT_USED
- #define CVT_UNIT(expression) CONCAT_TOKEN(convert_, UNIT_TYPE)(expression)
-#else
- #define CVT_UNIT(expression) (expression)
-#endif
-#if UNITS_PER_CHUNK == 1
- #define CHUNK_UNITS_TYPE UNIT_TYPE
-#else
- #define CHUNK_UNITS_TYPE MAKE_VECTOR_TYPE(UNIT_TYPE, UNITS_PER_CHUNK)
-#endif
-#define AS_CHUNK(expression) CONCAT_TOKEN(as_, CHUNK_TYPE)(expression)
-#define AS_UNITS(expression) CONCAT_TOKEN(as_, CHUNK_UNITS_TYPE)(expression)
-#if UNITS_PER_CHUNK == 4
- #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) > 1 ? ((idx) > 2 ? AS_UNITS(chunk).s3 : AS_UNITS(chunk).s2) : ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0))
-#elif UNITS_PER_CHUNK == 2
- #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0)
-#elif UNITS_PER_CHUNK == 1
- #define CHUNK_UNIT_SELECT(chunk, idx) AS_UNITS(chunk)
-#else
- #error Unsupported number of units per chunk.
-#endif
-#define SG_UNIT_SELECT(chunk, idx) CHUNK_UNIT_SELECT(_sub_group_shuffle(chunk, (idx) / UNITS_PER_CHUNK), (idx) % UNITS_PER_CHUNK)
-#define CHUNK_VEC1_TYPE CHUNK_TYPE
-#define CHUNK_VEC2_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 2)
-#define CHUNK_VEC4_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 4)
-#define CHUNK_VEC8_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 8)
-#define EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec))
-#define EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1))
-#define EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3))
-#define EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3, (array)[(idx) + 4] = chunk_vec.s4, (array)[(idx) + 5] = chunk_vec.s5, (array)[(idx) + 6] = chunk_vec.s6, (array)[(idx) + 7] = chunk_vec.s7))
-#define ALIGNED_BLOCK_READ1(ptr, byte_offset) _sub_group_block_read((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ2(ptr, byte_offset) _sub_group_block_read2((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ4(ptr, byte_offset) _sub_group_block_read4((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ8(ptr, byte_offset) _sub_group_block_read8((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ1(ptr, byte_offset) (*(const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ2(ptr, byte_offset) vload2(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ4(ptr, byte_offset) vload4(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ8(ptr, byte_offset) vload8(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_WRITE1(ptr, byte_offset, val) _sub_group_block_write((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE2(ptr, byte_offset, val) _sub_group_block_write2((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE4(ptr, byte_offset, val) _sub_group_block_write4((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE8(ptr, byte_offset, val) _sub_group_block_write8((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_WRITE1(ptr, byte_offset, val) ((void)(*(__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)) = (val)))
-#define ALIGNED_WRITE2(ptr, byte_offset, val) vstore2((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#define ALIGNED_WRITE4(ptr, byte_offset, val) vstore4((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#define ALIGNED_WRITE8(ptr, byte_offset, val) vstore8((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#if INPUT0_BATCH_NUM != 1
- #error Kernel does not support specified input batch size.
-#endif
-#if UNITS_PER_SG_READ <= 0 || RESPONSES_PER_SG_EXEC <= 0 || UNITS_PER_CHUNK <= 0 || UNITS_PER_SG_READ % RESPONSES_PER_SG_EXEC != 0 || RESPONSES_PER_SG_EXEC % UNITS_PER_CHUNK != 0
- #error Kernel does not support specified number of responses processed by single sub-group.
-#endif
-#if IN_CHUNK_PREFETCH_SIZE <= 0 || FILTER_CHUNK_PREFETCH_SIZE <= 0 || (IN_CHUNK_PREFETCH_SIZE * RESPONSES_PER_SG_EXEC) % FILTER_CHUNK_PREFETCH_SIZE != 0
- #error Kernel does not support specified prefetch sizes.
-#endif
-REQD_SUB_GROUP_SIZE(SUB_GROUP_SIZE)
-__attribute__((reqd_work_group_size(SUB_GROUP_SIZE, 1, 1)))
-KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
- const __global UNIT_TYPE* input,
- __global UNIT_TYPE* output,
- const __global UNIT_TYPE* weight
-#if BIAS_TERM
- , __global UNIT_TYPE* bias)
-#else
- )
-#endif
-{
- const uint input_byte_size = INPUT0_ELEMENTS_COUNT * UNIT_BYTE_SIZE;
- const uint output_size = FILTER_OFM_NUM;
- const uint sg_elem_id = get_sub_group_local_id();
- const uint sg_id = get_group_id(0);
- const uint input_base = 0;
- const uint filter_base = sg_id * input_byte_size * RESPONSES_PER_SG_EXEC;
- const uint output_base_id = sg_id * RESPONSES_PER_SG_EXEC + sg_elem_id;
-#if BIAS_TERM
- const uint bias_base_id = output_base_id;
-#endif
- const uint sg_elem_offset = sg_elem_id * CHUNK_BYTE_SIZE;
- CHUNK_TYPE acc = 0;
- uint input_offset = input_base;
- uint filter_offset = filter_base;
- while (input_offset + IN_CHUNK_PREFETCH_SIZE * BYTES_PER_SG_READ <= input_byte_size)
- {
- CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
-#if IN_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 8)
- {
- CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
- input_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#elif IN_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 4)
- {
- CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
- input_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#elif IN_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 2)
- {
- CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
- input_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#else
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 1)
- {
- CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
- input_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#endif
- unroll_for(uint elem_base_idx = 0; elem_base_idx < IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
- {
- CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
-#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 8)
- {
- CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
- filter_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 4)
- {
- CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
- filter_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 2)
- {
- CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
- filter_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#else
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 1)
- {
- CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
- filter_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#endif
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; ++filter_val_idx)
- {
- const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
-#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (sg_elem_id < SUB_GROUP_SIZE / 4
- ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ)))
- : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
- ? (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ)));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
- UNIT_TYPE rearranged_input = SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ);
-#else
- #error Selected RESPONSES_PER_SG_EXEC is not supported.
-#endif
- acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
- }
- }
- }
-#define INPUT0_ELEMENTS_REMAINDER (INPUT0_ELEMENTS_COUNT % (IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ))
-#define IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE ((INPUT0_ELEMENTS_REMAINDER + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ)
-#if INPUT0_ELEMENTS_REMAINDER != 0
- {
- CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
- #if IN_CHUNK_PREFETCH_SIZE % 8 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 8 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 16)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 8)
- {
- CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
- input_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #elif IN_CHUNK_PREFETCH_SIZE % 4 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 4 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 8)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 4)
- {
- CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
- input_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #elif IN_CHUNK_PREFETCH_SIZE % 2 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 2 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 4)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 2)
- {
- CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
- input_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #else
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 1)
- {
- CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
- input_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #endif
- unroll_for(uint elem_base_idx = 0; elem_base_idx < INPUT0_ELEMENTS_REMAINDER; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
- {
- const uint filter_chunk_remainder_size = ((INPUT0_ELEMENTS_REMAINDER - elem_base_idx) * RESPONSES_PER_SG_EXEC + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ;
- const uint filter_chunk_prefetch_req_size = filter_chunk_remainder_size < FILTER_CHUNK_PREFETCH_SIZE ? filter_chunk_remainder_size : FILTER_CHUNK_PREFETCH_SIZE;
- CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
-#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 8)
- {
- CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
- filter_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 4)
- {
- CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
- filter_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 2)
- {
- CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
- filter_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#else
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 1)
- {
- CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
- filter_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#endif
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; ++filter_val_idx)
- {
- const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
-#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (sg_elem_id < SUB_GROUP_SIZE / 4
- ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO))
- : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
- ? (input_base_elem_idx + 2 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 3 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO);
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
- UNIT_TYPE rearranged_input = input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO;
-#else
- #error Selected RESPONSES_PER_SG_EXEC is not supported.
-#endif
- acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
- }
- }
- }
-#endif
-#undef INPUT0_ELEMENTS_REMAINDER
-#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
- CHUNK_TYPE reduced_acc = acc;
- CHUNK_TYPE zero = 0;
- for (uint sg_reduce_offset = SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ;
- sg_reduce_offset < SUB_GROUP_SIZE;
- sg_reduce_offset += SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ)
- {
- reduced_acc = AS_CHUNK(AS_UNITS(reduced_acc) + AS_UNITS(_sub_group_shuffle_down(acc, zero, sg_reduce_offset)));
- }
- const uint expanded_acc_size = (RESPONSES_PER_SG_EXEC + SUB_GROUP_SIZE - 1) / SUB_GROUP_SIZE;
- unroll_for (uint expanded_acc_idx = 0; expanded_acc_idx < expanded_acc_size; ++expanded_acc_idx)
- {
- const uint output_id = output_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
-#if BIAS_TERM
- const uint bias_id = bias_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
-#endif
- UNIT_TYPE expanded_acc = SG_UNIT_SELECT(reduced_acc, expanded_acc_idx * SUB_GROUP_SIZE + sg_elem_id);
- if (output_id < output_size)
- {
-#if BIAS_TERM
- expanded_acc += bias[bias_id];
-#endif
- output[output_id] = ACTIVATION(expanded_acc, ACTIVATION_PARAMS);
- }
- }
-}
-#undef CONCAT_TOKEN_HANDLER1
-#undef CONCAT_TOKEN
-#undef CVT_UNIT
-#undef CHUNK_UNITS_TYPE
-#undef AS_CHUNK
-#undef AS_UNITS
-#undef CHUNK_UNIT_SELECT
-#undef SG_UNIT_SELECT
-#undef CHUNK_VEC1_TYPE
-#undef CHUNK_VEC2_TYPE
-#undef CHUNK_VEC4_TYPE
-#undef CHUNK_VEC8_TYPE
-#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#undef ALIGNED_BLOCK_READ1
-#undef ALIGNED_BLOCK_READ2
-#undef ALIGNED_BLOCK_READ4
-#undef ALIGNED_BLOCK_READ8
-#undef ALIGNED_READ1
-#undef ALIGNED_READ2
-#undef ALIGNED_READ4
-#undef ALIGNED_READ8
-#undef ALIGNED_BLOCK_WRITE1
-#undef ALIGNED_BLOCK_WRITE2
-#undef ALIGNED_BLOCK_WRITE4
-#undef ALIGNED_BLOCK_WRITE8
-#undef ALIGNED_WRITE1
-#undef ALIGNED_WRITE2
-#undef ALIGNED_WRITE4
-#undef ALIGNED_WRITE8
-#ifdef CONCAT_TOKEN_HANDLER1
-#undef CONCAT_TOKEN_HANDLER1
-#endif
-#ifdef CONCAT_TOKEN
-#undef CONCAT_TOKEN
-#endif
-#ifdef CVT_UNIT
-#undef CVT_UNIT
-#endif
-#ifdef CVT_UNIT
-#undef CVT_UNIT
-#endif
-#ifdef CHUNK_UNITS_TYPE
-#undef CHUNK_UNITS_TYPE
-#endif
-#ifdef CHUNK_UNITS_TYPE
-#undef CHUNK_UNITS_TYPE
-#endif
-#ifdef AS_CHUNK
-#undef AS_CHUNK
-#endif
-#ifdef AS_UNITS
-#undef AS_UNITS
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef SG_UNIT_SELECT
-#undef SG_UNIT_SELECT
-#endif
-#ifdef CHUNK_VEC1_TYPE
-#undef CHUNK_VEC1_TYPE
-#endif
-#ifdef CHUNK_VEC2_TYPE
-#undef CHUNK_VEC2_TYPE
-#endif
-#ifdef CHUNK_VEC4_TYPE
-#undef CHUNK_VEC4_TYPE
-#endif
-#ifdef CHUNK_VEC8_TYPE
-#undef CHUNK_VEC8_TYPE
-#endif
-#ifdef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#endif
-#ifdef ALIGNED_BLOCK_READ1
-#undef ALIGNED_BLOCK_READ1
-#endif
-#ifdef ALIGNED_BLOCK_READ2
-#undef ALIGNED_BLOCK_READ2
-#endif
-#ifdef ALIGNED_BLOCK_READ4
-#undef ALIGNED_BLOCK_READ4
-#endif
-#ifdef ALIGNED_BLOCK_READ8
-#undef ALIGNED_BLOCK_READ8
-#endif
-#ifdef ALIGNED_READ1
-#undef ALIGNED_READ1
-#endif
-#ifdef ALIGNED_READ2
-#undef ALIGNED_READ2
-#endif
-#ifdef ALIGNED_READ4
-#undef ALIGNED_READ4
-#endif
-#ifdef ALIGNED_READ8
-#undef ALIGNED_READ8
-#endif
-#ifdef ALIGNED_BLOCK_WRITE1
-#undef ALIGNED_BLOCK_WRITE1
-#endif
-#ifdef ALIGNED_BLOCK_WRITE2
-#undef ALIGNED_BLOCK_WRITE2
-#endif
-#ifdef ALIGNED_BLOCK_WRITE4
-#undef ALIGNED_BLOCK_WRITE4
-#endif
-#ifdef ALIGNED_BLOCK_WRITE8
-#undef ALIGNED_BLOCK_WRITE8
-#endif
-#ifdef ALIGNED_WRITE1
-#undef ALIGNED_WRITE1
-#endif
-#ifdef ALIGNED_WRITE2
-#undef ALIGNED_WRITE2
-#endif
-#ifdef ALIGNED_WRITE4
-#undef ALIGNED_WRITE4
-#endif
-#ifdef ALIGNED_WRITE8
-#undef ALIGNED_WRITE8
-#endif
-#ifdef INPUT0_ELEMENTS_REMAINDER
-#undef INPUT0_ELEMENTS_REMAINDER
-#endif
-#ifdef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
-#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
-#endif
-#undef KERNEL
-#undef FUNC
-#undef FUNC_CALL
-#undef CONST_ARRAY_DECL
-#undef CONST_ARRAY_REF
-#ifdef FP64_SUPPORTED
-#undef FP64_SUPPORTED
-#endif
-#ifdef FP16_SUPPORTED
-#undef FP16_SUPPORTED
-#endif
-#ifdef FP16_UNIT_USED
-#undef FP16_UNIT_USED
-#endif
-#ifdef INT8_UNIT_USED
-#undef INT8_UNIT_USED
-#endif
-#ifdef INT32_UNIT_USED
-#undef INT32_UNIT_USED
-#endif
-#ifdef INT64_UNIT_USED
-#undef INT64_UNIT_USED
-#endif
-#ifdef UINT8_UNIT_USED
-#undef UINT8_UNIT_USED
-#endif
-#ifdef UINT32_UNIT_USED
-#undef UINT32_UNIT_USED
-#endif
-#ifdef UNIT_TYPE
-#undef UNIT_TYPE
-#endif
-#ifdef UNIT_VAL_MAX
-#undef UNIT_VAL_MAX
-#endif
-#ifdef UNIT_VAL_MIN
-#undef UNIT_VAL_MIN
-#endif
-#ifdef UNIT_VAL_ONE
-#undef UNIT_VAL_ONE
-#endif
-#ifdef UNIT_VAL_ZERO
-#undef UNIT_VAL_ZERO
-#endif
-#ifdef TO_UNIT_TYPE
-#undef TO_UNIT_TYPE
-#endif
-#ifdef TO_UNIT_TYPE_SAT
-#undef TO_UNIT_TYPE_SAT
-#endif
-#ifdef AS_UNIT_TYPE
-#undef AS_UNIT_TYPE
-#endif
-#ifdef UNIT_MAX_FUNC
-#undef UNIT_MAX_FUNC
-#endif
-#ifdef UNIT_MIN_FUNC
-#undef UNIT_MIN_FUNC
-#endif
-#ifdef UNIT_ABS_FUNC
-#undef UNIT_ABS_FUNC
-#endif
-#ifdef UNIT_TYPE_SIZE
-#undef UNIT_TYPE_SIZE
-#endif
-#ifdef UNIT_IS_FP
-#undef UNIT_IS_FP
-#endif
-#ifdef NL_M_0
-#undef NL_M_0
-#endif
-#ifdef NL_N_0
-#undef NL_N_0
-#endif
-#ifdef ACTIVATION_FUNC_0_TYPE
-#undef ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_MAX
-#undef ACTIVATION_FUNC_0_VAL_MAX
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_MIN
-#undef ACTIVATION_FUNC_0_VAL_MIN
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_ONE
-#undef ACTIVATION_FUNC_0_VAL_ONE
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_ZERO
-#undef ACTIVATION_FUNC_0_VAL_ZERO
-#endif
-#ifdef TO_ACTIVATION_FUNC_0_TYPE
-#undef TO_ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef TO_ACTIVATION_FUNC_0_TYPE_SAT
-#undef TO_ACTIVATION_FUNC_0_TYPE_SAT
-#endif
-#ifdef AS_ACTIVATION_FUNC_0_TYPE
-#undef AS_ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef ACTIVATION_FUNC_0_MAX_FUNC
-#undef ACTIVATION_FUNC_0_MAX_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_MIN_FUNC
-#undef ACTIVATION_FUNC_0_MIN_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_ABS_FUNC
-#undef ACTIVATION_FUNC_0_ABS_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_TYPE_SIZE
-#undef ACTIVATION_FUNC_0_TYPE_SIZE
-#endif
-#ifdef ACTIVATION_FUNC_0_IS_FP
-#undef ACTIVATION_FUNC_0_IS_FP
-#endif
-#ifdef ACTIVATION_PARAMS_0
-#undef ACTIVATION_PARAMS_0
-#endif
-#ifdef ACTIVATION_FUNC_0
-#undef ACTIVATION_FUNC_0
-#endif
-#ifdef ACTIVATION_0
-#undef ACTIVATION_0
-#endif
-#ifdef ACTIVATION_PARAMS
-#undef ACTIVATION_PARAMS
-#endif
-#ifdef ACTIVATION
-#undef ACTIVATION
-#endif
-#ifdef INPUT0_SIZE_X
-#undef INPUT0_SIZE_X
-#endif
-#ifdef INPUT0_SIZE_Y
-#undef INPUT0_SIZE_Y
-#endif
-#ifdef INPUT0_SIZE_Z
-#undef INPUT0_SIZE_Z
-#endif
-#ifdef INPUT0_SIZE_W
-#undef INPUT0_SIZE_W
-#endif
-#ifdef INPUT0_SIZE_U
-#undef INPUT0_SIZE_U
-#endif
-#ifdef INPUT0_SIZE_V
-#undef INPUT0_SIZE_V
-#endif
-#ifdef INPUT0_FEATURE_NUM
-#undef INPUT0_FEATURE_NUM
-#endif
-#ifdef INPUT0_BATCH_NUM
-#undef INPUT0_BATCH_NUM
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_X
-#undef INPUT0_PAD_BEFORE_SIZE_X
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_Y
-#undef INPUT0_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_Z
-#undef INPUT0_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_W
-#undef INPUT0_PAD_BEFORE_SIZE_W
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_U
-#undef INPUT0_PAD_BEFORE_SIZE_U
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_V
-#undef INPUT0_PAD_BEFORE_SIZE_V
-#endif
-#ifdef INPUT0_PAD_BEFORE_FEATURE_NUM
-#undef INPUT0_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef INPUT0_PAD_BEFORE_BATCH_NUM
-#undef INPUT0_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_X
-#undef INPUT0_PAD_AFTER_SIZE_X
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_Y
-#undef INPUT0_PAD_AFTER_SIZE_Y
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_Z
-#undef INPUT0_PAD_AFTER_SIZE_Z
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_W
-#undef INPUT0_PAD_AFTER_SIZE_W
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_U
-#undef INPUT0_PAD_AFTER_SIZE_U
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_V
-#undef INPUT0_PAD_AFTER_SIZE_V
-#endif
-#ifdef INPUT0_PAD_AFTER_FEATURE_NUM
-#undef INPUT0_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef INPUT0_PAD_AFTER_BATCH_NUM
-#undef INPUT0_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef INPUT0_X_PITCH
-#undef INPUT0_X_PITCH
-#endif
-#ifdef INPUT0_Y_PITCH
-#undef INPUT0_Y_PITCH
-#endif
-#ifdef INPUT0_Z_PITCH
-#undef INPUT0_Z_PITCH
-#endif
-#ifdef INPUT0_W_PITCH
-#undef INPUT0_W_PITCH
-#endif
-#ifdef INPUT0_U_PITCH
-#undef INPUT0_U_PITCH
-#endif
-#ifdef INPUT0_V_PITCH
-#undef INPUT0_V_PITCH
-#endif
-#ifdef INPUT0_FEATURE_PITCH
-#undef INPUT0_FEATURE_PITCH
-#endif
-#ifdef INPUT0_BATCH_PITCH
-#undef INPUT0_BATCH_PITCH
-#endif
-#ifdef INPUT0_GET_INDEX_SAFE
-#undef INPUT0_GET_INDEX_SAFE
-#endif
-#ifdef INPUT0_GET_INDEX
-#undef INPUT0_GET_INDEX
-#endif
-#ifdef INPUT0_GET_INDEX_RAW
-#undef INPUT0_GET_INDEX_RAW
-#endif
-#ifdef INPUT0_VIEW_OFFSET
-#undef INPUT0_VIEW_OFFSET
-#endif
-#ifdef INPUT0_LENGTH
-#undef INPUT0_LENGTH
-#endif
-#ifdef INPUT0_DIMS
-#undef INPUT0_DIMS
-#endif
-#ifdef INPUT0_SIMPLE
-#undef INPUT0_SIMPLE
-#endif
-#ifdef INPUT0_GROUPED
-#undef INPUT0_GROUPED
-#endif
-#ifdef INPUT0_LAYOUT_BFYX
-#undef INPUT0_LAYOUT_BFYX
-#endif
-#ifdef INPUT0_TYPE
-#undef INPUT0_TYPE
-#endif
-#ifdef INPUT0_VAL_MAX
-#undef INPUT0_VAL_MAX
-#endif
-#ifdef INPUT0_VAL_MIN
-#undef INPUT0_VAL_MIN
-#endif
-#ifdef INPUT0_VAL_ONE
-#undef INPUT0_VAL_ONE
-#endif
-#ifdef INPUT0_VAL_ZERO
-#undef INPUT0_VAL_ZERO
-#endif
-#ifdef TO_INPUT0_TYPE
-#undef TO_INPUT0_TYPE
-#endif
-#ifdef TO_INPUT0_TYPE_SAT
-#undef TO_INPUT0_TYPE_SAT
-#endif
-#ifdef AS_INPUT0_TYPE
-#undef AS_INPUT0_TYPE
-#endif
-#ifdef INPUT0_MAX_FUNC
-#undef INPUT0_MAX_FUNC
-#endif
-#ifdef INPUT0_MIN_FUNC
-#undef INPUT0_MIN_FUNC
-#endif
-#ifdef INPUT0_ABS_FUNC
-#undef INPUT0_ABS_FUNC
-#endif
-#ifdef INPUT0_TYPE_SIZE
-#undef INPUT0_TYPE_SIZE
-#endif
-#ifdef INPUT0_IS_FP
-#undef INPUT0_IS_FP
-#endif
-#ifdef INPUT0_OFFSET
-#undef INPUT0_OFFSET
-#endif
-#ifdef INPUT0_SIZES_DATA
-#undef INPUT0_SIZES_DATA
-#endif
-#ifdef INPUT0_PITCHES
-#undef INPUT0_PITCHES
-#endif
-#ifdef INPUT0_PAD_BEFORE
-#undef INPUT0_PAD_BEFORE
-#endif
-#ifdef INPUT0_PAD_AFTER
-#undef INPUT0_PAD_AFTER
-#endif
-#ifdef OUTPUT_SIZE_X
-#undef OUTPUT_SIZE_X
-#endif
-#ifdef OUTPUT_SIZE_Y
-#undef OUTPUT_SIZE_Y
-#endif
-#ifdef OUTPUT_SIZE_Z
-#undef OUTPUT_SIZE_Z
-#endif
-#ifdef OUTPUT_SIZE_W
-#undef OUTPUT_SIZE_W
-#endif
-#ifdef OUTPUT_SIZE_U
-#undef OUTPUT_SIZE_U
-#endif
-#ifdef OUTPUT_SIZE_V
-#undef OUTPUT_SIZE_V
-#endif
-#ifdef OUTPUT_FEATURE_NUM
-#undef OUTPUT_FEATURE_NUM
-#endif
-#ifdef OUTPUT_BATCH_NUM
-#undef OUTPUT_BATCH_NUM
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_X
-#undef OUTPUT_PAD_BEFORE_SIZE_X
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_Y
-#undef OUTPUT_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_Z
-#undef OUTPUT_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_W
-#undef OUTPUT_PAD_BEFORE_SIZE_W
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_U
-#undef OUTPUT_PAD_BEFORE_SIZE_U
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_V
-#undef OUTPUT_PAD_BEFORE_SIZE_V
-#endif
-#ifdef OUTPUT_PAD_BEFORE_FEATURE_NUM
-#undef OUTPUT_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef OUTPUT_PAD_BEFORE_BATCH_NUM
-#undef OUTPUT_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_X
-#undef OUTPUT_PAD_AFTER_SIZE_X
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_Y
-#undef OUTPUT_PAD_AFTER_SIZE_Y
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_Z
-#undef OUTPUT_PAD_AFTER_SIZE_Z
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_W
-#undef OUTPUT_PAD_AFTER_SIZE_W
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_U
-#undef OUTPUT_PAD_AFTER_SIZE_U
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_V
-#undef OUTPUT_PAD_AFTER_SIZE_V
-#endif
-#ifdef OUTPUT_PAD_AFTER_FEATURE_NUM
-#undef OUTPUT_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef OUTPUT_PAD_AFTER_BATCH_NUM
-#undef OUTPUT_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef OUTPUT_X_PITCH
-#undef OUTPUT_X_PITCH
-#endif
-#ifdef OUTPUT_Y_PITCH
-#undef OUTPUT_Y_PITCH
-#endif
-#ifdef OUTPUT_Z_PITCH
-#undef OUTPUT_Z_PITCH
-#endif
-#ifdef OUTPUT_W_PITCH
-#undef OUTPUT_W_PITCH
-#endif
-#ifdef OUTPUT_U_PITCH
-#undef OUTPUT_U_PITCH
-#endif
-#ifdef OUTPUT_V_PITCH
-#undef OUTPUT_V_PITCH
-#endif
-#ifdef OUTPUT_FEATURE_PITCH
-#undef OUTPUT_FEATURE_PITCH
-#endif
-#ifdef OUTPUT_BATCH_PITCH
-#undef OUTPUT_BATCH_PITCH
-#endif
-#ifdef OUTPUT_GET_INDEX_SAFE
-#undef OUTPUT_GET_INDEX_SAFE
-#endif
-#ifdef OUTPUT_GET_INDEX
-#undef OUTPUT_GET_INDEX
-#endif
-#ifdef OUTPUT_GET_INDEX_RAW
-#undef OUTPUT_GET_INDEX_RAW
-#endif
-#ifdef OUTPUT_VIEW_OFFSET
-#undef OUTPUT_VIEW_OFFSET
-#endif
-#ifdef OUTPUT_LENGTH
-#undef OUTPUT_LENGTH
-#endif
-#ifdef OUTPUT_DIMS
-#undef OUTPUT_DIMS
-#endif
-#ifdef OUTPUT_SIMPLE
-#undef OUTPUT_SIMPLE
-#endif
-#ifdef OUTPUT_GROUPED
-#undef OUTPUT_GROUPED
-#endif
-#ifdef OUTPUT_LAYOUT_BF
-#undef OUTPUT_LAYOUT_BF
-#endif
-#ifdef OUTPUT_TYPE
-#undef OUTPUT_TYPE
-#endif
-#ifdef OUTPUT_VAL_MAX
-#undef OUTPUT_VAL_MAX
-#endif
-#ifdef OUTPUT_VAL_MIN
-#undef OUTPUT_VAL_MIN
-#endif
-#ifdef OUTPUT_VAL_ONE
-#undef OUTPUT_VAL_ONE
-#endif
-#ifdef OUTPUT_VAL_ZERO
-#undef OUTPUT_VAL_ZERO
-#endif
-#ifdef TO_OUTPUT_TYPE
-#undef TO_OUTPUT_TYPE
-#endif
-#ifdef TO_OUTPUT_TYPE_SAT
-#undef TO_OUTPUT_TYPE_SAT
-#endif
-#ifdef AS_OUTPUT_TYPE
-#undef AS_OUTPUT_TYPE
-#endif
-#ifdef OUTPUT_MAX_FUNC
-#undef OUTPUT_MAX_FUNC
-#endif
-#ifdef OUTPUT_MIN_FUNC
-#undef OUTPUT_MIN_FUNC
-#endif
-#ifdef OUTPUT_ABS_FUNC
-#undef OUTPUT_ABS_FUNC
-#endif
-#ifdef OUTPUT_TYPE_SIZE
-#undef OUTPUT_TYPE_SIZE
-#endif
-#ifdef OUTPUT_IS_FP
-#undef OUTPUT_IS_FP
-#endif
-#ifdef OUTPUT_OFFSET
-#undef OUTPUT_OFFSET
-#endif
-#ifdef OUTPUT_SIZES_DATA
-#undef OUTPUT_SIZES_DATA
-#endif
-#ifdef OUTPUT_PITCHES
-#undef OUTPUT_PITCHES
-#endif
-#ifdef OUTPUT_PAD_BEFORE
-#undef OUTPUT_PAD_BEFORE
-#endif
-#ifdef OUTPUT_PAD_AFTER
-#undef OUTPUT_PAD_AFTER
-#endif
-#ifdef OPTIONAL_SHAPE_INFO_ARG
-#undef OPTIONAL_SHAPE_INFO_ARG
-#endif
-#ifdef OPTIONAL_SHAPE_INFO_TENSOR
-#undef OPTIONAL_SHAPE_INFO_TENSOR
-#endif
-#ifdef FILTER_SIZE_X
-#undef FILTER_SIZE_X
-#endif
-#ifdef FILTER_SIZE_Y
-#undef FILTER_SIZE_Y
-#endif
-#ifdef FILTER_SIZE_Z
-#undef FILTER_SIZE_Z
-#endif
-#ifdef FILTER_IFM_NUM
-#undef FILTER_IFM_NUM
-#endif
-#ifdef FILTER_OFM_NUM
-#undef FILTER_OFM_NUM
-#endif
-#ifdef FILTER_GROUPS_NUM
-#undef FILTER_GROUPS_NUM
-#endif
-#ifdef FILTER_X_PITCH
-#undef FILTER_X_PITCH
-#endif
-#ifdef FILTER_Y_PITCH
-#undef FILTER_Y_PITCH
-#endif
-#ifdef FILTER_Z_PITCH
-#undef FILTER_Z_PITCH
-#endif
-#ifdef FILTER_IFM_PITCH
-#undef FILTER_IFM_PITCH
-#endif
-#ifdef FILTER_OFM_PITCH
-#undef FILTER_OFM_PITCH
-#endif
-#ifdef FILTER_GROUPS_PITCH
-#undef FILTER_GROUPS_PITCH
-#endif
-#ifdef FILTER_VIEW_OFFSET
-#undef FILTER_VIEW_OFFSET
-#endif
-#ifdef FILTER_LENGTH
-#undef FILTER_LENGTH
-#endif
-#ifdef FILTER_DIMS
-#undef FILTER_DIMS
-#endif
-#ifdef FILTER_SIMPLE
-#undef FILTER_SIMPLE
-#endif
-#ifdef FILTER_GROUPED
-#undef FILTER_GROUPED
-#endif
-#ifdef FILTER_LAYOUT_OS_I_OSV16
-#undef FILTER_LAYOUT_OS_I_OSV16
-#endif
-#ifdef FILTER_TYPE
-#undef FILTER_TYPE
-#endif
-#ifdef FILTER_VAL_MAX
-#undef FILTER_VAL_MAX
-#endif
-#ifdef FILTER_VAL_MIN
-#undef FILTER_VAL_MIN
-#endif
-#ifdef FILTER_VAL_ONE
-#undef FILTER_VAL_ONE
-#endif
-#ifdef FILTER_VAL_ZERO
-#undef FILTER_VAL_ZERO
-#endif
-#ifdef TO_FILTER_TYPE
-#undef TO_FILTER_TYPE
-#endif
-#ifdef TO_FILTER_TYPE_SAT
-#undef TO_FILTER_TYPE_SAT
-#endif
-#ifdef AS_FILTER_TYPE
-#undef AS_FILTER_TYPE
-#endif
-#ifdef FILTER_MAX_FUNC
-#undef FILTER_MAX_FUNC
-#endif
-#ifdef FILTER_MIN_FUNC
-#undef FILTER_MIN_FUNC
-#endif
-#ifdef FILTER_ABS_FUNC
-#undef FILTER_ABS_FUNC
-#endif
-#ifdef FILTER_TYPE_SIZE
-#undef FILTER_TYPE_SIZE
-#endif
-#ifdef FILTER_IS_FP
-#undef FILTER_IS_FP
-#endif
-#ifdef FILTER_OFFSET
-#undef FILTER_OFFSET
-#endif
-#ifdef FILTER_SIZES_DATA
-#undef FILTER_SIZES_DATA
-#endif
-#ifdef FILTER_PITCHES
-#undef FILTER_PITCHES
-#endif
-#ifdef FILTER_PAD_BEFORE
-#undef FILTER_PAD_BEFORE
-#endif
-#ifdef FILTER_PAD_AFTER
-#undef FILTER_PAD_AFTER
-#endif
-#ifdef BIAS_TERM
-#undef BIAS_TERM
-#endif
-#ifdef BIAS_SIZE_X
-#undef BIAS_SIZE_X
-#endif
-#ifdef BIAS_SIZE_Y
-#undef BIAS_SIZE_Y
-#endif
-#ifdef BIAS_SIZE_Z
-#undef BIAS_SIZE_Z
-#endif
-#ifdef BIAS_SIZE_W
-#undef BIAS_SIZE_W
-#endif
-#ifdef BIAS_SIZE_U
-#undef BIAS_SIZE_U
-#endif
-#ifdef BIAS_SIZE_V
-#undef BIAS_SIZE_V
-#endif
-#ifdef BIAS_FEATURE_NUM
-#undef BIAS_FEATURE_NUM
-#endif
-#ifdef BIAS_BATCH_NUM
-#undef BIAS_BATCH_NUM
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_X
-#undef BIAS_PAD_BEFORE_SIZE_X
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_Y
-#undef BIAS_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_Z
-#undef BIAS_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_W
-#undef BIAS_PAD_BEFORE_SIZE_W
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_U
-#undef BIAS_PAD_BEFORE_SIZE_U
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_V
-#undef BIAS_PAD_BEFORE_SIZE_V
-#endif
-#ifdef BIAS_PAD_BEFORE_FEATURE_NUM
-#undef BIAS_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef BIAS_PAD_BEFORE_BATCH_NUM
-#undef BIAS_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_X
-#undef BIAS_PAD_AFTER_SIZE_X
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_Y
-#undef BIAS_PAD_AFTER_SIZE_Y
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_Z
-#undef BIAS_PAD_AFTER_SIZE_Z
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_W
-#undef BIAS_PAD_AFTER_SIZE_W
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_U
-#undef BIAS_PAD_AFTER_SIZE_U
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_V
-#undef BIAS_PAD_AFTER_SIZE_V
-#endif
-#ifdef BIAS_PAD_AFTER_FEATURE_NUM
-#undef BIAS_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef BIAS_PAD_AFTER_BATCH_NUM
-#undef BIAS_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef BIAS_X_PITCH
-#undef BIAS_X_PITCH
-#endif
-#ifdef BIAS_Y_PITCH
-#undef BIAS_Y_PITCH
-#endif
-#ifdef BIAS_Z_PITCH
-#undef BIAS_Z_PITCH
-#endif
-#ifdef BIAS_W_PITCH
-#undef BIAS_W_PITCH
-#endif
-#ifdef BIAS_U_PITCH
-#undef BIAS_U_PITCH
-#endif
-#ifdef BIAS_V_PITCH
-#undef BIAS_V_PITCH
-#endif
-#ifdef BIAS_FEATURE_PITCH
-#undef BIAS_FEATURE_PITCH
-#endif
-#ifdef BIAS_BATCH_PITCH
-#undef BIAS_BATCH_PITCH
-#endif
-#ifdef BIAS_GET_INDEX_SAFE
-#undef BIAS_GET_INDEX_SAFE
-#endif
-#ifdef BIAS_GET_INDEX
-#undef BIAS_GET_INDEX
-#endif
-#ifdef BIAS_GET_INDEX_RAW
-#undef BIAS_GET_INDEX_RAW
-#endif
-#ifdef BIAS_VIEW_OFFSET
-#undef BIAS_VIEW_OFFSET
-#endif
-#ifdef BIAS_LENGTH
-#undef BIAS_LENGTH
-#endif
-#ifdef BIAS_DIMS
-#undef BIAS_DIMS
-#endif
-#ifdef BIAS_SIMPLE
-#undef BIAS_SIMPLE
-#endif
-#ifdef BIAS_GROUPED
-#undef BIAS_GROUPED
-#endif
-#ifdef BIAS_LAYOUT_BF
-#undef BIAS_LAYOUT_BF
-#endif
-#ifdef BIAS_TYPE
-#undef BIAS_TYPE
-#endif
-#ifdef BIAS_VAL_MAX
-#undef BIAS_VAL_MAX
-#endif
-#ifdef BIAS_VAL_MIN
-#undef BIAS_VAL_MIN
-#endif
-#ifdef BIAS_VAL_ONE
-#undef BIAS_VAL_ONE
-#endif
-#ifdef BIAS_VAL_ZERO
-#undef BIAS_VAL_ZERO
-#endif
-#ifdef TO_BIAS_TYPE
-#undef TO_BIAS_TYPE
-#endif
-#ifdef TO_BIAS_TYPE_SAT
-#undef TO_BIAS_TYPE_SAT
-#endif
-#ifdef AS_BIAS_TYPE
-#undef AS_BIAS_TYPE
-#endif
-#ifdef BIAS_MAX_FUNC
-#undef BIAS_MAX_FUNC
-#endif
-#ifdef BIAS_MIN_FUNC
-#undef BIAS_MIN_FUNC
-#endif
-#ifdef BIAS_ABS_FUNC
-#undef BIAS_ABS_FUNC
-#endif
-#ifdef BIAS_TYPE_SIZE
-#undef BIAS_TYPE_SIZE
-#endif
-#ifdef BIAS_IS_FP
-#undef BIAS_IS_FP
-#endif
-#ifdef BIAS_OFFSET
-#undef BIAS_OFFSET
-#endif
-#ifdef BIAS_SIZES_DATA
-#undef BIAS_SIZES_DATA
-#endif
-#ifdef BIAS_PITCHES
-#undef BIAS_PITCHES
-#endif
-#ifdef BIAS_PAD_BEFORE
-#undef BIAS_PAD_BEFORE
-#endif
-#ifdef BIAS_PAD_AFTER
-#undef BIAS_PAD_AFTER
-#endif
-#ifdef BIAS_PER_OUTPUT
-#undef BIAS_PER_OUTPUT
-#endif
-#ifdef BIAS_PER_OFM
-#undef BIAS_PER_OFM
-#endif
-#ifdef INPUT0_ELEMENTS_COUNT
-#undef INPUT0_ELEMENTS_COUNT
-#endif
-#ifdef SUB_GROUP_SIZE
-#undef SUB_GROUP_SIZE
-#endif
-#ifdef WORK_ITEMS_PER_BATCH
-#undef WORK_ITEMS_PER_BATCH
-#endif
-#ifdef UNIT_BYTE_SIZE
-#undef UNIT_BYTE_SIZE
-#endif
-#ifdef CHUNK_TYPE
-#undef CHUNK_TYPE
-#endif
-#ifdef CHUNK_BYTE_SIZE
-#undef CHUNK_BYTE_SIZE
-#endif
-#ifdef UNITS_PER_CHUNK
-#undef UNITS_PER_CHUNK
-#endif
-#ifdef BYTES_PER_SG_READ
-#undef BYTES_PER_SG_READ
-#endif
-#ifdef UNITS_PER_SG_READ
-#undef UNITS_PER_SG_READ
-#endif
-#ifdef RESPONSES_PER_SG_EXEC
-#undef RESPONSES_PER_SG_EXEC
-#endif
-#ifdef IN_CHUNK_PREFETCH_SIZE
-#undef IN_CHUNK_PREFETCH_SIZE
-#endif
-#ifdef FILTER_CHUNK_PREFETCH_SIZE
-#undef FILTER_CHUNK_PREFETCH_SIZE
-#endif
-
-//====================================================
-// Kernel template: fully_connected_gpu_bs_f_bsv16_b1 
-// Kernel name: fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0
-#define KERNEL(name) __kernel void fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0
-#define FUNC(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0
-#define FUNC_CALL(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0 []
-#define CONST_ARRAY_REF(name)  _##name##_fully_connected_gpu_bs_f_bsv16_b1_4545888249470468377_0
-#define FP64_SUPPORTED 0
-#define FP16_SUPPORTED 1
-#define FP16_UNIT_USED 1
-#define INT8_UNIT_USED 0
-#define INT32_UNIT_USED 0
-#define INT64_UNIT_USED 0
-#define UINT8_UNIT_USED 0
-#define UINT32_UNIT_USED 0
-#define UNIT_TYPE half
-#define UNIT_VAL_MAX HALF_MAX
-#define UNIT_VAL_MIN -UNIT_VAL_MAX
-#define UNIT_VAL_ONE 1.0h
-#define UNIT_VAL_ZERO 0.0h
-#define TO_UNIT_TYPE(v) convert_half(v)
-#define TO_UNIT_TYPE_SAT(v) convert_half(v)
-#define AS_UNIT_TYPE(v) as_half(v)
-#define UNIT_MAX_FUNC fmax
-#define UNIT_MIN_FUNC fmin
-#define UNIT_ABS_FUNC fabs
-#define UNIT_TYPE_SIZE 2
-#define UNIT_IS_FP 1
-#define NL_M_0 as_float(0x0)/*0.000000e+00*/
-#define NL_N_0 as_float(0x0)/*0.000000e+00*/
-#define ACTIVATION_FUNC_0_TYPE half
-#define ACTIVATION_FUNC_0_VAL_MAX HALF_MAX
-#define ACTIVATION_FUNC_0_VAL_MIN -ACTIVATION_FUNC_0_VAL_MAX
-#define ACTIVATION_FUNC_0_VAL_ONE 1.0h
-#define ACTIVATION_FUNC_0_VAL_ZERO 0.0h
-#define TO_ACTIVATION_FUNC_0_TYPE(v) convert_half(v)
-#define TO_ACTIVATION_FUNC_0_TYPE_SAT(v) convert_half(v)
-#define AS_ACTIVATION_FUNC_0_TYPE(v) as_half(v)
-#define ACTIVATION_FUNC_0_MAX_FUNC fmax
-#define ACTIVATION_FUNC_0_MIN_FUNC fmin
-#define ACTIVATION_FUNC_0_ABS_FUNC fabs
-#define ACTIVATION_FUNC_0_TYPE_SIZE 2
-#define ACTIVATION_FUNC_0_IS_FP 1
-#define ACTIVATION_PARAMS_0 NL_M_0, NL_N_0
-#define ACTIVATION_FUNC_0(input, m, n) (ACTIVATION_FUNC_0_MAX_FUNC(ACTIVATION_FUNC_0_VAL_ZERO, input))
-#define ACTIVATION_0(input, params) ACTIVATION_FUNC_0(input, params)
-#define ACTIVATION_PARAMS ACTIVATION_PARAMS_0
-#define ACTIVATION(input, params) ACTIVATION_FUNC_0(input, params)
-#define INPUT0_SIZE_X 1
-#define INPUT0_SIZE_Y 1
-#define INPUT0_SIZE_Z 1
-#define INPUT0_SIZE_W 1
-#define INPUT0_SIZE_U 1
-#define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 64
-#define INPUT0_BATCH_NUM 1
-#define INPUT0_PAD_BEFORE_SIZE_X 0
-#define INPUT0_PAD_BEFORE_SIZE_Y 0
-#define INPUT0_PAD_BEFORE_SIZE_Z 0
-#define INPUT0_PAD_BEFORE_SIZE_W 0
-#define INPUT0_PAD_BEFORE_SIZE_U 0
-#define INPUT0_PAD_BEFORE_SIZE_V 0
-#define INPUT0_PAD_BEFORE_FEATURE_NUM 0
-#define INPUT0_PAD_BEFORE_BATCH_NUM 0
-#define INPUT0_PAD_AFTER_SIZE_X 0
-#define INPUT0_PAD_AFTER_SIZE_Y 0
-#define INPUT0_PAD_AFTER_SIZE_Z 0
-#define INPUT0_PAD_AFTER_SIZE_W 0
-#define INPUT0_PAD_AFTER_SIZE_U 0
-#define INPUT0_PAD_AFTER_SIZE_V 0
-#define INPUT0_PAD_AFTER_FEATURE_NUM 0
-#define INPUT0_PAD_AFTER_BATCH_NUM 0
-#define INPUT0_X_PITCH 1
-#define INPUT0_Y_PITCH 1
-#define INPUT0_Z_PITCH 1
-#define INPUT0_W_PITCH 1
-#define INPUT0_U_PITCH 1
-#define INPUT0_V_PITCH 1
-#define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 64
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
-#define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
-#define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
-#define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 64
-#define INPUT0_DIMS 4
-#define INPUT0_SIMPLE 1
-#define INPUT0_GROUPED 0
-#define INPUT0_LAYOUT_BFYX 1
-#define INPUT0_TYPE half
-#define INPUT0_VAL_MAX HALF_MAX
-#define INPUT0_VAL_MIN -INPUT0_VAL_MAX
-#define INPUT0_VAL_ONE 1.0h
-#define INPUT0_VAL_ZERO 0.0h
-#define TO_INPUT0_TYPE(v) convert_half(v)
-#define TO_INPUT0_TYPE_SAT(v) convert_half(v)
-#define AS_INPUT0_TYPE(v) as_half(v)
-#define INPUT0_MAX_FUNC fmax
-#define INPUT0_MIN_FUNC fmin
-#define INPUT0_ABS_FUNC fabs
-#define INPUT0_TYPE_SIZE 2
-#define INPUT0_IS_FP 1
-#define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
-#define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
-#define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OUTPUT_SIZE_X 1
-#define OUTPUT_SIZE_Y 1
-#define OUTPUT_SIZE_Z 1
-#define OUTPUT_SIZE_W 1
-#define OUTPUT_SIZE_U 1
-#define OUTPUT_SIZE_V 1
-#define OUTPUT_FEATURE_NUM 256
-#define OUTPUT_BATCH_NUM 1
-#define OUTPUT_PAD_BEFORE_SIZE_X 0
-#define OUTPUT_PAD_BEFORE_SIZE_Y 0
-#define OUTPUT_PAD_BEFORE_SIZE_Z 0
-#define OUTPUT_PAD_BEFORE_SIZE_W 0
-#define OUTPUT_PAD_BEFORE_SIZE_U 0
-#define OUTPUT_PAD_BEFORE_SIZE_V 0
-#define OUTPUT_PAD_BEFORE_FEATURE_NUM 0
-#define OUTPUT_PAD_BEFORE_BATCH_NUM 0
-#define OUTPUT_PAD_AFTER_SIZE_X 0
-#define OUTPUT_PAD_AFTER_SIZE_Y 0
-#define OUTPUT_PAD_AFTER_SIZE_Z 0
-#define OUTPUT_PAD_AFTER_SIZE_W 0
-#define OUTPUT_PAD_AFTER_SIZE_U 0
-#define OUTPUT_PAD_AFTER_SIZE_V 0
-#define OUTPUT_PAD_AFTER_FEATURE_NUM 0
-#define OUTPUT_PAD_AFTER_BATCH_NUM 0
-#define OUTPUT_X_PITCH 1
-#define OUTPUT_Y_PITCH 1
-#define OUTPUT_Z_PITCH 1
-#define OUTPUT_W_PITCH 1
-#define OUTPUT_U_PITCH 1
-#define OUTPUT_V_PITCH 1
-#define OUTPUT_FEATURE_PITCH 1
-#define OUTPUT_BATCH_PITCH 256
-#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
-#define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
-#define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
-#define OUTPUT_VIEW_OFFSET 0
-#define OUTPUT_LENGTH 256
-#define OUTPUT_DIMS 2
-#define OUTPUT_SIMPLE 1
-#define OUTPUT_GROUPED 0
-#define OUTPUT_LAYOUT_BF 1
-#define OUTPUT_TYPE half
-#define OUTPUT_VAL_MAX HALF_MAX
-#define OUTPUT_VAL_MIN -OUTPUT_VAL_MAX
-#define OUTPUT_VAL_ONE 1.0h
-#define OUTPUT_VAL_ZERO 0.0h
-#define TO_OUTPUT_TYPE(v) convert_half(v)
-#define TO_OUTPUT_TYPE_SAT(v) convert_half(v)
-#define AS_OUTPUT_TYPE(v) as_half(v)
-#define OUTPUT_MAX_FUNC fmax
-#define OUTPUT_MIN_FUNC fmin
-#define OUTPUT_ABS_FUNC fabs
-#define OUTPUT_TYPE_SIZE 2
-#define OUTPUT_IS_FP 1
-#define OUTPUT_OFFSET 0
-#define OUTPUT_SIZES_DATA { 256,1,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
-#define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
-#define OUTPUT_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
-#define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define OPTIONAL_SHAPE_INFO_ARG 
-#define OPTIONAL_SHAPE_INFO_TENSOR 
-#define FILTER_SIZE_X 1
-#define FILTER_SIZE_Y 1
-#define FILTER_SIZE_Z 1
-#define FILTER_IFM_NUM 64
-#define FILTER_OFM_NUM 256
-#define FILTER_GROUPS_NUM 1
-#define FILTER_X_PITCH 1
-#define FILTER_Y_PITCH 1
-#define FILTER_Z_PITCH 1
-#define FILTER_IFM_PITCH 1
-#define FILTER_OFM_PITCH 64
-#define FILTER_GROUPS_PITCH 1
-#define FILTER_VIEW_OFFSET 0
-#define FILTER_LENGTH 16384
-#define FILTER_DIMS 2
-#define FILTER_SIMPLE 0
-#define FILTER_GROUPED 0
-#define FILTER_LAYOUT_OS_I_OSV16 1
-#define FILTER_TYPE half
-#define FILTER_VAL_MAX HALF_MAX
-#define FILTER_VAL_MIN -FILTER_VAL_MAX
-#define FILTER_VAL_ONE 1.0h
-#define FILTER_VAL_ZERO 0.0h
-#define TO_FILTER_TYPE(v) convert_half(v)
-#define TO_FILTER_TYPE_SAT(v) convert_half(v)
-#define AS_FILTER_TYPE(v) as_half(v)
-#define FILTER_MAX_FUNC fmax
-#define FILTER_MIN_FUNC fmin
-#define FILTER_ABS_FUNC fabs
-#define FILTER_TYPE_SIZE 2
-#define FILTER_IS_FP 1
-#define FILTER_OFFSET 0
-#define FILTER_SIZES_DATA { 64,256,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(FILTER_SIZES) = FILTER_SIZES_DATA;
-#define FILTER_SIZES CONST_ARRAY_REF(FILTER_SIZES)
-#define FILTER_PITCHES (size_t []){ 1,64,1,1,1,1,1,1,1, } 
-#define FILTER_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define FILTER_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_TERM 1
-#define BIAS_SIZE_X 1
-#define BIAS_SIZE_Y 1
-#define BIAS_SIZE_Z 1
-#define BIAS_SIZE_W 1
-#define BIAS_SIZE_U 1
-#define BIAS_SIZE_V 1
-#define BIAS_FEATURE_NUM 256
-#define BIAS_BATCH_NUM 1
-#define BIAS_PAD_BEFORE_SIZE_X 0
-#define BIAS_PAD_BEFORE_SIZE_Y 0
-#define BIAS_PAD_BEFORE_SIZE_Z 0
-#define BIAS_PAD_BEFORE_SIZE_W 0
-#define BIAS_PAD_BEFORE_SIZE_U 0
-#define BIAS_PAD_BEFORE_SIZE_V 0
-#define BIAS_PAD_BEFORE_FEATURE_NUM 0
-#define BIAS_PAD_BEFORE_BATCH_NUM 0
-#define BIAS_PAD_AFTER_SIZE_X 0
-#define BIAS_PAD_AFTER_SIZE_Y 0
-#define BIAS_PAD_AFTER_SIZE_Z 0
-#define BIAS_PAD_AFTER_SIZE_W 0
-#define BIAS_PAD_AFTER_SIZE_U 0
-#define BIAS_PAD_AFTER_SIZE_V 0
-#define BIAS_PAD_AFTER_FEATURE_NUM 0
-#define BIAS_PAD_AFTER_BATCH_NUM 0
-#define BIAS_X_PITCH 1
-#define BIAS_Y_PITCH 1
-#define BIAS_Z_PITCH 1
-#define BIAS_W_PITCH 1
-#define BIAS_U_PITCH 1
-#define BIAS_V_PITCH 1
-#define BIAS_FEATURE_PITCH 1
-#define BIAS_BATCH_PITCH 256
-#define BIAS_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 256)
-#define BIAS_GET_INDEX(b, f, y, x) (0 + (f))
-#define BIAS_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(BIAS, b, f, y, x)
-#define BIAS_VIEW_OFFSET 0
-#define BIAS_LENGTH 256
-#define BIAS_DIMS 2
-#define BIAS_SIMPLE 1
-#define BIAS_GROUPED 0
-#define BIAS_LAYOUT_BF 1
-#define BIAS_TYPE half
-#define BIAS_VAL_MAX HALF_MAX
-#define BIAS_VAL_MIN -BIAS_VAL_MAX
-#define BIAS_VAL_ONE 1.0h
-#define BIAS_VAL_ZERO 0.0h
-#define TO_BIAS_TYPE(v) convert_half(v)
-#define TO_BIAS_TYPE_SAT(v) convert_half(v)
-#define AS_BIAS_TYPE(v) as_half(v)
-#define BIAS_MAX_FUNC fmax
-#define BIAS_MIN_FUNC fmin
-#define BIAS_ABS_FUNC fabs
-#define BIAS_TYPE_SIZE 2
-#define BIAS_IS_FP 1
-#define BIAS_OFFSET 0
-#define BIAS_SIZES_DATA { 256,1,1,1,1,1,1,1,1, } 
-CONST_ARRAY_DECL(BIAS_SIZES) = BIAS_SIZES_DATA;
-#define BIAS_SIZES CONST_ARRAY_REF(BIAS_SIZES)
-#define BIAS_PITCHES (size_t []){ 1,256,1,1,1,1,1,1,1, } 
-#define BIAS_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
-#define BIAS_PER_OUTPUT 1
-#define BIAS_PER_OFM 0
-#define INPUT0_ELEMENTS_COUNT 64
-#define SUB_GROUP_SIZE 16
-#define WORK_ITEMS_PER_BATCH 1
-#define UNIT_BYTE_SIZE 2
-#define CHUNK_TYPE uint
-#define CHUNK_BYTE_SIZE 4
-#define UNITS_PER_CHUNK 2
-#define BYTES_PER_SG_READ 64
-#define UNITS_PER_SG_READ 32
-#define RESPONSES_PER_SG_EXEC 16
-#define IN_CHUNK_PREFETCH_SIZE 2
-#define FILTER_CHUNK_PREFETCH_SIZE 16
-
-
-#define CONCAT_TOKEN_HANDLER1(prefix, suffix) prefix##suffix
-#define CONCAT_TOKEN(prefix, suffix) CONCAT_TOKEN_HANDLER1(prefix, suffix)
-#if FP16_UNIT_USED
- #define CVT_UNIT(expression) CONCAT_TOKEN(convert_, UNIT_TYPE)(expression)
-#else
- #define CVT_UNIT(expression) (expression)
-#endif
-#if UNITS_PER_CHUNK == 1
- #define CHUNK_UNITS_TYPE UNIT_TYPE
-#else
- #define CHUNK_UNITS_TYPE MAKE_VECTOR_TYPE(UNIT_TYPE, UNITS_PER_CHUNK)
-#endif
-#define AS_CHUNK(expression) CONCAT_TOKEN(as_, CHUNK_TYPE)(expression)
-#define AS_UNITS(expression) CONCAT_TOKEN(as_, CHUNK_UNITS_TYPE)(expression)
-#if UNITS_PER_CHUNK == 4
- #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) > 1 ? ((idx) > 2 ? AS_UNITS(chunk).s3 : AS_UNITS(chunk).s2) : ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0))
-#elif UNITS_PER_CHUNK == 2
- #define CHUNK_UNIT_SELECT(chunk, idx) ((idx) ? AS_UNITS(chunk).s1 : AS_UNITS(chunk).s0)
-#elif UNITS_PER_CHUNK == 1
- #define CHUNK_UNIT_SELECT(chunk, idx) AS_UNITS(chunk)
-#else
- #error Unsupported number of units per chunk.
-#endif
-#define SG_UNIT_SELECT(chunk, idx) CHUNK_UNIT_SELECT(_sub_group_shuffle(chunk, (idx) / UNITS_PER_CHUNK), (idx) % UNITS_PER_CHUNK)
-#define CHUNK_VEC1_TYPE CHUNK_TYPE
-#define CHUNK_VEC2_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 2)
-#define CHUNK_VEC4_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 4)
-#define CHUNK_VEC8_TYPE MAKE_VECTOR_TYPE(CHUNK_TYPE, 8)
-#define EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec))
-#define EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1))
-#define EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3))
-#define EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(array, idx, chunk_vec) ((void)((array)[(idx)] = chunk_vec.s0, (array)[(idx) + 1] = chunk_vec.s1, (array)[(idx) + 2] = chunk_vec.s2, (array)[(idx) + 3] = chunk_vec.s3, (array)[(idx) + 4] = chunk_vec.s4, (array)[(idx) + 5] = chunk_vec.s5, (array)[(idx) + 6] = chunk_vec.s6, (array)[(idx) + 7] = chunk_vec.s7))
-#define ALIGNED_BLOCK_READ1(ptr, byte_offset) _sub_group_block_read((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ2(ptr, byte_offset) _sub_group_block_read2((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ4(ptr, byte_offset) _sub_group_block_read4((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_READ8(ptr, byte_offset) _sub_group_block_read8((const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ1(ptr, byte_offset) (*(const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ2(ptr, byte_offset) vload2(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ4(ptr, byte_offset) vload4(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_READ8(ptr, byte_offset) vload8(0, (const __global CHUNK_TYPE*)((const __global char*)(ptr) + (byte_offset)))
-#define ALIGNED_BLOCK_WRITE1(ptr, byte_offset, val) _sub_group_block_write((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE2(ptr, byte_offset, val) _sub_group_block_write2((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE4(ptr, byte_offset, val) _sub_group_block_write4((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_BLOCK_WRITE8(ptr, byte_offset, val) _sub_group_block_write8((__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)), (val))
-#define ALIGNED_WRITE1(ptr, byte_offset, val) ((void)(*(__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)) = (val)))
-#define ALIGNED_WRITE2(ptr, byte_offset, val) vstore2((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#define ALIGNED_WRITE4(ptr, byte_offset, val) vstore4((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#define ALIGNED_WRITE8(ptr, byte_offset, val) vstore8((val), 0, (__global CHUNK_TYPE*)((__global char*)(ptr) + (byte_offset)))
-#if INPUT0_BATCH_NUM != 1
- #error Kernel does not support specified input batch size.
-#endif
-#if UNITS_PER_SG_READ <= 0 || RESPONSES_PER_SG_EXEC <= 0 || UNITS_PER_CHUNK <= 0 || UNITS_PER_SG_READ % RESPONSES_PER_SG_EXEC != 0 || RESPONSES_PER_SG_EXEC % UNITS_PER_CHUNK != 0
- #error Kernel does not support specified number of responses processed by single sub-group.
-#endif
-#if IN_CHUNK_PREFETCH_SIZE <= 0 || FILTER_CHUNK_PREFETCH_SIZE <= 0 || (IN_CHUNK_PREFETCH_SIZE * RESPONSES_PER_SG_EXEC) % FILTER_CHUNK_PREFETCH_SIZE != 0
- #error Kernel does not support specified prefetch sizes.
-#endif
-REQD_SUB_GROUP_SIZE(SUB_GROUP_SIZE)
-__attribute__((reqd_work_group_size(SUB_GROUP_SIZE, 1, 1)))
-KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
- const __global UNIT_TYPE* input,
- __global UNIT_TYPE* output,
- const __global UNIT_TYPE* weight
-#if BIAS_TERM
- , __global UNIT_TYPE* bias)
-#else
- )
-#endif
-{
- const uint input_byte_size = INPUT0_ELEMENTS_COUNT * UNIT_BYTE_SIZE;
- const uint output_size = FILTER_OFM_NUM;
- const uint sg_elem_id = get_sub_group_local_id();
- const uint sg_id = get_group_id(0);
- const uint input_base = 0;
- const uint filter_base = sg_id * input_byte_size * RESPONSES_PER_SG_EXEC;
- const uint output_base_id = sg_id * RESPONSES_PER_SG_EXEC + sg_elem_id;
-#if BIAS_TERM
- const uint bias_base_id = output_base_id;
-#endif
- const uint sg_elem_offset = sg_elem_id * CHUNK_BYTE_SIZE;
- CHUNK_TYPE acc = 0;
- uint input_offset = input_base;
- uint filter_offset = filter_base;
- while (input_offset + IN_CHUNK_PREFETCH_SIZE * BYTES_PER_SG_READ <= input_byte_size)
- {
- CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
-#if IN_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 8)
- {
- CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
- input_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#elif IN_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 4)
- {
- CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
- input_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#elif IN_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 2)
- {
- CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
- input_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#else
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_SIZE; input_val_idx += 1)
- {
- CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
- input_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
-#endif
- unroll_for(uint elem_base_idx = 0; elem_base_idx < IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
- {
- CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
-#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 8)
- {
- CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
- filter_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 4)
- {
- CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
- filter_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 2)
- {
- CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
- filter_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#else
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; filter_val_idx += 1)
- {
- CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
- filter_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#endif
- unroll_for (uint filter_val_idx = 0; filter_val_idx < FILTER_CHUNK_PREFETCH_SIZE; ++filter_val_idx)
- {
- const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
-#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (sg_elem_id < SUB_GROUP_SIZE / 4
- ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ)))
- : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
- ? (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ)));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ))
- : (SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
- UNIT_TYPE rearranged_input = SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ);
-#else
- #error Selected RESPONSES_PER_SG_EXEC is not supported.
-#endif
- acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
- }
- }
- }
-#define INPUT0_ELEMENTS_REMAINDER (INPUT0_ELEMENTS_COUNT % (IN_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ))
-#define IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE ((INPUT0_ELEMENTS_REMAINDER + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ)
-#if INPUT0_ELEMENTS_REMAINDER != 0
- {
- CHUNK_TYPE input_val[IN_CHUNK_PREFETCH_SIZE];
- #if IN_CHUNK_PREFETCH_SIZE % 8 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 8 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 16)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 8)
- {
- CHUNK_VEC8_TYPE input_vals = ALIGNED_BLOCK_READ8(input, input_offset + 8 * sg_elem_offset);
- input_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #elif IN_CHUNK_PREFETCH_SIZE % 4 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 4 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 8)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 4)
- {
- CHUNK_VEC4_TYPE input_vals = ALIGNED_BLOCK_READ4(input, input_offset + 4 * sg_elem_offset);
- input_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #elif IN_CHUNK_PREFETCH_SIZE % 2 == 0 && (IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE % 2 == 0 || IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE >= 4)
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 2)
- {
- CHUNK_VEC2_TYPE input_vals = ALIGNED_BLOCK_READ2(input, input_offset + 2 * sg_elem_offset);
- input_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #else
- unroll_for(uint input_val_idx = 0; input_val_idx < IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE; input_val_idx += 1)
- {
- CHUNK_VEC1_TYPE input_vals = ALIGNED_BLOCK_READ1(input, input_offset + sg_elem_offset);
- input_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(input_val, input_val_idx, input_vals);
- }
- #endif
- unroll_for(uint elem_base_idx = 0; elem_base_idx < INPUT0_ELEMENTS_REMAINDER; elem_base_idx += FILTER_CHUNK_PREFETCH_SIZE * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC)
- {
- const uint filter_chunk_remainder_size = ((INPUT0_ELEMENTS_REMAINDER - elem_base_idx) * RESPONSES_PER_SG_EXEC + UNITS_PER_SG_READ - 1) / UNITS_PER_SG_READ;
- const uint filter_chunk_prefetch_req_size = filter_chunk_remainder_size < FILTER_CHUNK_PREFETCH_SIZE ? filter_chunk_remainder_size : FILTER_CHUNK_PREFETCH_SIZE;
- CHUNK_TYPE filter_val[FILTER_CHUNK_PREFETCH_SIZE];
-#if FILTER_CHUNK_PREFETCH_SIZE % 8 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 8)
- {
- CHUNK_VEC8_TYPE filter_vals = ALIGNED_BLOCK_READ8(weight, filter_offset + 8 * sg_elem_offset);
- filter_offset += 8 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 4 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 4)
- {
- CHUNK_VEC4_TYPE filter_vals = ALIGNED_BLOCK_READ4(weight, filter_offset + 4 * sg_elem_offset);
- filter_offset += 4 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#elif FILTER_CHUNK_PREFETCH_SIZE % 2 == 0
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 2)
- {
- CHUNK_VEC2_TYPE filter_vals = ALIGNED_BLOCK_READ2(weight, filter_offset + 2 * sg_elem_offset);
- filter_offset += 2 * BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#else
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; filter_val_idx += 1)
- {
- CHUNK_VEC1_TYPE filter_vals = ALIGNED_BLOCK_READ1(weight, filter_offset + sg_elem_offset);
- filter_offset += BYTES_PER_SG_READ;
- EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY(filter_val, filter_val_idx, filter_vals);
- }
-#endif
- unroll_for (uint filter_val_idx = 0; filter_val_idx < filter_chunk_prefetch_req_size; ++filter_val_idx)
- {
- const uint input_base_elem_idx = elem_base_idx + filter_val_idx * UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC;
-#if UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 4
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (sg_elem_id < SUB_GROUP_SIZE / 4
- ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO))
- : (sg_elem_id < 3 * SUB_GROUP_SIZE / 4
- ? (input_base_elem_idx + 2 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 2) / UNITS_PER_SG_READ], (input_base_elem_idx + 2) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 3 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 3) / UNITS_PER_SG_READ], (input_base_elem_idx + 3) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO));
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 2
- UNIT_TYPE rearranged_input = sg_elem_id < SUB_GROUP_SIZE / 2
- ? (input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO)
- : (input_base_elem_idx + 1 < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[(input_base_elem_idx + 1) / UNITS_PER_SG_READ], (input_base_elem_idx + 1) % UNITS_PER_SG_READ) : UNIT_VAL_ZERO);
-#elif UNITS_PER_SG_READ / RESPONSES_PER_SG_EXEC == 1
- UNIT_TYPE rearranged_input = input_base_elem_idx < INPUT0_ELEMENTS_REMAINDER ? SG_UNIT_SELECT(input_val[input_base_elem_idx / UNITS_PER_SG_READ], input_base_elem_idx % UNITS_PER_SG_READ) : UNIT_VAL_ZERO;
-#else
- #error Selected RESPONSES_PER_SG_EXEC is not supported.
-#endif
- acc = AS_CHUNK(fma(rearranged_input, AS_UNITS(filter_val[filter_val_idx]), AS_UNITS(acc)));
- }
- }
- }
-#endif
-#undef INPUT0_ELEMENTS_REMAINDER
-#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
- CHUNK_TYPE reduced_acc = acc;
- CHUNK_TYPE zero = 0;
- for (uint sg_reduce_offset = SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ;
- sg_reduce_offset < SUB_GROUP_SIZE;
- sg_reduce_offset += SUB_GROUP_SIZE * RESPONSES_PER_SG_EXEC / UNITS_PER_SG_READ)
- {
- reduced_acc = AS_CHUNK(AS_UNITS(reduced_acc) + AS_UNITS(_sub_group_shuffle_down(acc, zero, sg_reduce_offset)));
- }
- const uint expanded_acc_size = (RESPONSES_PER_SG_EXEC + SUB_GROUP_SIZE - 1) / SUB_GROUP_SIZE;
- unroll_for (uint expanded_acc_idx = 0; expanded_acc_idx < expanded_acc_size; ++expanded_acc_idx)
- {
- const uint output_id = output_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
-#if BIAS_TERM
- const uint bias_id = bias_base_id + expanded_acc_idx * SUB_GROUP_SIZE;
-#endif
- UNIT_TYPE expanded_acc = SG_UNIT_SELECT(reduced_acc, expanded_acc_idx * SUB_GROUP_SIZE + sg_elem_id);
- if (output_id < output_size)
- {
-#if BIAS_TERM
- expanded_acc += bias[bias_id];
-#endif
- output[output_id] = ACTIVATION(expanded_acc, ACTIVATION_PARAMS);
- }
- }
-}
-#undef CONCAT_TOKEN_HANDLER1
-#undef CONCAT_TOKEN
-#undef CVT_UNIT
-#undef CHUNK_UNITS_TYPE
-#undef AS_CHUNK
-#undef AS_UNITS
-#undef CHUNK_UNIT_SELECT
-#undef SG_UNIT_SELECT
-#undef CHUNK_VEC1_TYPE
-#undef CHUNK_VEC2_TYPE
-#undef CHUNK_VEC4_TYPE
-#undef CHUNK_VEC8_TYPE
-#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#undef ALIGNED_BLOCK_READ1
-#undef ALIGNED_BLOCK_READ2
-#undef ALIGNED_BLOCK_READ4
-#undef ALIGNED_BLOCK_READ8
-#undef ALIGNED_READ1
-#undef ALIGNED_READ2
-#undef ALIGNED_READ4
-#undef ALIGNED_READ8
-#undef ALIGNED_BLOCK_WRITE1
-#undef ALIGNED_BLOCK_WRITE2
-#undef ALIGNED_BLOCK_WRITE4
-#undef ALIGNED_BLOCK_WRITE8
-#undef ALIGNED_WRITE1
-#undef ALIGNED_WRITE2
-#undef ALIGNED_WRITE4
-#undef ALIGNED_WRITE8
-#ifdef CONCAT_TOKEN_HANDLER1
-#undef CONCAT_TOKEN_HANDLER1
-#endif
-#ifdef CONCAT_TOKEN
-#undef CONCAT_TOKEN
-#endif
-#ifdef CVT_UNIT
-#undef CVT_UNIT
-#endif
-#ifdef CVT_UNIT
-#undef CVT_UNIT
-#endif
-#ifdef CHUNK_UNITS_TYPE
-#undef CHUNK_UNITS_TYPE
-#endif
-#ifdef CHUNK_UNITS_TYPE
-#undef CHUNK_UNITS_TYPE
-#endif
-#ifdef AS_CHUNK
-#undef AS_CHUNK
-#endif
-#ifdef AS_UNITS
-#undef AS_UNITS
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef CHUNK_UNIT_SELECT
-#undef CHUNK_UNIT_SELECT
-#endif
-#ifdef SG_UNIT_SELECT
-#undef SG_UNIT_SELECT
-#endif
-#ifdef CHUNK_VEC1_TYPE
-#undef CHUNK_VEC1_TYPE
-#endif
-#ifdef CHUNK_VEC2_TYPE
-#undef CHUNK_VEC2_TYPE
-#endif
-#ifdef CHUNK_VEC4_TYPE
-#undef CHUNK_VEC4_TYPE
-#endif
-#ifdef CHUNK_VEC8_TYPE
-#undef CHUNK_VEC8_TYPE
-#endif
-#ifdef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC1_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC2_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC4_TO_CHUNK_ARRAY
-#endif
-#ifdef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#undef EXPAND_CHUNK_VEC8_TO_CHUNK_ARRAY
-#endif
-#ifdef ALIGNED_BLOCK_READ1
-#undef ALIGNED_BLOCK_READ1
-#endif
-#ifdef ALIGNED_BLOCK_READ2
-#undef ALIGNED_BLOCK_READ2
-#endif
-#ifdef ALIGNED_BLOCK_READ4
-#undef ALIGNED_BLOCK_READ4
-#endif
-#ifdef ALIGNED_BLOCK_READ8
-#undef ALIGNED_BLOCK_READ8
-#endif
-#ifdef ALIGNED_READ1
-#undef ALIGNED_READ1
-#endif
-#ifdef ALIGNED_READ2
-#undef ALIGNED_READ2
-#endif
-#ifdef ALIGNED_READ4
-#undef ALIGNED_READ4
-#endif
-#ifdef ALIGNED_READ8
-#undef ALIGNED_READ8
-#endif
-#ifdef ALIGNED_BLOCK_WRITE1
-#undef ALIGNED_BLOCK_WRITE1
-#endif
-#ifdef ALIGNED_BLOCK_WRITE2
-#undef ALIGNED_BLOCK_WRITE2
-#endif
-#ifdef ALIGNED_BLOCK_WRITE4
-#undef ALIGNED_BLOCK_WRITE4
-#endif
-#ifdef ALIGNED_BLOCK_WRITE8
-#undef ALIGNED_BLOCK_WRITE8
-#endif
-#ifdef ALIGNED_WRITE1
-#undef ALIGNED_WRITE1
-#endif
-#ifdef ALIGNED_WRITE2
-#undef ALIGNED_WRITE2
-#endif
-#ifdef ALIGNED_WRITE4
-#undef ALIGNED_WRITE4
-#endif
-#ifdef ALIGNED_WRITE8
-#undef ALIGNED_WRITE8
-#endif
-#ifdef INPUT0_ELEMENTS_REMAINDER
-#undef INPUT0_ELEMENTS_REMAINDER
-#endif
-#ifdef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
-#undef IN_CHUNK_PREFETCH_REMAINDER_REQ_SIZE
-#endif
-#undef KERNEL
-#undef FUNC
-#undef FUNC_CALL
-#undef CONST_ARRAY_DECL
-#undef CONST_ARRAY_REF
-#ifdef FP64_SUPPORTED
-#undef FP64_SUPPORTED
-#endif
-#ifdef FP16_SUPPORTED
-#undef FP16_SUPPORTED
-#endif
-#ifdef FP16_UNIT_USED
-#undef FP16_UNIT_USED
-#endif
-#ifdef INT8_UNIT_USED
-#undef INT8_UNIT_USED
-#endif
-#ifdef INT32_UNIT_USED
-#undef INT32_UNIT_USED
-#endif
-#ifdef INT64_UNIT_USED
-#undef INT64_UNIT_USED
-#endif
-#ifdef UINT8_UNIT_USED
-#undef UINT8_UNIT_USED
-#endif
-#ifdef UINT32_UNIT_USED
-#undef UINT32_UNIT_USED
-#endif
-#ifdef UNIT_TYPE
-#undef UNIT_TYPE
-#endif
-#ifdef UNIT_VAL_MAX
-#undef UNIT_VAL_MAX
-#endif
-#ifdef UNIT_VAL_MIN
-#undef UNIT_VAL_MIN
-#endif
-#ifdef UNIT_VAL_ONE
-#undef UNIT_VAL_ONE
-#endif
-#ifdef UNIT_VAL_ZERO
-#undef UNIT_VAL_ZERO
-#endif
-#ifdef TO_UNIT_TYPE
-#undef TO_UNIT_TYPE
-#endif
-#ifdef TO_UNIT_TYPE_SAT
-#undef TO_UNIT_TYPE_SAT
-#endif
-#ifdef AS_UNIT_TYPE
-#undef AS_UNIT_TYPE
-#endif
-#ifdef UNIT_MAX_FUNC
-#undef UNIT_MAX_FUNC
-#endif
-#ifdef UNIT_MIN_FUNC
-#undef UNIT_MIN_FUNC
-#endif
-#ifdef UNIT_ABS_FUNC
-#undef UNIT_ABS_FUNC
-#endif
-#ifdef UNIT_TYPE_SIZE
-#undef UNIT_TYPE_SIZE
-#endif
-#ifdef UNIT_IS_FP
-#undef UNIT_IS_FP
-#endif
-#ifdef NL_M_0
-#undef NL_M_0
-#endif
-#ifdef NL_N_0
-#undef NL_N_0
-#endif
-#ifdef ACTIVATION_FUNC_0_TYPE
-#undef ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_MAX
-#undef ACTIVATION_FUNC_0_VAL_MAX
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_MIN
-#undef ACTIVATION_FUNC_0_VAL_MIN
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_ONE
-#undef ACTIVATION_FUNC_0_VAL_ONE
-#endif
-#ifdef ACTIVATION_FUNC_0_VAL_ZERO
-#undef ACTIVATION_FUNC_0_VAL_ZERO
-#endif
-#ifdef TO_ACTIVATION_FUNC_0_TYPE
-#undef TO_ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef TO_ACTIVATION_FUNC_0_TYPE_SAT
-#undef TO_ACTIVATION_FUNC_0_TYPE_SAT
-#endif
-#ifdef AS_ACTIVATION_FUNC_0_TYPE
-#undef AS_ACTIVATION_FUNC_0_TYPE
-#endif
-#ifdef ACTIVATION_FUNC_0_MAX_FUNC
-#undef ACTIVATION_FUNC_0_MAX_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_MIN_FUNC
-#undef ACTIVATION_FUNC_0_MIN_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_ABS_FUNC
-#undef ACTIVATION_FUNC_0_ABS_FUNC
-#endif
-#ifdef ACTIVATION_FUNC_0_TYPE_SIZE
-#undef ACTIVATION_FUNC_0_TYPE_SIZE
-#endif
-#ifdef ACTIVATION_FUNC_0_IS_FP
-#undef ACTIVATION_FUNC_0_IS_FP
-#endif
-#ifdef ACTIVATION_PARAMS_0
-#undef ACTIVATION_PARAMS_0
-#endif
-#ifdef ACTIVATION_FUNC_0
-#undef ACTIVATION_FUNC_0
-#endif
-#ifdef ACTIVATION_0
-#undef ACTIVATION_0
-#endif
-#ifdef ACTIVATION_PARAMS
-#undef ACTIVATION_PARAMS
-#endif
-#ifdef ACTIVATION
-#undef ACTIVATION
-#endif
-#ifdef INPUT0_SIZE_X
-#undef INPUT0_SIZE_X
-#endif
-#ifdef INPUT0_SIZE_Y
-#undef INPUT0_SIZE_Y
-#endif
-#ifdef INPUT0_SIZE_Z
-#undef INPUT0_SIZE_Z
-#endif
-#ifdef INPUT0_SIZE_W
-#undef INPUT0_SIZE_W
-#endif
-#ifdef INPUT0_SIZE_U
-#undef INPUT0_SIZE_U
-#endif
-#ifdef INPUT0_SIZE_V
-#undef INPUT0_SIZE_V
-#endif
-#ifdef INPUT0_FEATURE_NUM
-#undef INPUT0_FEATURE_NUM
-#endif
-#ifdef INPUT0_BATCH_NUM
-#undef INPUT0_BATCH_NUM
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_X
-#undef INPUT0_PAD_BEFORE_SIZE_X
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_Y
-#undef INPUT0_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_Z
-#undef INPUT0_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_W
-#undef INPUT0_PAD_BEFORE_SIZE_W
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_U
-#undef INPUT0_PAD_BEFORE_SIZE_U
-#endif
-#ifdef INPUT0_PAD_BEFORE_SIZE_V
-#undef INPUT0_PAD_BEFORE_SIZE_V
-#endif
-#ifdef INPUT0_PAD_BEFORE_FEATURE_NUM
-#undef INPUT0_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef INPUT0_PAD_BEFORE_BATCH_NUM
-#undef INPUT0_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_X
-#undef INPUT0_PAD_AFTER_SIZE_X
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_Y
-#undef INPUT0_PAD_AFTER_SIZE_Y
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_Z
-#undef INPUT0_PAD_AFTER_SIZE_Z
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_W
-#undef INPUT0_PAD_AFTER_SIZE_W
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_U
-#undef INPUT0_PAD_AFTER_SIZE_U
-#endif
-#ifdef INPUT0_PAD_AFTER_SIZE_V
-#undef INPUT0_PAD_AFTER_SIZE_V
-#endif
-#ifdef INPUT0_PAD_AFTER_FEATURE_NUM
-#undef INPUT0_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef INPUT0_PAD_AFTER_BATCH_NUM
-#undef INPUT0_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef INPUT0_X_PITCH
-#undef INPUT0_X_PITCH
-#endif
-#ifdef INPUT0_Y_PITCH
-#undef INPUT0_Y_PITCH
-#endif
-#ifdef INPUT0_Z_PITCH
-#undef INPUT0_Z_PITCH
-#endif
-#ifdef INPUT0_W_PITCH
-#undef INPUT0_W_PITCH
-#endif
-#ifdef INPUT0_U_PITCH
-#undef INPUT0_U_PITCH
-#endif
-#ifdef INPUT0_V_PITCH
-#undef INPUT0_V_PITCH
-#endif
-#ifdef INPUT0_FEATURE_PITCH
-#undef INPUT0_FEATURE_PITCH
-#endif
-#ifdef INPUT0_BATCH_PITCH
-#undef INPUT0_BATCH_PITCH
-#endif
-#ifdef INPUT0_GET_INDEX_SAFE
-#undef INPUT0_GET_INDEX_SAFE
-#endif
-#ifdef INPUT0_GET_INDEX
-#undef INPUT0_GET_INDEX
-#endif
-#ifdef INPUT0_GET_INDEX_RAW
-#undef INPUT0_GET_INDEX_RAW
-#endif
-#ifdef INPUT0_VIEW_OFFSET
-#undef INPUT0_VIEW_OFFSET
-#endif
-#ifdef INPUT0_LENGTH
-#undef INPUT0_LENGTH
-#endif
-#ifdef INPUT0_DIMS
-#undef INPUT0_DIMS
-#endif
-#ifdef INPUT0_SIMPLE
-#undef INPUT0_SIMPLE
-#endif
-#ifdef INPUT0_GROUPED
-#undef INPUT0_GROUPED
-#endif
-#ifdef INPUT0_LAYOUT_BFYX
-#undef INPUT0_LAYOUT_BFYX
-#endif
-#ifdef INPUT0_TYPE
-#undef INPUT0_TYPE
-#endif
-#ifdef INPUT0_VAL_MAX
-#undef INPUT0_VAL_MAX
-#endif
-#ifdef INPUT0_VAL_MIN
-#undef INPUT0_VAL_MIN
-#endif
-#ifdef INPUT0_VAL_ONE
-#undef INPUT0_VAL_ONE
-#endif
-#ifdef INPUT0_VAL_ZERO
-#undef INPUT0_VAL_ZERO
-#endif
-#ifdef TO_INPUT0_TYPE
-#undef TO_INPUT0_TYPE
-#endif
-#ifdef TO_INPUT0_TYPE_SAT
-#undef TO_INPUT0_TYPE_SAT
-#endif
-#ifdef AS_INPUT0_TYPE
-#undef AS_INPUT0_TYPE
-#endif
-#ifdef INPUT0_MAX_FUNC
-#undef INPUT0_MAX_FUNC
-#endif
-#ifdef INPUT0_MIN_FUNC
-#undef INPUT0_MIN_FUNC
-#endif
-#ifdef INPUT0_ABS_FUNC
-#undef INPUT0_ABS_FUNC
-#endif
-#ifdef INPUT0_TYPE_SIZE
-#undef INPUT0_TYPE_SIZE
-#endif
-#ifdef INPUT0_IS_FP
-#undef INPUT0_IS_FP
-#endif
-#ifdef INPUT0_OFFSET
-#undef INPUT0_OFFSET
-#endif
-#ifdef INPUT0_SIZES_DATA
-#undef INPUT0_SIZES_DATA
-#endif
-#ifdef INPUT0_PITCHES
-#undef INPUT0_PITCHES
-#endif
-#ifdef INPUT0_PAD_BEFORE
-#undef INPUT0_PAD_BEFORE
-#endif
-#ifdef INPUT0_PAD_AFTER
-#undef INPUT0_PAD_AFTER
-#endif
-#ifdef OUTPUT_SIZE_X
-#undef OUTPUT_SIZE_X
-#endif
-#ifdef OUTPUT_SIZE_Y
-#undef OUTPUT_SIZE_Y
-#endif
-#ifdef OUTPUT_SIZE_Z
-#undef OUTPUT_SIZE_Z
-#endif
-#ifdef OUTPUT_SIZE_W
-#undef OUTPUT_SIZE_W
-#endif
-#ifdef OUTPUT_SIZE_U
-#undef OUTPUT_SIZE_U
-#endif
-#ifdef OUTPUT_SIZE_V
-#undef OUTPUT_SIZE_V
-#endif
-#ifdef OUTPUT_FEATURE_NUM
-#undef OUTPUT_FEATURE_NUM
-#endif
-#ifdef OUTPUT_BATCH_NUM
-#undef OUTPUT_BATCH_NUM
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_X
-#undef OUTPUT_PAD_BEFORE_SIZE_X
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_Y
-#undef OUTPUT_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_Z
-#undef OUTPUT_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_W
-#undef OUTPUT_PAD_BEFORE_SIZE_W
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_U
-#undef OUTPUT_PAD_BEFORE_SIZE_U
-#endif
-#ifdef OUTPUT_PAD_BEFORE_SIZE_V
-#undef OUTPUT_PAD_BEFORE_SIZE_V
-#endif
-#ifdef OUTPUT_PAD_BEFORE_FEATURE_NUM
-#undef OUTPUT_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef OUTPUT_PAD_BEFORE_BATCH_NUM
-#undef OUTPUT_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_X
-#undef OUTPUT_PAD_AFTER_SIZE_X
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_Y
-#undef OUTPUT_PAD_AFTER_SIZE_Y
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_Z
-#undef OUTPUT_PAD_AFTER_SIZE_Z
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_W
-#undef OUTPUT_PAD_AFTER_SIZE_W
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_U
-#undef OUTPUT_PAD_AFTER_SIZE_U
-#endif
-#ifdef OUTPUT_PAD_AFTER_SIZE_V
-#undef OUTPUT_PAD_AFTER_SIZE_V
-#endif
-#ifdef OUTPUT_PAD_AFTER_FEATURE_NUM
-#undef OUTPUT_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef OUTPUT_PAD_AFTER_BATCH_NUM
-#undef OUTPUT_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef OUTPUT_X_PITCH
-#undef OUTPUT_X_PITCH
-#endif
-#ifdef OUTPUT_Y_PITCH
-#undef OUTPUT_Y_PITCH
-#endif
-#ifdef OUTPUT_Z_PITCH
-#undef OUTPUT_Z_PITCH
-#endif
-#ifdef OUTPUT_W_PITCH
-#undef OUTPUT_W_PITCH
-#endif
-#ifdef OUTPUT_U_PITCH
-#undef OUTPUT_U_PITCH
-#endif
-#ifdef OUTPUT_V_PITCH
-#undef OUTPUT_V_PITCH
-#endif
-#ifdef OUTPUT_FEATURE_PITCH
-#undef OUTPUT_FEATURE_PITCH
-#endif
-#ifdef OUTPUT_BATCH_PITCH
-#undef OUTPUT_BATCH_PITCH
-#endif
-#ifdef OUTPUT_GET_INDEX_SAFE
-#undef OUTPUT_GET_INDEX_SAFE
-#endif
-#ifdef OUTPUT_GET_INDEX
-#undef OUTPUT_GET_INDEX
-#endif
-#ifdef OUTPUT_GET_INDEX_RAW
-#undef OUTPUT_GET_INDEX_RAW
-#endif
-#ifdef OUTPUT_VIEW_OFFSET
-#undef OUTPUT_VIEW_OFFSET
-#endif
-#ifdef OUTPUT_LENGTH
-#undef OUTPUT_LENGTH
-#endif
-#ifdef OUTPUT_DIMS
-#undef OUTPUT_DIMS
-#endif
-#ifdef OUTPUT_SIMPLE
-#undef OUTPUT_SIMPLE
-#endif
-#ifdef OUTPUT_GROUPED
-#undef OUTPUT_GROUPED
-#endif
-#ifdef OUTPUT_LAYOUT_BF
-#undef OUTPUT_LAYOUT_BF
-#endif
-#ifdef OUTPUT_TYPE
-#undef OUTPUT_TYPE
-#endif
-#ifdef OUTPUT_VAL_MAX
-#undef OUTPUT_VAL_MAX
-#endif
-#ifdef OUTPUT_VAL_MIN
-#undef OUTPUT_VAL_MIN
-#endif
-#ifdef OUTPUT_VAL_ONE
-#undef OUTPUT_VAL_ONE
-#endif
-#ifdef OUTPUT_VAL_ZERO
-#undef OUTPUT_VAL_ZERO
-#endif
-#ifdef TO_OUTPUT_TYPE
-#undef TO_OUTPUT_TYPE
-#endif
-#ifdef TO_OUTPUT_TYPE_SAT
-#undef TO_OUTPUT_TYPE_SAT
-#endif
-#ifdef AS_OUTPUT_TYPE
-#undef AS_OUTPUT_TYPE
-#endif
-#ifdef OUTPUT_MAX_FUNC
-#undef OUTPUT_MAX_FUNC
-#endif
-#ifdef OUTPUT_MIN_FUNC
-#undef OUTPUT_MIN_FUNC
-#endif
-#ifdef OUTPUT_ABS_FUNC
-#undef OUTPUT_ABS_FUNC
-#endif
-#ifdef OUTPUT_TYPE_SIZE
-#undef OUTPUT_TYPE_SIZE
-#endif
-#ifdef OUTPUT_IS_FP
-#undef OUTPUT_IS_FP
-#endif
-#ifdef OUTPUT_OFFSET
-#undef OUTPUT_OFFSET
-#endif
-#ifdef OUTPUT_SIZES_DATA
-#undef OUTPUT_SIZES_DATA
-#endif
-#ifdef OUTPUT_PITCHES
-#undef OUTPUT_PITCHES
-#endif
-#ifdef OUTPUT_PAD_BEFORE
-#undef OUTPUT_PAD_BEFORE
-#endif
-#ifdef OUTPUT_PAD_AFTER
-#undef OUTPUT_PAD_AFTER
-#endif
-#ifdef OPTIONAL_SHAPE_INFO_ARG
-#undef OPTIONAL_SHAPE_INFO_ARG
-#endif
-#ifdef OPTIONAL_SHAPE_INFO_TENSOR
-#undef OPTIONAL_SHAPE_INFO_TENSOR
-#endif
-#ifdef FILTER_SIZE_X
-#undef FILTER_SIZE_X
-#endif
-#ifdef FILTER_SIZE_Y
-#undef FILTER_SIZE_Y
-#endif
-#ifdef FILTER_SIZE_Z
-#undef FILTER_SIZE_Z
-#endif
-#ifdef FILTER_IFM_NUM
-#undef FILTER_IFM_NUM
-#endif
-#ifdef FILTER_OFM_NUM
-#undef FILTER_OFM_NUM
-#endif
-#ifdef FILTER_GROUPS_NUM
-#undef FILTER_GROUPS_NUM
-#endif
-#ifdef FILTER_X_PITCH
-#undef FILTER_X_PITCH
-#endif
-#ifdef FILTER_Y_PITCH
-#undef FILTER_Y_PITCH
-#endif
-#ifdef FILTER_Z_PITCH
-#undef FILTER_Z_PITCH
-#endif
-#ifdef FILTER_IFM_PITCH
-#undef FILTER_IFM_PITCH
-#endif
-#ifdef FILTER_OFM_PITCH
-#undef FILTER_OFM_PITCH
-#endif
-#ifdef FILTER_GROUPS_PITCH
-#undef FILTER_GROUPS_PITCH
-#endif
-#ifdef FILTER_VIEW_OFFSET
-#undef FILTER_VIEW_OFFSET
-#endif
-#ifdef FILTER_LENGTH
-#undef FILTER_LENGTH
-#endif
-#ifdef FILTER_DIMS
-#undef FILTER_DIMS
-#endif
-#ifdef FILTER_SIMPLE
-#undef FILTER_SIMPLE
-#endif
-#ifdef FILTER_GROUPED
-#undef FILTER_GROUPED
-#endif
-#ifdef FILTER_LAYOUT_OS_I_OSV16
-#undef FILTER_LAYOUT_OS_I_OSV16
-#endif
-#ifdef FILTER_TYPE
-#undef FILTER_TYPE
-#endif
-#ifdef FILTER_VAL_MAX
-#undef FILTER_VAL_MAX
-#endif
-#ifdef FILTER_VAL_MIN
-#undef FILTER_VAL_MIN
-#endif
-#ifdef FILTER_VAL_ONE
-#undef FILTER_VAL_ONE
-#endif
-#ifdef FILTER_VAL_ZERO
-#undef FILTER_VAL_ZERO
-#endif
-#ifdef TO_FILTER_TYPE
-#undef TO_FILTER_TYPE
-#endif
-#ifdef TO_FILTER_TYPE_SAT
-#undef TO_FILTER_TYPE_SAT
-#endif
-#ifdef AS_FILTER_TYPE
-#undef AS_FILTER_TYPE
-#endif
-#ifdef FILTER_MAX_FUNC
-#undef FILTER_MAX_FUNC
-#endif
-#ifdef FILTER_MIN_FUNC
-#undef FILTER_MIN_FUNC
-#endif
-#ifdef FILTER_ABS_FUNC
-#undef FILTER_ABS_FUNC
-#endif
-#ifdef FILTER_TYPE_SIZE
-#undef FILTER_TYPE_SIZE
-#endif
-#ifdef FILTER_IS_FP
-#undef FILTER_IS_FP
-#endif
-#ifdef FILTER_OFFSET
-#undef FILTER_OFFSET
-#endif
-#ifdef FILTER_SIZES_DATA
-#undef FILTER_SIZES_DATA
-#endif
-#ifdef FILTER_PITCHES
-#undef FILTER_PITCHES
-#endif
-#ifdef FILTER_PAD_BEFORE
-#undef FILTER_PAD_BEFORE
-#endif
-#ifdef FILTER_PAD_AFTER
-#undef FILTER_PAD_AFTER
-#endif
-#ifdef BIAS_TERM
-#undef BIAS_TERM
-#endif
-#ifdef BIAS_SIZE_X
-#undef BIAS_SIZE_X
-#endif
-#ifdef BIAS_SIZE_Y
-#undef BIAS_SIZE_Y
-#endif
-#ifdef BIAS_SIZE_Z
-#undef BIAS_SIZE_Z
-#endif
-#ifdef BIAS_SIZE_W
-#undef BIAS_SIZE_W
-#endif
-#ifdef BIAS_SIZE_U
-#undef BIAS_SIZE_U
-#endif
-#ifdef BIAS_SIZE_V
-#undef BIAS_SIZE_V
-#endif
-#ifdef BIAS_FEATURE_NUM
-#undef BIAS_FEATURE_NUM
-#endif
-#ifdef BIAS_BATCH_NUM
-#undef BIAS_BATCH_NUM
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_X
-#undef BIAS_PAD_BEFORE_SIZE_X
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_Y
-#undef BIAS_PAD_BEFORE_SIZE_Y
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_Z
-#undef BIAS_PAD_BEFORE_SIZE_Z
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_W
-#undef BIAS_PAD_BEFORE_SIZE_W
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_U
-#undef BIAS_PAD_BEFORE_SIZE_U
-#endif
-#ifdef BIAS_PAD_BEFORE_SIZE_V
-#undef BIAS_PAD_BEFORE_SIZE_V
-#endif
-#ifdef BIAS_PAD_BEFORE_FEATURE_NUM
-#undef BIAS_PAD_BEFORE_FEATURE_NUM
-#endif
-#ifdef BIAS_PAD_BEFORE_BATCH_NUM
-#undef BIAS_PAD_BEFORE_BATCH_NUM
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_X
-#undef BIAS_PAD_AFTER_SIZE_X
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_Y
-#undef BIAS_PAD_AFTER_SIZE_Y
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_Z
-#undef BIAS_PAD_AFTER_SIZE_Z
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_W
-#undef BIAS_PAD_AFTER_SIZE_W
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_U
-#undef BIAS_PAD_AFTER_SIZE_U
-#endif
-#ifdef BIAS_PAD_AFTER_SIZE_V
-#undef BIAS_PAD_AFTER_SIZE_V
-#endif
-#ifdef BIAS_PAD_AFTER_FEATURE_NUM
-#undef BIAS_PAD_AFTER_FEATURE_NUM
-#endif
-#ifdef BIAS_PAD_AFTER_BATCH_NUM
-#undef BIAS_PAD_AFTER_BATCH_NUM
-#endif
-#ifdef BIAS_X_PITCH
-#undef BIAS_X_PITCH
-#endif
-#ifdef BIAS_Y_PITCH
-#undef BIAS_Y_PITCH
-#endif
-#ifdef BIAS_Z_PITCH
-#undef BIAS_Z_PITCH
-#endif
-#ifdef BIAS_W_PITCH
-#undef BIAS_W_PITCH
-#endif
-#ifdef BIAS_U_PITCH
-#undef BIAS_U_PITCH
-#endif
-#ifdef BIAS_V_PITCH
-#undef BIAS_V_PITCH
-#endif
-#ifdef BIAS_FEATURE_PITCH
-#undef BIAS_FEATURE_PITCH
-#endif
-#ifdef BIAS_BATCH_PITCH
-#undef BIAS_BATCH_PITCH
-#endif
-#ifdef BIAS_GET_INDEX_SAFE
-#undef BIAS_GET_INDEX_SAFE
-#endif
-#ifdef BIAS_GET_INDEX
-#undef BIAS_GET_INDEX
-#endif
-#ifdef BIAS_GET_INDEX_RAW
-#undef BIAS_GET_INDEX_RAW
-#endif
-#ifdef BIAS_VIEW_OFFSET
-#undef BIAS_VIEW_OFFSET
-#endif
-#ifdef BIAS_LENGTH
-#undef BIAS_LENGTH
-#endif
-#ifdef BIAS_DIMS
-#undef BIAS_DIMS
-#endif
-#ifdef BIAS_SIMPLE
-#undef BIAS_SIMPLE
-#endif
-#ifdef BIAS_GROUPED
-#undef BIAS_GROUPED
-#endif
-#ifdef BIAS_LAYOUT_BF
-#undef BIAS_LAYOUT_BF
-#endif
-#ifdef BIAS_TYPE
-#undef BIAS_TYPE
-#endif
-#ifdef BIAS_VAL_MAX
-#undef BIAS_VAL_MAX
-#endif
-#ifdef BIAS_VAL_MIN
-#undef BIAS_VAL_MIN
-#endif
-#ifdef BIAS_VAL_ONE
-#undef BIAS_VAL_ONE
-#endif
-#ifdef BIAS_VAL_ZERO
-#undef BIAS_VAL_ZERO
-#endif
-#ifdef TO_BIAS_TYPE
-#undef TO_BIAS_TYPE
-#endif
-#ifdef TO_BIAS_TYPE_SAT
-#undef TO_BIAS_TYPE_SAT
-#endif
-#ifdef AS_BIAS_TYPE
-#undef AS_BIAS_TYPE
-#endif
-#ifdef BIAS_MAX_FUNC
-#undef BIAS_MAX_FUNC
-#endif
-#ifdef BIAS_MIN_FUNC
-#undef BIAS_MIN_FUNC
-#endif
-#ifdef BIAS_ABS_FUNC
-#undef BIAS_ABS_FUNC
-#endif
-#ifdef BIAS_TYPE_SIZE
-#undef BIAS_TYPE_SIZE
-#endif
-#ifdef BIAS_IS_FP
-#undef BIAS_IS_FP
-#endif
-#ifdef BIAS_OFFSET
-#undef BIAS_OFFSET
-#endif
-#ifdef BIAS_SIZES_DATA
-#undef BIAS_SIZES_DATA
-#endif
-#ifdef BIAS_PITCHES
-#undef BIAS_PITCHES
-#endif
-#ifdef BIAS_PAD_BEFORE
-#undef BIAS_PAD_BEFORE
-#endif
-#ifdef BIAS_PAD_AFTER
-#undef BIAS_PAD_AFTER
-#endif
-#ifdef BIAS_PER_OUTPUT
-#undef BIAS_PER_OUTPUT
-#endif
-#ifdef BIAS_PER_OFM
-#undef BIAS_PER_OFM
-#endif
-#ifdef INPUT0_ELEMENTS_COUNT
-#undef INPUT0_ELEMENTS_COUNT
-#endif
-#ifdef SUB_GROUP_SIZE
-#undef SUB_GROUP_SIZE
-#endif
-#ifdef WORK_ITEMS_PER_BATCH
-#undef WORK_ITEMS_PER_BATCH
-#endif
-#ifdef UNIT_BYTE_SIZE
-#undef UNIT_BYTE_SIZE
-#endif
-#ifdef CHUNK_TYPE
-#undef CHUNK_TYPE
-#endif
-#ifdef CHUNK_BYTE_SIZE
-#undef CHUNK_BYTE_SIZE
-#endif
-#ifdef UNITS_PER_CHUNK
-#undef UNITS_PER_CHUNK
-#endif
-#ifdef BYTES_PER_SG_READ
-#undef BYTES_PER_SG_READ
-#endif
-#ifdef UNITS_PER_SG_READ
-#undef UNITS_PER_SG_READ
-#endif
-#ifdef RESPONSES_PER_SG_EXEC
-#undef RESPONSES_PER_SG_EXEC
-#endif
-#ifdef IN_CHUNK_PREFETCH_SIZE
-#undef IN_CHUNK_PREFETCH_SIZE
-#endif
-#ifdef FILTER_CHUNK_PREFETCH_SIZE
-#undef FILTER_CHUNK_PREFETCH_SIZE
-#endif
-
-//====================================================
 // Kernel template: reorder_data_fast_b1 
-// Kernel name: reorder_data_fast_b1_11762321333161727376_0
-#define KERNEL(name) __kernel void reorder_data_fast_b1_11762321333161727376_0
-#define FUNC(name)  _##name##_reorder_data_fast_b1_11762321333161727376_0
-#define FUNC_CALL(name)  _##name##_reorder_data_fast_b1_11762321333161727376_0
-#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_reorder_data_fast_b1_11762321333161727376_0 []
-#define CONST_ARRAY_REF(name)  _##name##_reorder_data_fast_b1_11762321333161727376_0
+// Kernel name: reorder_data_fast_b1_17182053592672782609_0
+#define KERNEL(name) __kernel void reorder_data_fast_b1_17182053592672782609_0
+#define FUNC(name)  _##name##_reorder_data_fast_b1_17182053592672782609_0
+#define FUNC_CALL(name)  _##name##_reorder_data_fast_b1_17182053592672782609_0
+#define CONST_ARRAY_DECL(name) __constant size_t  _##name##_reorder_data_fast_b1_17182053592672782609_0 []
+#define CONST_ARRAY_REF(name)  _##name##_reorder_data_fast_b1_17182053592672782609_0
 #define FP64_SUPPORTED 0
 #define FP16_SUPPORTED 1
 #define FP16_UNIT_USED 1
@@ -8206,7 +8206,7 @@ KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
 #define INPUT0_SIZE_W 1
 #define INPUT0_SIZE_U 1
 #define INPUT0_SIZE_V 1
-#define INPUT0_FEATURE_NUM 64
+#define INPUT0_FEATURE_NUM 32
 #define INPUT0_BATCH_NUM 1
 #define INPUT0_PAD_BEFORE_SIZE_X 0
 #define INPUT0_PAD_BEFORE_SIZE_Y 0
@@ -8231,12 +8231,12 @@ KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
 #define INPUT0_U_PITCH 1
 #define INPUT0_V_PITCH 1
 #define INPUT0_FEATURE_PITCH 1
-#define INPUT0_BATCH_PITCH 64
-#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
+#define INPUT0_BATCH_PITCH 32
+#define INPUT0_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 32)
 #define INPUT0_GET_INDEX(b, f, y, x) (0 + (f))
 #define INPUT0_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(INPUT0, b, f, y, x)
 #define INPUT0_VIEW_OFFSET 0
-#define INPUT0_LENGTH 64
+#define INPUT0_LENGTH 32
 #define INPUT0_DIMS 4
 #define INPUT0_SIMPLE 1
 #define INPUT0_GROUPED 0
@@ -8255,10 +8255,10 @@ KERNEL (fully_connected_gpu_bx_bs_f_bsv16_b1)(
 #define INPUT0_TYPE_SIZE 4
 #define INPUT0_IS_FP 1
 #define INPUT0_OFFSET 0
-#define INPUT0_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
+#define INPUT0_SIZES_DATA { 1,1,32,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define INPUT0_SIZES CONST_ARRAY_REF(INPUT0_SIZES)
-#define INPUT0_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
+#define INPUT0_PITCHES (size_t []){ 1,1,1,32,1,1,1,1,1, } 
 #define INPUT0_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define INPUT0_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_SIZE_X 1
@@ -8267,7 +8267,7 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_SIZE_W 1
 #define OUTPUT_SIZE_U 1
 #define OUTPUT_SIZE_V 1
-#define OUTPUT_FEATURE_NUM 64
+#define OUTPUT_FEATURE_NUM 32
 #define OUTPUT_BATCH_NUM 1
 #define OUTPUT_PAD_BEFORE_SIZE_X 0
 #define OUTPUT_PAD_BEFORE_SIZE_Y 0
@@ -8292,12 +8292,12 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_U_PITCH 1
 #define OUTPUT_V_PITCH 1
 #define OUTPUT_FEATURE_PITCH 1
-#define OUTPUT_BATCH_PITCH 64
-#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 64)
+#define OUTPUT_BATCH_PITCH 32
+#define OUTPUT_GET_INDEX_SAFE(b, f, y, x) ((0 + (f)) % 32)
 #define OUTPUT_GET_INDEX(b, f, y, x) (0 + (f))
 #define OUTPUT_GET_INDEX_RAW(b, f, y, x) GET_DATA_INDEX_RAW(OUTPUT, b, f, y, x)
 #define OUTPUT_VIEW_OFFSET 0
-#define OUTPUT_LENGTH 64
+#define OUTPUT_LENGTH 32
 #define OUTPUT_DIMS 4
 #define OUTPUT_SIMPLE 1
 #define OUTPUT_GROUPED 0
@@ -8316,10 +8316,10 @@ CONST_ARRAY_DECL(INPUT0_SIZES) = INPUT0_SIZES_DATA;
 #define OUTPUT_TYPE_SIZE 2
 #define OUTPUT_IS_FP 1
 #define OUTPUT_OFFSET 0
-#define OUTPUT_SIZES_DATA { 1,1,64,1,1,1,1,1,1, } 
+#define OUTPUT_SIZES_DATA { 1,1,32,1,1,1,1,1,1, } 
 CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define OUTPUT_SIZES CONST_ARRAY_REF(OUTPUT_SIZES)
-#define OUTPUT_PITCHES (size_t []){ 1,1,1,64,1,1,1,1,1, } 
+#define OUTPUT_PITCHES (size_t []){ 1,1,1,32,1,1,1,1,1, } 
 #define OUTPUT_PAD_BEFORE (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OUTPUT_PAD_AFTER (size_t []){ 0,0,0,0,0,0,0,0,0, } 
 #define OPTIONAL_SHAPE_INFO_ARG 
@@ -8387,7 +8387,7 @@ CONST_ARRAY_DECL(OUTPUT_SIZES) = OUTPUT_SIZES_DATA;
 #define GWS_BATCH 2
 #define GWS_FEATURE 1
 #define GWS_YX 0
-#define ELEMENTS_COUNT 64
+#define ELEMENTS_COUNT 32
 #define CHANGE_DATA_TYPE_ONLY 1
 
 
