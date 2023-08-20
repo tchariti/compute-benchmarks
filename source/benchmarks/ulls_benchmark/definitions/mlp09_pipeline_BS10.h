@@ -10,21 +10,21 @@
 #include "framework/argument/basic_argument.h"
 #include "framework/test_case/test_case.h"
 
-struct BMLP15PipelineArguments : TestCaseArgumentContainer {
+struct MLP09PipelineBS10Arguments : TestCaseArgumentContainer {
     BooleanArgument oooq;
 
-    BMLP15PipelineArguments()
+    MLP09PipelineBS10Arguments()
         : oooq(*this, "oooq", "OOOQ enabled or disabled") {}
 };
 
-struct BMLP15Pipeline : TestCase<BMLP15PipelineArguments> {
-    using TestCase<BMLP15PipelineArguments>::TestCase;
+struct MLP09PipelineBS10 : TestCase<MLP09PipelineBS10Arguments> {
+    using TestCase<MLP09PipelineBS10Arguments>::TestCase;
 
     std::string getTestCaseName() const override {
-        return "BMLP15Pipeline";
+        return "MLP09PipelineBS10";
     }
 
     std::string getHelp() const override {
-        return "enqueues MLP pipeline.";
+        return "enqueues MLP09 pipeline batch size 10.";
     }
 };

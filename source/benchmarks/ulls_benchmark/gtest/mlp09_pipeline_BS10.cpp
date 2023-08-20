@@ -5,30 +5,30 @@
  *
  */
 
-#include "definitions/bmlp15_pipeline.h"
+#include "definitions/mlp09_pipeline_BS10.h"
 
 #include "framework/test_case/register_test_case.h"
 #include "framework/utility/common_gtest_args.h"
 
 #include <gtest/gtest.h>
 
-[[maybe_unused]] static const inline RegisterTestCase<BMLP15Pipeline> registerTestCase{};
+[[maybe_unused]] static const inline RegisterTestCase<MLP09PipelineBS10> registerTestCase{};
 
-class BMLP15PipelineSubmissionTest : public ::testing::TestWithParam<std::tuple<Api, bool>> {
+class MLP09PipelineBS10SubmissionTest : public ::testing::TestWithParam<std::tuple<Api, bool>> {
 };
 
-TEST_P(BMLP15PipelineSubmissionTest, Test) {
-    BMLP15PipelineArguments args;
+TEST_P(MLP09PipelineBS10SubmissionTest, Test) {
+    MLP09PipelineBS10Arguments args;
     args.api = std::get<0>(GetParam());
     args.oooq = std::get<1>(GetParam());
 
-    BMLP15Pipeline test;
+    MLP09PipelineBS10 test;
     test.run(args);
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    BMLP15PipelineSubmissionTest,
-    BMLP15PipelineSubmissionTest,
+    MLP09PipelineBS10SubmissionTest,
+    MLP09PipelineBS10SubmissionTest,
     ::testing::Combine(
         ::CommonGtestArgs::allApis(),
         ::testing::Values(true, false)));

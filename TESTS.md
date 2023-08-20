@@ -202,7 +202,6 @@ UsmImmediateCopyMultipleBlits|allocates two unified device memory buffers on sep
 Ulls Benchmark is a set of tests aimed at measuring Ultra Low Latency Submission (ULLS) performance impact.
 | Test name | Description | Params | L0 | OCL |
 |-----------|-------------|--------|----|-----|
-BMLP15Pipeline|enqueues MLP pipeline.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:x:|
 BestSubmission|enqueues a system memory write via PIPE_CONTROL and measures when update becomes visible on the CPU.|<ul></ul>|:heavy_check_mark:|:x:|
 BestWalkerNthCommandListSubmission|enqueues single kernel on n command lists, which updates system memory location and then busy-loops on CPU until the update of the kernel of nth command list becomes visible. This is L0 only test.|<ul><li>--CmdListCount Command list count</li></ul>|:heavy_check_mark:|:x:|
 BestWalkerNthSubmission|enqueues n kernels, which updates system memory location and then busy-loops on CPU until the update of nth kernel becomes visible.|<ul><li>--KernelCount Kernel count</li></ul>|:heavy_check_mark:|:x:|
@@ -219,6 +218,7 @@ KernelSwitchLatencyImmediate|measures time from end of one kernel till start of 
 KernelWithWork|measures time required to run a GPU kernel which assigns constant values to elements of a buffer. Each thread assigns one value.|<ul><li>--usedIds Which of the get_global_id() and get_local_id() calls will be used in the kernel (None or Global or Local or AtomicPerWkg)</li><li>--wgc Workgroup count</li><li>--wgs Workgroup size (aka local work size)</li></ul>|:heavy_check_mark:|:heavy_check_mark:|
 KernelWithWorkImmediate|measures time required to run a GPU kernel which assigns constant values to elements of a buffer using immediate command list. Each thread assigns one value.|<ul><li>--UseEventForHostSync If true, use events to synchronize with host.If false, use zeCommandListHostSynchronize</li><li>--usedIds Which of the get_global_id() and get_local_id() calls will be used in the kernel (None or Global or Local or AtomicPerWkg)</li><li>--wgc Workgroup count</li><li>--wgs Workgroup size (aka local work size)</li></ul>|:heavy_check_mark:|:x:|
 KernelWithWorkPeriodic|measures average time required to run a GPU kernel which assigns constant values to elements of a buffer. Each thread assigns one value. Kernel is run multiple times with a set delay between submissions.|<ul><li>--numSubmissions Number of kernel enqueues to run</li><li>--timeBetweenSubmissions Delay between kernel enqueues in microseconds</li></ul>|:heavy_check_mark:|:x:|
+MLP09PipelineBS10|enqueues MLP09 pipeline batch size 10.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:x:|
 MLP12Pipeline|enqueues MLP12 pipeline.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:x:|
 MLP12PipelineBS10|enqueues MLP12 pipeline batch size 10.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:x:|
 MLP15Pipeline|enqueues MLP pipeline.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:heavy_check_mark:|
