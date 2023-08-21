@@ -37,6 +37,8 @@ static TestResult run(const MultiQueueSubmissionArguments &arguments, Statistics
         buffers.push_back(clCreateBuffer(opencl.context, CL_MEM_READ_WRITE, size, nullptr, &retVal));
     }
 
+    std::cout<<"Command queue count::"<<queues.size()<<std::endl;
+
     const char *source = "__kernel void fill_with_ones(__global int *buffer) { "
                          "    const int gid = get_global_id(0);"
                          "    buffer[gid] = 1;"

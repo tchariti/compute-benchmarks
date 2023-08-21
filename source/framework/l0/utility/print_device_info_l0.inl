@@ -39,7 +39,9 @@ void printDeviceInfo() {
     std::cout << "\t\tconfig:       " << deviceProperties.numSlices << "x" << deviceProperties.numSubslicesPerSlice << "x" << deviceProperties.numEUsPerSubslice << std::endl;
     std::cout << "\t\teuCount:      " << deviceProperties.numSlices * deviceProperties.numSubslicesPerSlice * deviceProperties.numEUsPerSubslice << std::endl;
     std::cout << "\t\tthreadsPerEu: " << deviceProperties.numThreadsPerEU << std::endl;
-
+    std::cout << "\t\tmaxHardwareContexts:"<<deviceProperties.maxHardwareContexts << std::endl;
+    std::cout << "\t\tmaxCommandQueuePriority:"<<deviceProperties.maxCommandQueuePriority << std::endl;
+    std::cout << "\t\tmaxMemAllocSize:"<<deviceProperties.maxMemAllocSize << std::endl;
     std::cout << std::endl;
 }
 
