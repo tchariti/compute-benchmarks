@@ -202,6 +202,7 @@ UsmImmediateCopyMultipleBlits|allocates two unified device memory buffers on sep
 Ulls Benchmark is a set of tests aimed at measuring Ultra Low Latency Submission (ULLS) performance impact.
 | Test name | Description | Params | L0 | OCL |
 |-----------|-------------|--------|----|-----|
+BMLP15Pipeline|enqueues MLP pipeline.|<ul><li>--oooq OOOQ enabled or disabled (0 or 1)</li></ul>|:heavy_check_mark:|:x:|
 BestSubmission|enqueues a system memory write via PIPE_CONTROL and measures when update becomes visible on the CPU.|<ul></ul>|:heavy_check_mark:|:x:|
 BestWalkerNthCommandListSubmission|enqueues single kernel on n command lists, which updates system memory location and then busy-loops on CPU until the update of the kernel of nth command list becomes visible. This is L0 only test.|<ul><li>--CmdListCount Command list count</li></ul>|:heavy_check_mark:|:x:|
 BestWalkerNthSubmission|enqueues n kernels, which updates system memory location and then busy-loops on CPU until the update of nth kernel becomes visible.|<ul><li>--KernelCount Kernel count</li></ul>|:heavy_check_mark:|:x:|

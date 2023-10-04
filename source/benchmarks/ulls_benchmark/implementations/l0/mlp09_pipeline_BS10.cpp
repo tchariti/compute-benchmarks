@@ -74,17 +74,22 @@ static std::vector<ze_kernel_handle_t> get_kernels(const LevelZero& levelzero) {
     Opencl opencl;
 
     cl_int retVal;
-    std::ifstream file("/home/tchariti/ericsson/compute-benchmarks/source/benchmarks/ulls_benchmark/kernels/copyable_sources/MLP_07-09_sync_BS10_cldumps/clDNN_program_1_bucket_0_part_0_3014964219603481063_adls.bin");
+    std::ifstream file("/home/tchariti/compute-benchmarks/source/benchmarks/ulls_benchmark/kernels/copyable_sources/MLP_07-09_sync_BS10_cldumps/clDNN_program_1_bucket_0_part_0_3014964219603481063.cl");
     std::stringstream buffer;
     buffer << file.rdbuf();
     const std::string source = buffer.str();
     auto data_ptr = source.data();
     const auto sourceLength = source.length();
 
-    cl_int binStatus;
+    //Build from source files
+    cl_program program = clCreateProgramWithSource(opencl.context, 1, &data_ptr, &sourceLength, &retVal);
+    std::cout<<"clCreateProgramWithSource retVal=" << retVal << std::endl;
+    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr);
+
+    /* cl_int binStatus;
     cl_program program = clCreateProgramWithBinary(opencl.context, 1, &opencl.device, &sourceLength, (const unsigned char **) &data_ptr, &binStatus, &retVal);
-    //std::cout<<"MLP09BS10 clCreateProgramWithBinary, binStatus, retVal =  " << binStatus << "," << retVal << std::endl;
-    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr); // Must be called even when loading binary
+    std::cout<<"MLP09BS10 clCreateProgramWithBinary, binStatus, retVal =  " << binStatus << "," << retVal << std::endl;
+    clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr); // Must be called even when loading binary */
     
     cl_kernel kernel0 = clCreateKernel(program, "reorder_data_8651755562007300334_0", &retVal);
     cl_kernel kernel1 = clCreateKernel(program, "fully_connected_gpu_bf_tiled_2485442293408685635_0", &retVal);
