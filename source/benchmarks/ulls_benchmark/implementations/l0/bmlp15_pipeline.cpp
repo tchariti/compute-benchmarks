@@ -91,9 +91,9 @@ static std::vector<ze_kernel_handle_t> get_kernels_generic(const LevelZero& leve
 #if 1
     //Build from source files
     cl_program program = clCreateProgramWithSource(opencl.context, 1, &data_ptr, &sourceLength, &retVal);
-    if (retVal )  {
-        std::cout<<"clCreateProgramWithSource retVal=" << retVal << std::endl;
-    }
+    //if (retVal )  {
+    //    std::cout<<"clCreateProgramWithSource retVal=" << retVal << std::endl;
+    //}
     clBuildProgram(program, 1, &opencl.device, nullptr, nullptr, nullptr);
 #else     
     //Build from binary files
@@ -341,9 +341,9 @@ static TestResult run(const BMLP15PipelineArguments &arguments, Statistics &stat
 
     // Find a command queue type that support compute
 
-    for( uint32_t i = 0; i < cmdqueueGroupCount; ++i ) {
-        std::cout<<"Bhaskar DEBUG 100:: Command queue group::"<<i<<"::Queue Count::"<<cmdqueueGroupProperties[i].numQueues;
-    }
+   // for( uint32_t i = 0; i < cmdqueueGroupCount; ++i ) {
+    //    std::cout<<"Bhaskar DEBUG 100:: Command queue group::"<<i<<"::Queue Count::"<<cmdqueueGroupProperties[i].numQueues << std::endl;
+   // }
 
 }
 
